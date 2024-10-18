@@ -111,7 +111,7 @@ export default function Home() {
                   duration: 2,
                   delay: 0.2,
                 }}
-                className={"absolute top-1/2 left-[20%]"}
+                className={"absolute max-sm:w-14 top-1/2 left-[20%]"}
                 src={icons.rolledDegree}
                 alt={"Rolled Degree Icom"}
               />
@@ -293,7 +293,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary max-sm:w-1/3 max-sm:h-1/3 primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:text-sm max-sm:text-nowrap primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>

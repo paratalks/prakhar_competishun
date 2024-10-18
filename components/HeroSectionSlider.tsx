@@ -36,12 +36,12 @@ const HeroSectionSlider = ({ ...props }) => {
         {heroSectionHastags.map((item, index) => (
           <CarouselItem
             key={index}
-            className={`${smallScreen ? "basis-1/2" : "basis-1/4"} flex flex-row gap-x-2 items-center text-2xl font-extrabold italic`}
+            className={`max-sm:basis-1/2 basis-1/4 flex flex-row gap-x-2 items-center text-2xl font-extrabold italic`}
           >
             {item}
             <Sparkle
               style={{
-                transform: `${smallScreen ? "translate(15px,0)" : "translate(130px,0)"}`,
+                transform: `max-sm:translate(15px,0) translate(130px,0)`,
               }}
             />
           </CarouselItem>

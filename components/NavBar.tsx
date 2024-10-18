@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 const NavBar = () => {
   return (
-    <div className={"navbar-container"}>
+    <div className={"navbar-container max-sm:px-2"}>
       <div>
         <Image
           unoptimized
@@ -12,6 +12,7 @@ const NavBar = () => {
           alt={"logo"}
           width={80}
           height={80}
+          className={"max-sm:w-20"}
         />
       </div>
       <div className={`flex flex-row gap-x-12 max-sm:hidden`}>
@@ -79,7 +80,7 @@ const NavBar = () => {
       <button
         onMouseEnter={() => {}}
         className={
-          "text-sm font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5"
+          "text-xs font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5"
         }
       >
         Contact Us
