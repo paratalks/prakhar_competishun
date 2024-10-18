@@ -20,6 +20,7 @@ const PricingSection = () => {
           }
         />
         <Image
+          unoptimized
           src={icons.marks}
           alt={"100"}
           height={100}

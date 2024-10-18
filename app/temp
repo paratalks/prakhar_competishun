@@ -32,7 +32,7 @@ export default function Home() {
         }
       />
 
-      <Image
+      <Image unoptimized
         className={"filter -z-10 grayscale blur-[1px] w-screen h-screen"}
         src={images.expertsBG}
         alt={"background"}
@@ -40,7 +40,7 @@ export default function Home() {
         objectFit={"cover"}
       />
       <div className={"flex flex-col w-full items-center"}>
-        <Image
+        <Image unoptimized
           src={images.logo}
           className={"absolute opacity-20 z-[5] top-20 max-w-2xl w-32"}
           alt={"logo"}
@@ -62,7 +62,7 @@ export default function Home() {
             "h-[90dvh] flex items-center list justify-center border-white"
           }
         >
-          <Image
+          <Image unoptimized
             className={"absolute z-[5] bottom-0 mohitsir item"}
             src={mentorImages.mohitsir}
             alt={"mohitsir"}
@@ -70,7 +70,7 @@ export default function Home() {
             height={460}
             objectFit={"cover"}
           />
-          <Image
+          <Image unoptimized
             className={"absolute bottom-0 amitsir item"}
             src={mentorImages.amitsir}
             alt={"amit sir"}
@@ -78,7 +78,7 @@ export default function Home() {
             height={400}
             objectFit={"cover"}
           />
-          <Image
+          <Image unoptimized
             className={"absolute filter bottom-0 aloksir item"}
             src={mentorImages.aloksir}
             alt={"alok sir"}
@@ -86,7 +86,7 @@ export default function Home() {
             height={430}
             objectFit={"cover"}
           />
-          <Image
+          <Image unoptimized
             className={"absolute filter bottom-0 neerajsir item"}
             src={mentorImages.neerajsir}
             alt={"neeraj sir"}

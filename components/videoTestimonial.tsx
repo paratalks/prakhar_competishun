@@ -12,6 +12,7 @@ const VideoTestimonial = () => {
         }
       >
         <Image
+          unoptimized
           src={illustrations.illustration1}
           alt={"testimonial"}
           width={200}
@@ -31,6 +32,7 @@ const VideoTestimonial = () => {
                 }
               >
                 <Image
+                  unoptimized
                   src={icons.playButton}
                   alt={"Play"}
                   width={50}

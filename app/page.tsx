@@ -146,6 +146,7 @@ export default function Home() {
               />
             </div>
             <Image
+              unoptimized
               src={blurs.blur1}
               alt={"blur image"}
               fill
@@ -155,6 +156,7 @@ export default function Home() {
             />
 
             <Image
+              unoptimized
               onMouseLeave={handleMouseLeave}
               src={images.modelImageHeroSec}
               className={`absolute w-[19dvw] max-sm:w-[60vw] bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
@@ -164,6 +166,7 @@ export default function Home() {
               style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
             />
             <Image
+              unoptimized
               src={images.modelImageHeroSec}
               className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
@@ -171,6 +174,7 @@ export default function Home() {
               height={heroSectionModelDimension}
             />
             <Image
+              unoptimized
               src={images.modelImageHeroSec}
               className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
@@ -178,6 +182,7 @@ export default function Home() {
               height={heroSectionModelDimension}
             />
             <Image
+              unoptimized
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               src={images.modelImageHeroSec}
@@ -194,7 +199,7 @@ export default function Home() {
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 2, ease: "backOut", repeat: Infinity }}
                 className={
-                  "gradientBorder primary-button-animation absolute bottom-[15%] left-[12%] rounded-2xl"
+                  "gradientBorder max-sm:hidden primary-button-animation absolute bottom-[15%] left-[12%] rounded-2xl"
                 }
               >
                 <div className={"rounded-2xl bg-foreground px-5 py-3 "}>
@@ -217,7 +222,7 @@ export default function Home() {
                   repeat: Infinity,
                 }}
                 className={
-                  "gradientBorder primary-button-animation absolute bottom-[30%] right-[10%] rounded-2xl"
+                  "gradientBorder max-sm:hidden primary-button-animation absolute bottom-[30%] right-[10%] rounded-2xl"
                 }
               >
                 <div className={"rounded-2xl bg-foreground p-5"}>
@@ -238,17 +243,18 @@ export default function Home() {
           </div>
           <div
             className={
-              "hero-texts flex flex-col items-center gap-y-6 mt-16 justify-center w-full"
+              "hero-texts flex flex-col items-center gap-y-6 max-sm:gap-y-1 mt-16 justify-center w-full"
             }
           >
             <h1
               className={
-                "hero-title flex flex-row gap-x-4 font-extrabold text-7xl"
+                "hero-title flex max-sm:text-lg flex-row gap-x-4 font-extrabold text-7xl"
               }
             >
               {`Get into `}
               <div className={"relative flex"}>
                 <Image
+                  unoptimized
                   className={"absolute -top-10 -left-10"}
                   src={icons.degreeHat}
                   alt={"Degree Hat"}
@@ -266,10 +272,10 @@ export default function Home() {
 
               {`with Competishun,`}
             </h1>
-            <h1 className={"hero-title font-extrabold text-7xl"}>
+            <h1 className={"hero-title max-sm:text-lg font-extrabold text-7xl"}>
               <span className={"text-primary"}>99 Percentile</span> Dream begins
             </h1>
-            <p className={"text-xl"}>
+            <p className={"text-xl max-sm:text-xs text-center"}>
               {`Join the batch of aspiring `}
               <span className={"text-primary"}>IITians</span>
               {` with our Champ 2 `}
@@ -287,7 +293,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:w-1/3 max-sm:h-1/3 primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>
@@ -314,6 +320,7 @@ export default function Home() {
         <section className={"youtube-banner-section relative mt-12 h-[100dvh]"}>
           <div className={"w-full flex mt-56 justify-center"}>
             <Image
+              unoptimized
               src={blurs.blurSection2}
               alt={"Blur"}
               className={
@@ -330,6 +337,7 @@ export default function Home() {
               }
             >
               <Image
+                unoptimized
                 ref={starsScope}
                 src={icons.sparkleStar}
                 alt={"sparkleStar"}
@@ -338,6 +346,7 @@ export default function Home() {
                 className={"absolute sparkleStar right-0 top-0"}
               />
               <Image
+                unoptimized
                 ref={starsScope}
                 src={icons.sparkleStar}
                 alt={"sparkleStar"}
@@ -390,6 +399,7 @@ export default function Home() {
                     className="flex flex-row gap-x-4 w-5/12 items-center"
                   >
                     <Image
+                      unoptimized
                       src={images.logo}
                       alt="competishun Logo"
                       width={100}

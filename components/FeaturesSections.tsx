@@ -58,6 +58,7 @@ const FeaturesSections = () => {
                     }
                   >
                     <Image
+                      unoptimized
                       src={illustrations.illustration1}
                       alt={"Animation"}
                       width={150}
@@ -92,6 +93,7 @@ const FeaturesSections = () => {
                     }
                   >
                     <Image
+                      unoptimized
                       src={illustrations.illustration1}
                       alt={"Animation"}
                       width={150}

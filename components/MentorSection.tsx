@@ -13,6 +13,7 @@ const MentorSection = () => {
     <section className={"w-full h-full flex flex-col items-center"}>
       <div className={"absolute w-screen h-[150dvh]"}>
         <Image
+          unoptimized
           src={blurs.mentorSectionBlur}
           className={
             "absolute w-screen blur-md opacity-50 h-screen scale-125 -z-40"
@@ -24,6 +25,7 @@ const MentorSection = () => {
       </div>
       <div className={"absolute w-screen h-full"}>
         <Image
+          unoptimized
           src={icons.wave}
           className={"absolute w-screen bottom-0 -z-40"}
           alt={"bg-blur"}

@@ -10,6 +10,7 @@ const TextTesimonialWithImage = () => {
           className={"bg-[#220D00] overflow-hidden w-full h-full rounded-3xl"}
         >
           <Image
+            unoptimized
             src={images.testimonial2}
             alt={"sample Image"}
             width={500}

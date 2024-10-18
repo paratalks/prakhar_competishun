@@ -6,7 +6,13 @@ const NavBar = () => {
   return (
     <div className={"navbar-container"}>
       <div>
-        <Image src={images.logo} alt={"logo"} width={80} height={80} />
+        <Image
+          unoptimized
+          src={images.logo}
+          alt={"logo"}
+          width={80}
+          height={80}
+        />
       </div>
       <div className={`flex flex-row gap-x-12 max-sm:hidden`}>
         {navLinks.map((link) => (

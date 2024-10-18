@@ -15,6 +15,7 @@ const StatisticSection = () => {
     <section className={"w-full h-full relative flex flex-col items-center"}>
       <div className={"absolute w-screen h-full"}>
         <Image
+          unoptimized
           src={blurs.statisticsBlur}
           className={"absolute w-screen -z-40"}
           alt={"bg-blur"}
@@ -64,6 +65,7 @@ const StatisticSection = () => {
                     />
 
                     <Image
+                      unoptimized
                       src={images.statsBoy}
                       alt={"Competishun Stats"}
                       width={500}

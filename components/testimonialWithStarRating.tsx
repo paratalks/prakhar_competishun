@@ -36,6 +36,7 @@ const TestimonialWithStarRating = () => {
               <div className={"flex flex-col h-full w-full gap-y-4"}>
                 <div className={"flex flex-row gap-x-4"}>
                   <Image
+                    unoptimized
                     src={images.testimonial}
                     alt={"testimonial"}
                     width={80}
@@ -74,6 +75,7 @@ const TestimonialWithStarRating = () => {
                   }
                 >
                   <Image
+                    unoptimized
                     className={"star w-6"}
                     src={icons.star}
                     alt={"star"}
@@ -81,6 +83,7 @@ const TestimonialWithStarRating = () => {
                     height={startSize}
                   />
                   <Image
+                    unoptimized
                     className={"star  w-6"}
                     src={icons.star}
                     alt={"star"}
@@ -88,6 +91,7 @@ const TestimonialWithStarRating = () => {
                     height={startSize}
                   />
                   <Image
+                    unoptimized
                     className={"star  w-6"}
                     src={icons.star}
                     alt={"star"}
@@ -95,6 +99,7 @@ const TestimonialWithStarRating = () => {
                     height={startSize}
                   />
                   <Image
+                    unoptimized
                     className={"star  w-6"}
                     src={icons.star}
                     alt={"star"}
@@ -102,6 +107,7 @@ const TestimonialWithStarRating = () => {
                     height={startSize}
                   />
                   <Image
+                    unoptimized
                     className={"star  w-6"}
                     src={icons.star}
                     alt={"star"}
