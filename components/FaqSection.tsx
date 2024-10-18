@@ -12,7 +12,7 @@ const FaqSection = () => {
       <div className={"w-full flex flex-col items-center gap-y-16"}>
         <div
           className={
-            "absolute rounded-full right-28 -top-12 -z-10 bg-secondary blur-[300px] w-96 h-[50vh] object-cover"
+            "absolute rounded-full right-28 -top-12 -z-10 bg-secondary blur-[300px] w-96 h-[50dvh] object-cover"
           }
         />
         <h1 className={"text-5xl font-bold"}>

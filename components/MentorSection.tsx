@@ -11,7 +11,7 @@ const MentorSection = () => {
 
   return (
     <section className={"w-full h-full flex flex-col items-center"}>
-      <div className={"absolute w-screen h-[150vh]"}>
+      <div className={"absolute w-screen h-[150dvh]"}>
         <Image
           src={blurs.mentorSectionBlur}
           className={
@@ -72,7 +72,7 @@ const MentorSection = () => {
             scaleX: { duration: 0.6, delay: 0.5, ease: "easeIn" },
             y: { duration: 0.5 },
           }}
-          className={`h-[30vh] mt-10 gradientBorder w-[80%] rounded-3xl  ${animatingMentorIndex != -1 ? "flex" : "hidden"}`}
+          className={`h-[30dvh] mt-10 gradientBorder w-[80%] rounded-3xl  ${animatingMentorIndex != -1 ? "flex" : "hidden"}`}
         >
           <div
             className={
@@ -99,7 +99,7 @@ const MentorSection = () => {
         </motion.div>
         <div className={"absolute w-full h-screen bottom-0"}>
           <div className={" w-full absolute overflow-hidden bottom-0 z-20"}>
-            <div className={"h-[90vh] flex items-center list justify-center "}>
+            <div className={"h-[90dvh] flex items-center list justify-center "}>
               {mentors.map((item, index) => (
                 <motion.img
                   onHoverStart={() => {

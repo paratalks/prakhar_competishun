@@ -69,7 +69,7 @@ const ProspectusSection = () => {
         <div className={"flex flex-row justify-between"}>
           <div
             className={
-              "flex flex-col gap-y-10  gap-x-14 w-1/3 h-[70vh] flex-wrap -translate-x-10"
+              "flex flex-col gap-y-10  gap-x-14 w-1/3 h-[70dvh] flex-wrap -translate-x-10"
             }
           >
             {...Array.from({ length: 6 }).map((_, i) => (

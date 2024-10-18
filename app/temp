@@ -28,7 +28,7 @@ export default function Home() {
     <div className="w-screen h-full flex flex-col justify-center">
       <div
         className={
-          "absolute w-screen bottom-0 h-[30vh] bg-gradient-to-t from-black via-black via-20% to-transparent z-40"
+          "absolute w-screen bottom-0 h-[30dvh] bg-gradient-to-t from-black via-black via-20% to-transparent z-40"
         }
       />
 
@@ -59,7 +59,7 @@ export default function Home() {
       >
         <div
           className={
-            "h-[90vh] flex items-center list justify-center border-white"
+            "h-[90dvh] flex items-center list justify-center border-white"
           }
         >
           <Image

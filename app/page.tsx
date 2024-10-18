@@ -157,7 +157,7 @@ export default function Home() {
             <Image
               onMouseLeave={handleMouseLeave}
               src={images.modelImageHeroSec}
-              className={`absolute bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              className={`absolute w-[19dvw] max-sm:w-[60vw] bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -165,14 +165,14 @@ export default function Home() {
             />
             <Image
               src={images.modelImageHeroSec}
-              className={`absolute bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
             />
             <Image
               src={images.modelImageHeroSec}
-              className={`absolute bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -181,7 +181,7 @@ export default function Home() {
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               src={images.modelImageHeroSec}
-              className={`absolute bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -209,7 +209,6 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div
-                ref={scope}
                 initial={"hidden"}
                 animate={{ y: [0, 5, 0] }}
                 transition={{
@@ -303,16 +302,16 @@ export default function Home() {
         >
           <div
             className={
-              "w-screen absolute bg-primary h-[10vh] transform rotate-1 z-20"
+              "w-screen absolute bg-primary h-[10dvh] transform rotate-1 z-20"
             }
           >
             <div className={"w-full h-full flex flex-row items-center"}>
               <HeroSectionSlider className={"w-full"} />
             </div>
           </div>
-          <div className={"h-[10vh] absolute w-screen bg-white z-10"} />
+          <div className={"h-[10dvh] absolute w-screen bg-white z-10"} />
         </section>
-        <section className={"youtube-banner-section relative mt-12 h-[100vh]"}>
+        <section className={"youtube-banner-section relative mt-12 h-[100dvh]"}>
           <div className={"w-full flex mt-56 justify-center"}>
             <Image
               src={blurs.blurSection2}
@@ -356,24 +355,24 @@ export default function Home() {
 
         <FeaturesSections />
 
-        <div className={"relative h-[100vh]"}>
+        <div className={"relative h-[100dvh]"}>
           <Testimonials />
         </div>
-        <div className={"relative h-[100vh]"}>
+        <div className={"relative h-[100dvh]"}>
           <FaqSection />
         </div>
-        <div className={"relative h-[100vh] "}>
+        <div className={"relative h-[100dvh] "}>
           <StatisticSection />
         </div>
-        <div className={"relative h-[100vh] "}>
+        <div className={"relative h-[100dvh] "}>
           <MentorSection />
         </div>
-        <div className={"relative h-[100vh] "}>
+        <div className={"relative h-[100dvh] "}>
           <ProspectusSection />
         </div>
         <div
           className={
-            "relative pricing-section h-[150vh] flex flex-col items-center"
+            "relative pricing-section h-[150dvh] flex flex-col items-center"
           }
         >
           <PricingSection />
@@ -381,7 +380,7 @@ export default function Home() {
         <div className={"relative flex flex-col items-center"}>
           <FooterBanner />
         </div>
-        <div className={"relative h-[50vh] flex flex-col items-center"}>
+        <div className={"relative h-[50dvh] flex flex-col items-center"}>
           <footer className="bg-white absolute h-full  w-screen dark:bg-background ">
             <div className=" w-full h-full p-4 py-6 lg:py-8">
               <div className="md:flex md:justify-between p-20">
