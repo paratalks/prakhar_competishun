@@ -23,7 +23,7 @@ const FaqSection = () => {
           <div className="flex flex-col md:flex-row gap-5 justify-between bg-[#220D00] rounded-[2rem] text-white p-6">
             {/* FAQ Questions */}
             <div className="w-full md:w-1/2 flex flex-col gap-y-2">
-              <h2 className={"text-3xl font-extrabold pl-2 mb-2"}> FAQ's </h2>
+              <h2 className={"text-3xl font-extrabold pl-2 mb-2"}>{`FAQ's`}</h2>
               <ul className={"w-full h-full flex flex-col gap-y-2"}>
                 {Faqs.map((faq, index) => (
                   <li key={index} className="mb-4 text-2xl font-extrabold">

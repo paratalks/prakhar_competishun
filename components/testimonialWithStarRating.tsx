@@ -52,10 +52,10 @@ const TestimonialWithStarRating = () => {
                   </div>
                 </div>
                 <p className={"text-gray-300 leading-loose"}>
-                  If you're coaching individuals or teams in specific areas like
-                  sports, business, 😎 or fitness, you may receive feedback in
-                  the form of improved performance metrics, such as increased
-                  revenue, improved athletic performance.
+                  {`If you're coaching individuals or teams in specific areas like
+                    sports, business, 😎 or fitness, you may receive feedback in
+                    the form of improved performance metrics, such as increased
+                    revenue, improved athletic performance.`}
                 </p>
               </div>
             </div>

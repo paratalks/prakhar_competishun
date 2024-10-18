@@ -38,8 +38,8 @@ const PricingSection = () => {
                   Ultimate Revision Course for JEE Main - 2025
                 </h1>
                 <p>
-                  Revise Smarter, Score Higher with Experts mentors in
-                  Competishun. Let's Crack JEE 2025
+                  {`Revise Smarter, Score Higher with Experts mentors in
+                    Competishun. Let's Crack JEE 2025`}
                 </p>
                 <motion.button
                   animate={{ scale: [1, 1.1, 1] }}
