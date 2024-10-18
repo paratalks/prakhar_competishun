@@ -30,7 +30,10 @@ export default function Home() {
   const [starsScope, twinkleAnimation] = useAnimate();
 
   const [playMagicSound] = useSound(sounds.magicSound, { volume: 0.5 });
-  const [screen, setScreen] = useState({ width: 0, height: 0 });
+  const [screen, setScreen] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   const heroSectionModelDimension = 320;
   // variable and state declaration ends here
   const popFeatureModalAnimation = async () => {
@@ -56,11 +59,12 @@ export default function Home() {
   };
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
+    console.log("screen", window.innerWidth, window.innerHeight);
     popFeatureModalAnimation();
   }, []);
   useEffect(() => {
     twinkleAnimationHandler();
-  }, []);
+  }, [screen.width, screen.height]);
   // handling mouse move on model on hero section
   const handleMouseMove = (e: { clientX: number; clientY: number }) => {
     if (!imageContainerRef.current) return;
@@ -102,7 +106,7 @@ export default function Home() {
               "background-gradients w-full h-screen flex items-center justify-center"
             }
           >
-            <div className={"w-full side-icons"}>
+            <div className={"w-screen side-icons"}>
               <motion.img
                 animate={{ y: [0, 10, 0] }}
                 transition={{
@@ -111,13 +115,13 @@ export default function Home() {
                   duration: 2,
                   delay: 0.2,
                 }}
-                className={"absolute max-sm:w-14 top-1/2 left-[20%]"}
+                className={"absolute max-sm:w-14 top-1/2 left-[20%] -z-40"}
                 src={icons.rolledDegree}
                 alt={"Rolled Degree Icom"}
               />
               <motion.img
                 animate={{
-                  y: [0, -150, 100, 200],
+                  y: [0, -screen.height / 8, 100, 200],
                   x: [0, screen.width / 1.3],
                   rotateX: [0, 200],
                   rotateZ: [0, 20, -10, -20, 10],
@@ -128,7 +132,7 @@ export default function Home() {
                   delay: 0.3,
                 }}
                 width={100}
-                className={"absolute top-1/4 left-0 -z-10 opacity-50"}
+                className={"absolute top-1/4 left-0 opacity-50 -z-40"}
                 src={icons.paperPlane}
                 alt={"Rolled Degree Icom"}
               />
@@ -140,7 +144,9 @@ export default function Home() {
                   duration: 2,
                 }}
                 width={50}
-                className={"absolute bottom-[10%] right-1/4 -z-10 opacity-50"}
+                className={
+                  "absolute bottom-[10%] right-1/4 -z-10 opacity-50 -z-40"
+                }
                 src={icons.medal}
                 alt={"Rolled Degree Icom"}
               />
@@ -243,19 +249,19 @@ export default function Home() {
           </div>
           <div
             className={
-              "hero-texts flex flex-col items-center gap-y-6 max-sm:gap-y-1 mt-16 justify-center w-full"
+              "hero-texts flex flex-col items-center lg:gap-y-6 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full"
             }
           >
             <h1
               className={
-                "hero-title flex max-sm:text-lg flex-row gap-x-4 font-extrabold text-7xl"
+                "hero-title flex max-sm:text-lg max-md:text-5xl text-7xl  text-nowrap flex-row gap-x-4 font-extrabold "
               }
             >
               {`Get into `}
               <div className={"relative flex"}>
                 <Image
                   unoptimized
-                  className={"absolute -top-10 -left-10"}
+                  className={"absolute -top-10 -left-10 -z-40"}
                   src={icons.degreeHat}
                   alt={"Degree Hat"}
                   width={100}
@@ -272,7 +278,11 @@ export default function Home() {
 
               {`with Competishun,`}
             </h1>
-            <h1 className={"hero-title max-sm:text-lg font-extrabold text-7xl"}>
+            <h1
+              className={
+                "hero-title max-sm:text-lg max-md:text-3xl text-7xl font-extrabold text-nowrap"
+              }
+            >
               <span className={"text-primary"}>99 Percentile</span> Dream begins
             </h1>
             <p className={"text-xl max-sm:text-xs text-center"}>
@@ -354,7 +364,11 @@ export default function Home() {
                 height={50}
                 className={"absolute sparkleStar left-0 bottom-0"}
               />
-              <h2 className={"youtube-banner-title text-5xl font-extrabold"}>
+              <h2
+                className={
+                  "youtube-banner-title text-5xl max-sm:text-2xl font-extrabold"
+                }
+              >
                 Our Latest <ScribledHighlightedText textInput={"Videos"} />
               </h2>
               <YoutubeRecom />

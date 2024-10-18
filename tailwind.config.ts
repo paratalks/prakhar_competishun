@@ -44,6 +44,22 @@ const config: Config = {
         sans: ["var(--font-gothic-sans)", ...fontFamily.sans],
       },
     },
+    screens: {
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "1300px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1440px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1650px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "2080px",
+      // => @media (min-width: 1536px) { ... }
+    },
   },
   plugins: [],
 };

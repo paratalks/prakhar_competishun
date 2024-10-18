@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const hkgothic = localFont({
   src: "./fonts/HKGrotesk-Regular.ttf",
@@ -28,6 +29,8 @@ export default function RootLayout({
       <body
         className={`${hkgothic.variable} overflow-x-clip font-sans bg-background text-foreground antialiased`}
       >
+        <div id="chat-widget" data-key="670f87c42f6b943716677af3"></div>
+        <Script src="https://cdn.jsdelivr.net/gh/helio-ai/widget@latest/main.js"></Script>
         {children}
       </body>
     </html>
