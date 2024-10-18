@@ -6,10 +6,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { heroSectionHastags, smallScreen } from "@/constants";
+import { heroSectionHastags } from "@/constants";
 import { Sparkle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { set } from "yaml/dist/schema/yaml-1.1/set";
 const HeroSectionSlider = ({ ...props }) => {
   const [screen, setScreen] = useState({ width: 0, height: 0 });
   const [smallScreen, setSmallScreen] = useState(false);

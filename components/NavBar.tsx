@@ -8,7 +8,7 @@ const NavBar = () => {
       <div>
         <Image src={images.logo} alt={"logo"} width={80} height={80} />
       </div>
-      <div className={`flex flex-row gap-x-12`}>
+      <div className={`flex flex-row gap-x-12 max-sm:hidden`}>
         {navLinks.map((link) => (
           <div
             key={link.id}
