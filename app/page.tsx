@@ -30,10 +30,7 @@ export default function Home() {
   const [starsScope, twinkleAnimation] = useAnimate();
 
   const [playMagicSound] = useSound(sounds.magicSound, { volume: 0.5 });
-  const [screen, setScreen] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [screen, setScreen] = useState({ width: 0, height: 0 });
   const heroSectionModelDimension = 320;
   // variable and state declaration ends here
   const popFeatureModalAnimation = async () => {
@@ -59,7 +56,7 @@ export default function Home() {
   };
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
-    console.log("screen", window.innerWidth, window.innerHeight);
+
     popFeatureModalAnimation();
   }, []);
   useEffect(() => {
