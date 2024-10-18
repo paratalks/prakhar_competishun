@@ -1,0 +1,101 @@
+"use client";
+import Image from "next/image";
+import { images, mentorImages } from "@/constants";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+export default function Home() {
+  useGSAP(() => {
+    gsap.context(() => {
+      gsap.to(".amitsir", {
+        x: 400,
+        duration: 1.2,
+      });
+      gsap.to(".mohitsir", {
+        x: 100,
+        duration: 1,
+      });
+      gsap.to(".neerajsir", {
+        x: -200,
+      });
+      gsap.to(".aloksir", {
+        x: -500,
+        duration: 1.2,
+      });
+    });
+  });
+  return (
+    <div className="w-screen h-full flex flex-col justify-center">
+      <div
+        className={
+          "absolute w-screen bottom-0 h-[30vh] bg-gradient-to-t from-black via-black via-20% to-transparent z-40"
+        }
+      />
+
+      <Image
+        className={"filter -z-10 grayscale blur-[1px] w-screen h-screen"}
+        src={images.expertsBG}
+        alt={"background"}
+        fill
+        objectFit={"cover"}
+      />
+      <div className={"flex flex-col w-full items-center"}>
+        <Image
+          src={images.logo}
+          className={"absolute opacity-20 z-[5] top-20 max-w-2xl w-32"}
+          alt={"logo"}
+          width={200}
+          height={200}
+          objectFit={"cover"}
+        />
+        <h3 className={"absolute z-20 top-28 tracking-[1rem] text-primary"}>
+          Power of real gurus
+        </h3>
+      </div>
+      <div
+        className={
+          " w-full absolute overflow-hidden bottom-0 z-20 border border-red-800"
+        }
+      >
+        <div
+          className={
+            "h-[90vh] flex items-center list justify-center border-white"
+          }
+        >
+          <Image
+            className={"absolute z-[5] bottom-0 mohitsir item"}
+            src={mentorImages.mohitsir}
+            alt={"mohitsir"}
+            width={460}
+            height={460}
+            objectFit={"cover"}
+          />
+          <Image
+            className={"absolute bottom-0 amitsir item"}
+            src={mentorImages.amitsir}
+            alt={"amit sir"}
+            width={400}
+            height={400}
+            objectFit={"cover"}
+          />
+          <Image
+            className={"absolute filter bottom-0 aloksir item"}
+            src={mentorImages.aloksir}
+            alt={"alok sir"}
+            width={470}
+            height={430}
+            objectFit={"cover"}
+          />
+          <Image
+            className={"absolute filter bottom-0 neerajsir item"}
+            src={mentorImages.neerajsir}
+            alt={"neeraj sir"}
+            width={450}
+            height={450}
+            objectFit={"cover"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

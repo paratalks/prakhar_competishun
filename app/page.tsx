@@ -1,101 +1,573 @@
+"use client";
+import NavBar from "@/components/NavBar";
 import Image from "next/image";
-
+import { blurs, icons, images, scribles, sounds } from "@/constants";
+import React, { useEffect, useRef, useState } from "react";
+import useSound from "use-sound";
+import { motion, useAnimate } from "framer-motion";
+import { HeadphonesIcon, Sparkle, StarIcon } from "lucide-react";
+import { primary } from "@/constants/colors";
+import HeroSectionSlider from "@/components/HeroSectionSlider";
+import YoutubeRecom from "@/components/YoutubeRecom";
+import FeaturesSections from "@/components/FeaturesSections";
+import ScribledHighlightedText from "@/components/ScribledHighlightedText";
+import Testimonials from "@/components/Testimonials";
+import FaqSection from "@/components/FaqSection";
+import StatisticSection from "@/components/StatisticSection";
+import MentorSection from "@/components/MentorSection";
+import ProspectusSection from "@/components/ProspectusSection";
+import PricingSection from "@/components/PricingSection";
+import FooterBanner from "@/components/FooterBanner";
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [clipPath, setClipPath] = useState("circle(0%)");
+  const imageContainerRef = useRef(null);
+  const [activateTransition, setActivateTransition] = useState(false);
+  const [lastPosition, setLastPosition] = useState({
+    xPercent: 0,
+    yPercent: 0,
+  });
+  const [scope, popAnimate] = useAnimate();
+  const [starsScope, twinkleAnimation] = useAnimate();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const [playMagicSound] = useSound(sounds.magicSound, { volume: 0.5 });
+  const [screen, setScreen] = useState({ width: 0, height: 0 });
+  const heroSectionModelDimension = 320;
+  // variable and state declaration ends here
+  const popFeatureModalAnimation = async () => {
+    await popAnimate(scope.current, {
+      scale: [0, 1],
+      transitionDuration: 1,
+    });
+  };
+  const twinkleAnimationHandler = async () => {
+    await twinkleAnimation(
+      ".sparkleStar",
+      {
+        scale: [1, 1.1, 1],
+        opacity: [1, 0.5, 1],
+      },
+      {
+        duration: 0.7,
+        autoplay: true,
+        repeatType: "reverse",
+        repeat: Infinity,
+      },
+    );
+  };
+  useEffect(() => {
+    setScreen({ width: window.innerWidth, height: window.innerHeight });
+    popFeatureModalAnimation();
+  }, []);
+  useEffect(() => {
+    twinkleAnimationHandler();
+  }, []);
+  // handling mouse move on model on hero section
+  const handleMouseMove = (e: { clientX: number; clientY: number }) => {
+    if (!imageContainerRef.current) return;
+    setActivateTransition(false);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    const rect = imageContainerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+
+    setClipPath(`circle(0% at ${xPercent}% ${yPercent}%)`);
+    setLastPosition({ xPercent, yPercent });
+    setTimeout(() => {
+      setActivateTransition(true);
+      setClipPath(`circle(150% at ${xPercent}% ${yPercent}%)`);
+    }, 10);
+  };
+  // handling mouse leave from model on hero section
+  const handleMouseLeave = () => {
+    setClipPath(
+      `circle(0% at ${lastPosition.xPercent}% ${lastPosition.yPercent}%)`,
+    );
+  };
+  return (
+    <div className="w-full flex relative flex-col items-center">
+      <div
+        id="chat-widget"
+        data-domain="Mentorship"
+        data-subject="Jobs Leadership Class"
+      />
+      <div className={"w-10/12 flex flex-col"}>
+        <section
+          className={"hero-section flex flex-col w-full h-screen relative"}
+        >
+          <div
+            className={
+              "background-gradients w-full h-screen flex items-center justify-center"
+            }
           >
+            <div className={"w-full side-icons"}>
+              <motion.img
+                animate={{ y: [0, 10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  duration: 2,
+                  delay: 0.2,
+                }}
+                className={"absolute top-1/2 left-[20%]"}
+                src={icons.rolledDegree}
+                alt={"Rolled Degree Icom"}
+              />
+              <motion.img
+                animate={{
+                  y: [0, -150, 100, 200],
+                  x: [0, screen.width / 1.3],
+                  rotateX: [0, 200],
+                  rotateZ: [0, 20, -10, -20, 10],
+                }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 3.5,
+                  delay: 0.3,
+                }}
+                width={100}
+                className={"absolute top-1/4 left-0 -z-10 opacity-50"}
+                src={icons.paperPlane}
+                alt={"Rolled Degree Icom"}
+              />
+              <motion.img
+                animate={{ y: [0, 10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  duration: 2,
+                }}
+                width={50}
+                className={"absolute bottom-[10%] right-1/4 -z-10 opacity-50"}
+                src={icons.medal}
+                alt={"Rolled Degree Icom"}
+              />
+            </div>
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={blurs.blur1}
+              alt={"blur image"}
+              fill
+              objectFit={"cover"}
+              layout={"fill"}
+              className={"w-full h-full blur-2xl -z-40 md:scale-125"}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+            <Image
+              onMouseLeave={handleMouseLeave}
+              src={images.modelImageHeroSec}
+              className={`absolute bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+              style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
+            />
+            <Image
+              src={images.modelImageHeroSec}
+              className={`absolute bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+            />
+            <Image
+              src={images.modelImageHeroSec}
+              className={`absolute bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+            />
+            <Image
+              ref={imageContainerRef}
+              onMouseMove={handleMouseMove}
+              src={images.modelImageHeroSec}
+              className={`absolute bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+              style={{ transform: "translate(0, 6%)" }}
+            />
+            <div className={"w-full features-modal"}>
+              <motion.div
+                ref={scope}
+                initial={"hidden"}
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 2, ease: "backOut", repeat: Infinity }}
+                className={
+                  "gradientBorder primary-button-animation absolute bottom-[15%] left-[12%] rounded-2xl"
+                }
+              >
+                <div className={"rounded-2xl bg-foreground px-5 py-3 "}>
+                  <p
+                    className={
+                      "text-black text-xl font-extrabold flex flex-row gap-x-5"
+                    }
+                  >
+                    <HeadphonesIcon color={primary} />
+                    24*7 Doubt Solving
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                ref={scope}
+                initial={"hidden"}
+                animate={{ y: [0, 5, 0] }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+                className={
+                  "gradientBorder primary-button-animation absolute bottom-[30%] right-[10%] rounded-2xl"
+                }
+              >
+                <div className={"rounded-2xl bg-foreground p-5"}>
+                  <p
+                    className={
+                      "text-black text-xl font-extrabold flex flex-row gap-x-5"
+                    }
+                  >
+                    <HeadphonesIcon color={primary} />
+                    24*7 Doubt Solving
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+          <div className={"navbar-section mt-10"}>
+            <NavBar />
+          </div>
+          <div
+            className={
+              "hero-texts flex flex-col items-center gap-y-6 mt-16 justify-center w-full"
+            }
           >
-            Read our docs
-          </a>
+            <h1
+              className={
+                "hero-title flex flex-row gap-x-4 font-extrabold text-7xl"
+              }
+            >
+              {`Get into `}
+              <div className={"relative flex"}>
+                <Image
+                  className={"absolute -top-10 -left-10"}
+                  src={icons.degreeHat}
+                  alt={"Degree Hat"}
+                  width={100}
+                  height={100}
+                />
+                <span
+                  className={
+                    "bg-gradient-to-r from-primary via-50% via-white to-blue-500 text-transparent bg-clip-text"
+                  }
+                >
+                  {`IIT `}
+                </span>
+              </div>
+
+              {`with Competishun,`}
+            </h1>
+            <h1 className={"hero-title font-extrabold text-7xl"}>
+              <span className={"text-primary"}>99 Percentile</span> Dream begins
+            </h1>
+            <p className={"text-xl"}>
+              {`Join the batch of aspiring `}
+              <span className={"text-primary"}>IITians</span>
+              {` with our Champ 2 `}
+              {`JEE batch`}
+            </p>
+            <a href="#pricing-section">
+              <motion.button
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  ease: "anticipate",
+                  repeatDelay: 1,
+                  duration: 1,
+                }}
+                className={
+                  "bg-primary primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
+                }
+              >
+                Join Now <span className={"ml-2"}>🏆</span>
+              </motion.button>
+            </a>
+          </div>
+        </section>
+        <section
+          className={
+            "hero-section-banner-slider flex justify-center relative mt-5 z-20"
+          }
+        >
+          <div
+            className={
+              "w-screen absolute bg-primary h-[10vh] transform rotate-1 z-20"
+            }
+          >
+            <div className={"w-full h-full flex flex-row items-center"}>
+              <HeroSectionSlider className={"w-full"} />
+            </div>
+          </div>
+          <div className={"h-[10vh] absolute w-screen bg-white z-10"} />
+        </section>
+        <section className={"youtube-banner-section relative mt-12 h-[100vh]"}>
+          <div className={"w-full flex mt-56 justify-center"}>
+            <Image
+              src={blurs.blurSection2}
+              alt={"Blur"}
+              className={
+                "-z-40 absolute w-screen filter blur-md opacity-50 scale-150"
+              }
+              width={1920}
+              height={1080}
+              objectFit={"cover"}
+            />
+            <div
+              ref={starsScope}
+              className={
+                "youtuber-banner-content z-10 relative flex flex-col gap-y-14 items-center justify-center w-full"
+              }
+            >
+              <Image
+                ref={starsScope}
+                src={icons.sparkleStar}
+                alt={"sparkleStar"}
+                width={50}
+                height={50}
+                className={"absolute sparkleStar right-0 top-0"}
+              />
+              <Image
+                ref={starsScope}
+                src={icons.sparkleStar}
+                alt={"sparkleStar"}
+                width={50}
+                height={50}
+                className={"absolute sparkleStar left-0 bottom-0"}
+              />
+              <h2 className={"youtube-banner-title text-5xl font-extrabold"}>
+                Our Latest <ScribledHighlightedText textInput={"Videos"} />
+              </h2>
+              <YoutubeRecom />
+            </div>
+          </div>
+        </section>
+
+        <FeaturesSections />
+
+        <div className={"relative h-[100vh]"}>
+          <Testimonials />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={"relative h-[100vh]"}>
+          <FaqSection />
+        </div>
+        <div className={"relative h-[100vh] "}>
+          <StatisticSection />
+        </div>
+        <div className={"relative h-[100vh] "}>
+          <MentorSection />
+        </div>
+        <div className={"relative h-[100vh] "}>
+          <ProspectusSection />
+        </div>
+        <div
+          className={
+            "relative pricing-section h-[150vh] flex flex-col items-center"
+          }
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <PricingSection />
+        </div>
+        <div className={"relative flex flex-col items-center"}>
+          <FooterBanner />
+        </div>
+        <div className={"relative h-[50vh] flex flex-col items-center"}>
+          <footer className="bg-white absolute h-full  w-screen dark:bg-background ">
+            <div className=" w-full h-full p-4 py-6 lg:py-8">
+              <div className="md:flex md:justify-between p-20">
+                <div className="mb-6 md:mb-0">
+                  <a
+                    href="/"
+                    className="flex flex-row gap-x-4 w-5/12 items-center"
+                  >
+                    <Image
+                      src={images.logo}
+                      alt="competishun Logo"
+                      width={100}
+                      height={100}
+                    />
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                      Competishun
+                    </span>
+                  </a>
+                  <p className={"w-5/12 mt-5"}>
+                    Competishun is a premier JEE preparation platform that
+                    supports students with JEE learning , advanced test series
+                    and real-time doubt resolution.
+                  </p>
+                </div>
+                <div className="grid w-1/2 h-full grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                  <div className={"border-r"}>
+                    <div>
+                      <h2 className="mb-6 text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                        Support
+                      </h2>
+                      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                        <li className="mb-4">
+                          <a href="/" className="hover:text-white">
+                            Help
+                          </a>
+                        </li>
+                        <li className="mb-4 hover:text-white">
+                          <a
+                            href="https://competishun.com/"
+                            className="hover:underline"
+                          >
+                            FAQ
+                          </a>
+                        </li>
+                        <li className={"hover:text-white"}>
+                          <a
+                            href="https://tailwindcss.com/"
+                            className="hover:underline"
+                          >
+                            FAQ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className={"border-r"}>
+                    <div>
+                      <h2 className="mb-6 text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                        Resources
+                      </h2>
+                      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                        <li className="mb-4">
+                          <a href="/" className="hover:text-white">
+                            About
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/" className="hover:text-white">
+                            Career
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+              <div className="sm:flex sm:items-center sm:justify-between w-full pb-6">
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                  © 2024{" "}
+                  <a
+                    href="https://competishun.com/"
+                    className="hover:underline"
+                  >
+                    Competishun™
+                  </a>
+                  . All Rights Reserved.
+                </span>
+                <div className="flex mt-4 sm:justify-center sm:mt-0">
+                  <a
+                    href="#"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 8 19"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span className="sr-only">Facebook page</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 21 16"
+                    >
+                      <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+                    </svg>
+                    <span className="sr-only">Discord community</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 17"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span className="sr-only">Twitter page</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span className="sr-only">GitHub account</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span className="sr-only">Dribbble account</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
   );
 }

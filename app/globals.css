@@ -3,25 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070316;
+  --foreground: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #070316;
+    --foreground: #fff;
   }
 }
 
-body {
+body html{
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+    overflow-x: hidden;
 }
-
+ .item{
+    filter: none;
+}
+ .item:hover{
+  transition: 500ms linear;
+  filter: none;
+}
+ .item:not(:hover){
+     transition: 300ms linear;
+   filter: grayscale(1);
+ }
+.bgBlur1{
+    background: rgb(241,94,4);
+    background: radial-gradient(circle, rgba(241,94,4,1) 0%, rgba(81,107,255,0) 100%);
+    transform: translateZ(0);
+    filter: blur( 70px);
+}
+.gradientBorder {
+    background: rgb(241,94,4);
+    background: linear-gradient(90deg, rgba(241,94,4,1) 0%, rgba(81,107,255,1) 100%);
+    padding: 1px;
+}
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+    .navbar-container{
+        @apply flex flex-row justify-between items-center;
+    }
+    .background-gradients{
+        @apply absolute inset-0 ;
+    }
+    .primary-button-animation {
+        @apply hover:shadow-[-5px_6px_30px_-7px_rgba(0,0,0,1)] drop-shadow-lg hover:shadow-primary transition-shadow ease-linear duration-200;
+    }
+    .secondary-button-animation {
+        @apply hover:shadow-[-5px_6px_30px_-7px_rgba(0,0,0,1)] drop-shadow-lg hover:shadow-secondary transition-shadow ease-linear duration-200;
+    }
+    .feature-section-title {
+        @apply text-5xl font-extrabold text-center leading-[1.2];
+    }
+    .testimonial-section-title {
+        @apply text-6xl font-extrabold text-center leading-[1.2];
+    }
+    .star{
+        @apply opacity-0;
+    }
+    .statsItem{
+        @apply p-0 ;
+    }
 }
