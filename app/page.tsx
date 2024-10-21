@@ -89,6 +89,11 @@ export default function Home() {
   };
   return (
     <div className="w-full flex relative flex-col items-center">
+      <div
+        className={"z-40 w-screen overflow-hidden "}
+        id="chat-widget"
+        data-key="670f87c42f6b943716677af3"
+      ></div>
       <div className={"w-10/12 flex flex-col"}>
         <section
           className={"hero-section flex flex-col w-full h-screen relative"}
