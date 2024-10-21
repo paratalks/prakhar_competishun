@@ -100,25 +100,28 @@ export const heroSectionHastags = [
 
 export const Faqs = [
   {
-    question: "What is special In this course ?",
+    question: "Will I get Physical Study Material?",
     answer:
-      "Our user-friendly dashboard provides a clear overview of your business operations, allowing you to monitor important metrics and track progress in real-time. Streamline your project workflows with powerful task management features. Assign tasks, set deadlines.",
+      "With this Course Purchase, you will get only Digital Study Material like DPP’s and their respective Text and Video Solution. Physical Study Material is not provided with this Short term Course.",
   },
   {
-    question: "Can I Get a Free Trial?",
-    answer: "You can click the join now button to get enrolled in the course",
+    question: "Will Classes be any Live Classes?",
+    answer:
+      "There will be only Recorded Scheduled Lectures will be provided. In week there will be LIVE INTERACTION Session for your guidance for 30 Minutes.",
   },
   {
-    question: "Success Rate of Competishun Students?",
-    answer: "We have near about 100% of success rate",
+    question: "Will Test be conducted in this course? ",
+    answer:
+      "Test will be conducted on weekly basis as per test grid that will be provided to you along with the course. Test will be conducted on COMPETISHUN DIGITAL APP / WEBSITE and we will share the complete details in your Official Support Prior to your 1st test.",
   },
   {
-    question: "When will the batches start?",
-    answer: "All the batches start from 10th december",
+    question: "Will Doubt clearing session will be conducted?",
+    answer:
+      "you can ask your doubts in your doubt groups tagging faculties and you will get a reply at the earliest.",
   },
   {
-    question: "What Makes Competishun Stand Out?",
-    answer: "The love from students",
+    question: "How Do you contact Support Staff of Competishun?",
+    answer: "You can contact Support Staff at 8888-0000-21, 7410-900-901",
   },
 ];
 
@@ -133,7 +136,7 @@ export const prospectusCategory = [
 export const mentors = [
   {
     title: "Mohit sir",
-    desc: "Mohit sir is a great mentor",
+    desc: "  B.Tech, IIT Delhi : Mohit Tyagi Sir (MT sir) holds more than 22 years of experience and is one of the finest faculty of Mathematics who can not only teach Mathematics, but create a love for it among the Students. Having headed the Maths Team as HOD (Maths) at one of the leading coaching institute of Kota. His channel at YouTube is a source of Inspiration for both students & faculty members.",
     experience: [
       {
         year: "2021",
@@ -147,53 +150,53 @@ export const mentors = [
       },
     ],
     image: mentorImages.mohitsir,
-    movement: -200,
+    movement: -7,
     animationDuration: 1,
     dimension: 270,
   },
   {
     title: "Amit sir",
-    desc: "Amit sir is a great mentor",
+    desc: "B.tech, IIT- Delhi  Amit Bijarnia Sir (ABJ sir) is a graduate from IIT-Delhi, a very enthusiastic Physics Teacher with a great love for the subject and very popular among the students of JEE (Advanced) / IIT-JEE. His ability to make the students imagine the problem and reach its solution in quick time is very unique. He is very much adored and loved by the Students for his ability to capture the vivid world of Physics and present it to the students in a lucid manner so as to create a love for the subject. Over the years, numerous students taught by him at Kota, have captured prestigious ranks in IIT-JEE (Advanced).",
     experience: [
       {
         year: "2021",
         experienceTitle: "IIT Bombay",
-        experienceDesc: "Graduted from IIT Bombay",
+        experienceDesc: "Graduated from IIT Bombay",
       },
       {
         year: "2020",
         experienceTitle: "IIT Delhi",
-        experienceDesc: "Graduted from IIT Delhi",
+        experienceDesc: "Graduated from IIT Delhi",
       },
     ],
     image: mentorImages.amitsir,
-    movement: 150,
+    movement: 7,
     animationDuration: 1,
     dimension: 230,
   },
   {
     title: "Alok sir",
-    desc: "Alok sir is a great mentor",
+    desc: "B.TECH, NIT-ALLAHABAD (EX SCIENTIST - ISRO) Alok Sir (ALK Sir), held senior faculty positions among many nationally reputed IIT-JEE coaching institutions and is well known for making the subject simple, interesting for students by his organized way of teaching. His exceptional approach of relating various topics of chemistry with practical applications create a deep interest and a sense of belonging for Chemistry. Being a former Scientist of ISRO, he believes that Science and technology will a play a pivotal role in the development of our country and strives hard to motivate students to pursue the same.",
     experience: [
       {
         year: "2021",
         experienceTitle: "IIT Bombay",
-        experienceDesc: "Graduted from IIT Bombay",
+        experienceDesc: "Graduated from IIT Bombay",
       },
       {
         year: "2020",
         experienceTitle: "IIT Delhi",
-        experienceDesc: "Graduted from IIT Delhi",
+        experienceDesc: "Graduated from IIT Delhi",
       },
     ],
     image: mentorImages.aloksir,
-    movement: 450,
+    movement: 3,
     animationDuration: 1,
     dimension: 270,
   },
   {
     title: "Neeraj sir",
-    desc: "Neeraj sir is a great mentor",
+    desc: ' M.Sc., NET-JRF, SLET : Neeraj Sir (NS Sir), has vast experience of teaching Organic Chemistry as  Senior Faculty in a Reputed National Institute for past 14 Years. He is known for teaching to "the point and in a simplified way such that students are able to score well in Organic Chemistry. He has nurtured many Top-100 AIRs in IIT-JEE(Main)& (Main+Advanced).',
     experience: [
       {
         year: "2021",
@@ -207,8 +210,182 @@ export const mentors = [
       },
     ],
     image: mentorImages.neerajsir,
-    movement: -500,
+    movement: -3,
     animationDuration: 1,
     dimension: 260,
+  },
+];
+
+export const feature_Row1 = [
+  {
+    title: "Expert Faculty",
+    desc: "Our experienced and highly qualified instructors are experts in their respective fields, providing students with top-notch guidance, personalized attention, and valuable insights to tackle the JEE Main.",
+  },
+  {
+    title: "Rigorous Curriculum",
+    desc: "The course is meticulously crafted to cover the entire JEE Main syllabus. We prioritize essential topics, offer in-depth explanations, and provide ample practice material to strengthen your understanding",
+  },
+  {
+    title: "Time-Efficient",
+    desc: "Designed as a condensed program, the crash course optimizes your preparation time, making it ideal for students with tight schedules or those looking for a last-minute refresher",
+  },
+];
+
+export const feature_Row2 = [
+  {
+    title: "Mock Tests and Practice Papers",
+    desc: "To gauge your progress and build confidence, we offer a series of mock tests and practice papers that simulate the actual exam.",
+  },
+  {
+    title: "Doubt Resolution",
+    desc: "Our dedicated doubt-clearing sessions ensure that no question remains unanswered. Feel free to ask questions, seek clarification, and reinforce your topics",
+  },
+  {
+    title: "Digital Study Materials",
+    desc: "Our meticulously curated Digital study materials resources will be provided",
+  },
+];
+
+export const statisticsData = [
+  {
+    number: "12k+",
+    label: "Aspiring IITians",
+    bgColor: "bg-primary",
+    shadowColor: "shadow-primary",
+    position: "top-40 right-10",
+  },
+  {
+    number: "200+",
+    label: "Recorded Lectures",
+    bgColor: "bg-green-700",
+    shadowColor: "shadow-green-500",
+    position: "bottom-40 right-20",
+  },
+  {
+    number: "20k+",
+    label: "Students in IIT",
+    bgColor: "bg-blue-900",
+    shadowColor: "shadow-blue-500",
+    position: "bottom-52 left-20",
+  },
+  {
+    number: "15k+",
+    label: "Alumni Network",
+    bgColor: "bg-purple-800",
+    shadowColor: "shadow-purple-500",
+    position: "top-52 left-10",
+  }, // Changed the last statistic
+];
+
+export const testimonialData = [
+  {
+    name: "NIHAR HINGRAJIA",
+    achievement: "AIR56, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I Joined, Competishun because of Mohit Tyagi Sir and their best academic team. I loved their lectures  on YouTube so, I bought the course as well.  Their content, Test structure are so well designed that helped me in achieving my goal to IIT",
+    testimonialType: 0,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "Harshit Srivastava",
+    achievement: "AIR215, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I found out about Team Competishun over Youtube and I am glad that I joined their JEE Main & Adv. coaching classes. They helped me achieve really good results. They are really cost-effective, have good teachers and are always on-time. Thank you Team Competishun",
+    testimonialType: 2,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "RAJAT GOLECHHA",
+    achievement: "AIR100, JEE ADVANCED – 2021",
+    testimonialDescription:
+      " Taking Online Course right here at Competishun has been a prime gain to me. The courses are well laid out and the faculties are supportive and responsible towards each doubt I asked. I want to devote my success to Team Competishun & Thank you for assisting me out in attaining my preferred goal.",
+    testimonialType: 0,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "Harshit Srivastava",
+    achievement: "AIR215, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I found out about Team Competishun over Youtube and I am glad that I joined their JEE Main & Adv. coaching classes. They helped me achieve really good results. They are really cost-effective, have good teachers and are always on-time. Thank you Team Competishun",
+    testimonialType: 2,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "RAJAT GOLECHHA",
+    achievement: "AIR100, JEE ADVANCED – 2021",
+    testimonialDescription:
+      " Taking Online Course right here at Competishun has been a prime gain to me. The courses are well laid out and the faculties are supportive and responsible towards each doubt I asked. I want to devote my success to Team Competishun & Thank you for assisting me out in attaining my preferred goal.",
+    testimonialType: 1,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "NIHAR HINGRAJIA",
+    achievement: "AIR56, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I Joined, Competishun because of Mohit Tyagi Sir and their best academic team. I loved their lectures  on YouTube so, I bought the course as well.  Their content, Test structure are so well designed that helped me in achieving my goal to IIT",
+    testimonialType: 0,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "Harshit Srivastava",
+    achievement: "AIR215, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I found out about Team Competishun over Youtube and I am glad that I joined their JEE Main & Adv. coaching classes. They helped me achieve really good results. They are really cost-effective, have good teachers and are always on-time. Thank you Team Competishun",
+    testimonialType: 2,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "RAJAT GOLECHHA",
+    achievement: "AIR100, JEE ADVANCED – 2021",
+    testimonialDescription:
+      " Taking Online Course right here at Competishun has been a prime gain to me. The courses are well laid out and the faculties are supportive and responsible towards each doubt I asked. I want to devote my success to Team Competishun & Thank you for assisting me out in attaining my preferred goal.",
+    testimonialType: 0,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "Harshit Srivastava",
+    achievement: "AIR215, JEE ADVANCED 2022",
+    testimonialDescription:
+      "I found out about Team Competishun over Youtube and I am glad that I joined their JEE Main & Adv. coaching classes. They helped me achieve really good results. They are really cost-effective, have good teachers and are always on-time. Thank you Team Competishun",
+    testimonialType: 2,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
+  },
+  {
+    name: "RAJAT GOLECHHA",
+    achievement: "AIR100, JEE ADVANCED – 2021",
+    testimonialDescription:
+      " Taking Online Course right here at Competishun has been a prime gain to me. The courses are well laid out and the faculties are supportive and responsible towards each doubt I asked. I want to devote my success to Team Competishun & Thank you for assisting me out in attaining my preferred goal.",
+    testimonialType: 1,
+    // 0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+    testimonialLink: null,
+    testimonialImage: null,
+    testimonialRating: 4.5,
   },
 ];

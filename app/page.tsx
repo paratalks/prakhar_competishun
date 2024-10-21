@@ -89,11 +89,6 @@ export default function Home() {
   };
   return (
     <div className="w-full flex relative flex-col items-center">
-      <div
-        id="chat-widget"
-        data-domain="Mentorship"
-        data-subject="Jobs Leadership Class"
-      />
       <div className={"w-10/12 flex flex-col"}>
         <section
           className={"hero-section flex flex-col w-full h-screen relative"}
@@ -112,7 +107,7 @@ export default function Home() {
                   duration: 2,
                   delay: 0.2,
                 }}
-                className={"absolute max-sm:w-14 top-1/2 left-[20%] -z-40"}
+                className={"absolute sm:w-14 w-10 top-1/2 left-[20%] -z-40"}
                 src={icons.rolledDegree}
                 alt={"Rolled Degree Icom"}
               />
@@ -128,8 +123,9 @@ export default function Home() {
                   duration: 3.5,
                   delay: 0.3,
                 }}
-                width={100}
-                className={"absolute top-1/4 left-0 opacity-50 -z-40"}
+                className={
+                  "absolute w-12 sm:w-16 lg:w-24 sm:top-1/4 top-1/3 left-0 opacity-50 -z-40"
+                }
                 src={icons.paperPlane}
                 alt={"Rolled Degree Icom"}
               />
@@ -142,7 +138,7 @@ export default function Home() {
                 }}
                 width={50}
                 className={
-                  "absolute bottom-[10%] right-1/4 -z-10 opacity-50 -z-40"
+                  "absolute bottom-[10%] sm:right-1/4 right-1/3 opacity-50 -z-40"
                 }
                 src={icons.medal}
                 alt={"Rolled Degree Icom"}
@@ -157,12 +153,11 @@ export default function Home() {
               layout={"fill"}
               className={"w-full h-full blur-2xl -z-40 md:scale-125"}
             />
-
             <Image
               unoptimized
               onMouseLeave={handleMouseLeave}
               src={images.modelImageHeroSec}
-              className={`absolute w-[19dvw] max-sm:w-[60vw] bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              className={`absolute lg:w-[19vw] md:w-[25vw] sm:w-[40vw] w-[70vw] bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -171,7 +166,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              className={`absolute lg:w-[19vw] md:w-[25vw] sm:w-[40vw] w-[70vw] bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -179,7 +174,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              className={`absolute lg:w-[19vw] md:w-[25vw] sm:w-[40vw] w-[70vw] bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -189,29 +184,36 @@ export default function Home() {
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               src={images.modelImageHeroSec}
-              className={`absolute w-[19vw] max-sm:w-[60vw] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+              className={`absolute lg:w-[19vw] md:w-[25vw] sm:w-[40vw] w-[70vw] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
               style={{ transform: "translate(0, 6%)" }}
             />
-            <div className={"w-full features-modal"}>
+            <div className={"w-screen features-modal"}>
               <motion.div
                 ref={scope}
                 initial={"hidden"}
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 2, ease: "backOut", repeat: Infinity }}
                 className={
-                  "gradientBorder max-sm:hidden primary-button-animation absolute bottom-[15%] left-[12%] rounded-2xl"
+                  "gradientBorder primary-button-animation absolute sm:bottom-[15%] bottom-[10%] md:left-[12%] left-0 rounded-2xl "
                 }
               >
-                <div className={"rounded-2xl bg-foreground px-5 py-3 "}>
+                <div
+                  className={
+                    "rounded-2xl bg-foreground px-5 py-3 flex items-center justify-center lg:gap-x-5 sm:gap-x-2"
+                  }
+                >
+                  <HeadphonesIcon
+                    color={primary}
+                    className={"lg:size-8 sm:size-4 size-3"}
+                  />
                   <p
                     className={
-                      "text-black text-xl font-extrabold flex flex-row gap-x-5"
+                      "text-black text-[0.5rem] sm:text-xs lg:text-xl font-extrabold flex flex-row gap-x-5"
                     }
                   >
-                    <HeadphonesIcon color={primary} />
                     24*7 Doubt Solving
                   </p>
                 </div>
@@ -225,16 +227,23 @@ export default function Home() {
                   repeat: Infinity,
                 }}
                 className={
-                  "gradientBorder max-sm:hidden primary-button-animation absolute bottom-[30%] right-[10%] rounded-2xl"
+                  "gradientBorder primary-button-animation absolute md:bottom-[30%] bottom-[25%] md:right-[10%] right-0  rounded-2xl z-20"
                 }
               >
-                <div className={"rounded-2xl bg-foreground p-5"}>
+                <div
+                  className={
+                    "rounded-2xl bg-foreground px-5 py-3 flex items-center justify-center lg:gap-x-5 sm:gap-x-2"
+                  }
+                >
+                  <HeadphonesIcon
+                    color={primary}
+                    className={"lg:size-8 sm:size-4 size-3"}
+                  />
                   <p
                     className={
-                      "text-black text-xl font-extrabold flex flex-row gap-x-5"
+                      "text-black text-[0.5rem] sm:text-xs lg:text-xl font-extrabold flex flex-row gap-x-5"
                     }
                   >
-                    <HeadphonesIcon color={primary} />
                     24*7 Doubt Solving
                   </p>
                 </div>
@@ -246,19 +255,21 @@ export default function Home() {
           </div>
           <div
             className={
-              "hero-texts flex flex-col items-center lg:gap-y-6 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full"
+              "hero-texts flex flex-col items-center lg:gap-y-3 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full"
             }
           >
             <h1
               className={
-                "hero-title flex max-sm:text-lg max-md:text-5xl text-7xl  text-nowrap flex-row gap-x-4 font-extrabold "
+                "hero-title flex text-2xl sm:text-2xl lg:text-5xl xl:text-7xl text-nowrap flex-row gap-x-4 font-extrabold"
               }
             >
               {`Get into `}
-              <div className={"relative flex"}>
+              <div className={"relative flex max-sm:w-fit"}>
                 <Image
                   unoptimized
-                  className={"absolute -top-10 -left-10 -z-40"}
+                  className={
+                    "absolute xl:-top-10 xl:-left-10 max-sm:-top-1 max-sm:-left-2 sm:-top-5 sm:-left-6"
+                  }
                   src={icons.degreeHat}
                   alt={"Degree Hat"}
                   width={100}
@@ -272,21 +283,21 @@ export default function Home() {
                   {`IIT `}
                 </span>
               </div>
-
               {`with Competishun,`}
             </h1>
             <h1
               className={
-                "hero-title max-sm:text-lg max-md:text-3xl text-7xl font-extrabold text-nowrap"
+                "hero-title text-2xl sm:text-2xl lg:text-5xl xl:text-7xl font-extrabold text-nowrap"
               }
             >
               <span className={"text-primary"}>99 Percentile</span> Dream begins
             </h1>
-            <p className={"text-xl max-sm:text-xs text-center"}>
-              {`Join the batch of aspiring `}
-              <span className={"text-primary"}>IITians</span>
-              {` with our Champ 2 `}
-              {`JEE batch`}
+            <p
+              className={
+                " text-xs sm:text-xs lg:text-lg text-center lg:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
+              }
+            >
+              {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
             </p>
             <a href="#pricing-section">
               <motion.button
@@ -300,7 +311,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary max-sm:text-sm max-sm:text-nowrap primary-button-animation font-bold text-2xl p-3 px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:mt-2 max-sm:text-sm max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl p-3 px-5 rounded-2xl w-fit items-center"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>
@@ -366,7 +377,11 @@ export default function Home() {
                   "youtube-banner-title text-5xl max-sm:text-2xl font-extrabold"
                 }
               >
-                Our Latest <ScribledHighlightedText textInput={"Videos"} />
+                Our Latest{" "}
+                <ScribledHighlightedText
+                  textInput={"Videos"}
+                  scrible={screen.width >= 640}
+                />
               </h2>
               <YoutubeRecom />
             </div>
@@ -375,36 +390,36 @@ export default function Home() {
 
         <FeaturesSections />
 
-        <div className={"relative h-[100dvh]"}>
+        <div className={"relative h-[80vh] lg:h-[100dvh]"}>
           <Testimonials />
         </div>
-        <div className={"relative h-[100dvh]"}>
+        <div className={"relative sm:h-[150dvh] xl:h-[100dvh] h-[200dvh]"}>
           <FaqSection />
         </div>
-        <div className={"relative h-[100dvh] "}>
+        <div className={"relative xl:h-[100dvh] h-[150dvh] "}>
           <StatisticSection />
         </div>
-        <div className={"relative h-[100dvh] "}>
+        <div className={"relative sm:h-[110dvh] h-[120dvh] "}>
           <MentorSection />
         </div>
-        <div className={"relative h-[100dvh] "}>
+        <div className={"relative  xl:h-[100dvh] sm:h-[200dvh] h-[220dvh]"}>
           <ProspectusSection />
         </div>
         <div
           className={
-            "relative pricing-section h-[150dvh] flex flex-col items-center"
+            "relative pricing-section lg:h-[150dvh] sm:h-[200dvh] h-[200dvh] flex flex-col items-center"
           }
         >
           <PricingSection />
         </div>
-        <div className={"relative flex flex-col items-center"}>
+        <div className={"relative flex flex-col items-center "}>
           <FooterBanner />
         </div>
         <div className={"relative h-[50dvh] flex flex-col items-center"}>
           <footer className="bg-white absolute h-full  w-screen dark:bg-background ">
             <div className=" w-full h-full p-4 py-6 lg:py-8">
               <div className="md:flex md:justify-between p-20">
-                <div className="mb-6 md:mb-0">
+                <div className="mb-10 md:mb-0 lg:w-5/12 ">
                   <a
                     href="/"
                     className="flex flex-row gap-x-4 w-5/12 items-center"
@@ -420,16 +435,14 @@ export default function Home() {
                       Competishun
                     </span>
                   </a>
-                  <p className={"w-5/12 mt-5"}>
-                    Competishun is a premier JEE preparation platform that
-                    supports students with JEE learning , advanced test series
-                    and real-time doubt resolution.
+                  <p className={"mt-5"}>
+                    {`Competishun is a well-known name in the field of IIT-JEE/NEET Online & Offline Coaching providing Pre-Engineering/Pre-Medical training to aspirants intending to prepare and appear in various competitive, talent search and scholarship examinations of National and International level such as JEE (Main + Advanced) formerly IIT-JEE (Indian Institute of Technology - Joint Entrance Examination). JEE (Main) (formerly AIEEE-All India Engineering Entrance Examination), NEET (National Eligibility cum Entrance Test), BITSAT (Birla Institute of Technology & Science Admission Test) etc. `}
                   </p>
                 </div>
-                <div className="grid w-1/2 h-full grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div className="grid w-full lg:w-1/2 h-full grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                   <div className={"border-r"}>
                     <div>
-                      <h2 className="mb-6 text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase dark:text-white">
                         Support
                       </h2>
                       <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -459,7 +472,7 @@ export default function Home() {
                   </div>
                   <div className={"border-r"}>
                     <div>
-                      <h2 className="mb-6 text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase dark:text-white">
                         Resources
                       </h2>
                       <ul className="text-gray-500 dark:text-gray-400 font-medium">

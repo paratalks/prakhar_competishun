@@ -1,8 +1,54 @@
 import Image from "next/image";
 import { images, navLinks } from "@/constants";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Copy, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { createQuery } from "@/actions/index.action";
 
 const NavBar = () => {
+  const [showPhone, setShowPhone] = useState(false);
+  const [formData, setFormData] = useState({
+    studentName: "",
+    studentPhone: "",
+    studentQuery: "",
+  });
+  const isFormOpen = useRef(false);
+  const handleFormSubmit = async (event: any) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    await createQuery({
+      name: formData.get("query-name")?.toString(),
+      phone: formData.get("query-phone")?.toString(),
+      query: formData.get("query-desc")?.toString(),
+    });
+    setFormData({
+      studentName: "",
+      studentPhone: "",
+      studentQuery: "",
+    });
+    setIsFormOpen(false);
+    alert(
+      "Congratulations! You have paved your first path for becoming a champ!",
+    );
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      isFormOpen = true;
+    }, 10000);
+  }, [isFormOpen]);
   return (
     <div className={"navbar-container max-sm:px-2"}>
       <div>
@@ -15,7 +61,7 @@ const NavBar = () => {
           className={"max-sm:w-20"}
         />
       </div>
-      <div className={`flex flex-row gap-x-12 max-sm:hidden`}>
+      <div className={`flex flex-row group gap-x-12 max-sm:hidden`}>
         {navLinks.map((link) => (
           <div
             key={link.id}
@@ -75,16 +121,112 @@ const NavBar = () => {
           </div>
         ))}
       </div>
-
       {/*    add hover effect in the button on hovering the button a slight shadow should come out of the button of primary color  */}
-      <button
-        onMouseEnter={() => {}}
-        className={
-          "text-xs font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5"
-        }
-      >
-        Contact Us
-      </button>
+      <div className={"flex flex-row items-center"}>
+        <button
+          onMouseEnter={() => {
+            setShowPhone(true);
+          }}
+          onMouseLeave={() => {
+            setShowPhone(false);
+          }}
+          className={"z-10 p-3"}
+        >
+          <Phone />
+        </button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <button
+              onClick={() => {
+                setIsFormOpen(true);
+              }}
+              className={
+                "text-xs font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5 transition-all duration-300"
+              }
+            >
+              {showPhone ? "8888-0000-21" : "Contact Us"}
+            </button>
+          </DialogTrigger>
+          <DialogContent
+            className="sm:max-w-md rounded-3xl p-8"
+            style={{ borderRadius: 20 }}
+          >
+            <DialogHeader>
+              <DialogTitle>{`Let's Make You Champ!`}</DialogTitle>
+              <DialogDescription>
+                {`Ask any doubt, hindering you from being a 'Champ'`}
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleFormSubmit}>
+              <div className="flex flex-col items-center space-x-2 gap-y-5">
+                <Label htmlFor="" className="sr-only">
+                  Name of student
+                </Label>
+                <Input
+                  id="queryName"
+                  name={"query-name"}
+                  placeholder={"Full Name"}
+                  value={formData.studentName}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentName: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <Label htmlFor="" className="sr-only">
+                  Phone of student
+                </Label>
+                <Input
+                  id="queryPhone"
+                  name={"query-phone"}
+                  placeholder={"Phone"}
+                  value={formData.studentPhone}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentPhone: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <Label htmlFor="" className="sr-only">
+                  Query of student
+                </Label>
+                <Textarea
+                  id="queryDesc"
+                  name={"query-desc"}
+                  placeholder={"Your Query"}
+                  cols={5}
+                  value={formData.studentQuery}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentQuery: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <div className={"w-full flex flex-row gap-5 justify-center"}>
+                  <DialogClose asChild>
+                    <Button
+                      size="sm"
+                      className="px-3 bg-secondary rounded-2xl mt-5 hover:bg-secondary hover:scale-110 secondary-button-animation transition-all duration-300"
+                    >
+                      {`Close`}
+                    </Button>
+                  </DialogClose>
+                  <Button
+                    type="submit"
+                    size="sm"
+                    className="px-3 rounded-2xl mt-5 hover:scale-110 primary-button-animation transition-all duration-300"
+                  >
+                    {`Make Me Champ`}
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   );
 };

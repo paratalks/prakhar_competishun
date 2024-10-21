@@ -29,8 +29,12 @@ const ProspectusSection = () => {
           width={70}
           height={70}
         />
-        <div className={"w-1/2 flex flex-col items-center justify-center"}>
-          <h1 className={"section-title text-5xl font-bold text-center"}>
+        <div className={"w-full flex flex-col items-center justify-center"}>
+          <h1
+            className={
+              "section-title text-2xl sm:text-3xl lg:text-5xl font-bold text-center"
+            }
+          >
             Course{" "}
             <ScribledHighlightedText
               textInput={"Prospectus"}
@@ -39,12 +43,16 @@ const ProspectusSection = () => {
               }
             />
           </h1>
-          <p className={"mt-2 text-gray-400 text-center"}>
+          <p
+            className={
+              "mt-2 text-xs sm:text-sm lg:text-lg  text-gray-400 text-center"
+            }
+          >
             Choose the Course That Matches Your Learning Style and Pace,
             Designed to Maximize Your scores.
           </p>
         </div>
-        <div className={"gradientBorder rounded-full"}>
+        <div className={"gradientBorder rounded-full max-sm:scale-75"}>
           <div className={"w-full bg-[#1D131E] p-3 rounded-full"}>
             <div
               className={
@@ -57,9 +65,9 @@ const ProspectusSection = () => {
                   onClick={() => {
                     setSelectedCategory(index);
                   }}
-                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-row gap-2 px-8 py-3 bg-primary rounded-full transition-all duration-500`}
+                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-row gap-2 px-8 py-3 bg-primary rounded-full items-center lg:flex-nowrap transition-all duration-500`}
                 >
-                  <NotebookPen />
+                  <NotebookPen className={"max-sm:size-3"} />
                   <p>{item.title}</p>
                 </motion.button>
               ))}
@@ -69,7 +77,7 @@ const ProspectusSection = () => {
         <div className={"flex flex-row justify-between"}>
           <div
             className={
-              "flex flex-col gap-y-10  gap-x-14 w-1/3 h-[70dvh] flex-wrap -translate-x-10"
+              "flex flex-col gap-y-10  gap-x-14 w-full xl:w-1/3 h-[70dvh] xl:flex-wrap lg:-translate-x-10"
             }
           >
             {...Array.from({ length: 6 }).map((_, i) => (

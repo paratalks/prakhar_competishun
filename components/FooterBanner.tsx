@@ -24,12 +24,12 @@ const FooterBanner = () => {
       >
         <div
           className={
-            " w-screen h-1/2 bg-primary/[0.2] relative p-20 flex flex-row gap-2"
+            " w-screen h-fit bg-primary/[0.2] relative p-20 flex lg:flex-row flex-col gap-2"
           }
         >
           <div
             className={
-              "flex w-1/3 items-center justify-center flex-col ml-10 gap-10"
+              "flex lg:w-1/3 w-full items-center justify-center flex-col lg:ml-10 gap-10"
             }
           >
             <h2 className={"text-5xl font-bold leading-[1.3]"}>
@@ -51,7 +51,7 @@ const FooterBanner = () => {
           </div>
           <div
             className={
-              "flex w-1/2 flex-1 h-full items-center justify-center flex-col ml-10 gap-10"
+              " w-1/2 lg:flex hidden flex-1 h-full items-center justify-center flex-col ml-10 gap-10"
             }
           >
             <motion.img
@@ -69,14 +69,14 @@ const FooterBanner = () => {
               alt={"bg"}
               width={600}
               height={600}
-              className={"absolute bottom-0"}
+              className={"absolute bottom-0 sm:w-96 xl:w-5/12"}
             />
             <motion.img
               src={images.guyWithTshirt}
               alt={"bg"}
               width={600}
               height={600}
-              className={"absolute bottom-0 blur-md -z-[1]"}
+              className={"absolute bottom-0 blur-md -z-[1] sm:w-96 xl:w-5/12"}
             />
           </div>
         </div>

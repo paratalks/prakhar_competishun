@@ -28,12 +28,18 @@ const StatisticSection = () => {
           "section-content w-full h-full p-20 z-40 flex flex-col items-center"
         }
       >
-        <h1 className={"section-title text-5xl font-bold text-center"}>
+        <h1
+          className={
+            "section-title text-2xl sm:text-3xl lg:text-5xl font-bold text-center"
+          }
+        >
           Join <span className={"text-primary"}>Competishun</span> <br />{" "}
           Community, Your way to IIT
         </h1>
         <div
-          className={"h-full w-1/2 flex flex-col  items-center justify-center"}
+          className={
+            "h-full lg:w-1/2 flex flex-col  items-center justify-center"
+          }
         >
           <Carousel
             plugins={[

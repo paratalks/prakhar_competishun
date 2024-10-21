@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ScribledHighlightedText from "@/components/ScribledHighlightedText";
 import TestimonialWithStarRating from "@/components/testimonialWithStarRating";
 import Image from "next/image";
-import { blurs } from "@/constants";
+import { blurs, testimonialData } from "@/constants";
 import VideoTestimonial from "@/components/videoTestimonial";
 import TextTesimonialWithImage from "@/components/textTesimonialWithImage";
 import {
@@ -29,7 +29,7 @@ const Testimonials = () => {
             "testimonial-section-content z-10 relative flex flex-col gap-y-24 items-center justify-center w-full"
           }
         >
-          <h1 className={"testimonial-section-title"}>
+          <h1 className={"testimonial-section-title max-sm:text-2xl"}>
             Hear from our{" "}
             <ScribledHighlightedText
               textInput={"Champions!"}
@@ -52,29 +52,39 @@ const Testimonials = () => {
                 align: "start",
                 loop: true,
               }}
-              className={"absolute  w-screen "}
+              className={"absolute  w-screen flex justify-center"}
             >
-              <CarouselContent className={"gap-x-7"}>
-                <CarouselItem className={`${smallScreen ? "" : "basis-1/5"} `}>
-                  <TextTesimonialWithImage />
-                </CarouselItem>
-                <CarouselItem className={`${smallScreen ? "" : "basis-1/5"} `}>
-                  <TestimonialWithStarRating />
-                </CarouselItem>
-                <CarouselItem className={`${smallScreen ? "" : "basis-1/5"} `}>
-                  <VideoTestimonial />
-                </CarouselItem>
-                <CarouselItem className={`${smallScreen ? "" : "basis-1/5"} `}>
-                  <TextTesimonialWithImage />
-                </CarouselItem>
-                <CarouselItem className={`${smallScreen ? "" : "basis-1/5"} `}>
-                  <TestimonialWithStarRating />
-                </CarouselItem>
-                <CarouselItem
-                  className={`${smallScreen ? "" : "basis-1/5 mr-8"} `}
-                >
-                  <VideoTestimonial />
-                </CarouselItem>
+              <CarouselContent className={" gap-x-2 sm:gap-x-5 lg:gap-x-7"}>
+                {testimonialData.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    className={`basis-1/2 sm:basis-1/3  lg:basis-1/5 first:pl-5`}
+                  >
+                    {/*  0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+                     */}
+                    {item.testimonialType == 0 ? (
+                      <TestimonialWithStarRating
+                        name={item.name}
+                        achievement={item.achievement}
+                        testimonial={item.testimonialDescription}
+                        rating={item.testimonialRating}
+                      />
+                    ) : item.testimonialType == 1 ? (
+                      <VideoTestimonial
+                        name={item.name}
+                        videoLink={
+                          item.testimonialLink || "https://manwith.codes"
+                        }
+                      />
+                    ) : (
+                      <TextTesimonialWithImage
+                        achievement={item.achievement}
+                        testimonial={item.testimonialDescription}
+                        name={item.name}
+                      />
+                    )}
+                  </CarouselItem>
+                ))}
               </CarouselContent>
             </Carousel>
           </div>

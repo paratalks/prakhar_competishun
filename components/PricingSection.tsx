@@ -28,33 +28,39 @@ const PricingSection = () => {
           className={"absolute right-32 top-20"}
         />
         <div className={"gradientBorder w-full h-full rounded-3xl"}>
-          <div className={"w-full h-full bg-[#220D00] p-16 rounded-3xl"}>
-            <div className={"flex flex-row gap-2"}>
+          <div
+            className={
+              "w-full h-full bg-[#220D00] p-6 sm:p-12 lg:p-16 rounded-3xl"
+            }
+          >
+            <div className={"flex lg:flex-row flex-col gap-x-2 gap-y-5"}>
               <div
                 className={
-                  "w-full md:w-1/2 h-full pr-12 flex flex-col gap-y-12"
+                  "w-full md:w-1/2 h-full lg:pr-12 flex flex-col gap-y-12"
                 }
               >
-                <h1 className={"text-7xl font-bold"}>
+                <h1 className={" text-3xl sm:text-6xl lg:text-7xl font-bold"}>
                   Ultimate Revision Course for JEE Main - 2025
                 </h1>
                 <p>
                   {`Revise Smarter, Score Higher with Experts mentors in
                     Competishun. Let's Crack JEE 2025`}
                 </p>
-                <motion.button
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{
-                    duration: 0.8,
-                    repeat: Infinity,
-                    ease: "anticipate",
-                  }}
-                  className={
-                    "bg-primary primary-button-animation border-white font-bold text-2xl border p-5 w-full rounded-2xl"
-                  }
-                >
-                  Join Now <span className={"ml-2"}>🏆</span>
-                </motion.button>
+                <a href="https://rzp.io/rzp/YfK1Axui">
+                  <motion.button
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{
+                      duration: 0.8,
+                      repeat: Infinity,
+                      ease: "anticipate",
+                    }}
+                    className={
+                      "bg-primary primary-button-animation border-white font-bold text-nowrap text-lg sm:text-xl lg:text-2xl border p-5 max-sm:p-3 w-full rounded-2xl"
+                    }
+                  >
+                    Join Now <span className={"ml-2"}>🏆</span>
+                  </motion.button>
+                </a>
               </div>
               <div
                 className={"w-full md:w-1/2 h-full flex flex-col rounded-2xl"}
