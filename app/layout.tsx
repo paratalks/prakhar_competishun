@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${hkgothic.variable} overflow-x-clip font-sans bg-background text-foreground antialiased`}
       >
         <div
-          className={"z-[50]"}
+          className={"z-40 w-screen hidden sm:flex"}
           id="chat-widget"
           data-key="670f87c42f6b943716677af3"
         ></div>

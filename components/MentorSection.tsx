@@ -57,10 +57,10 @@ const MentorSection = () => {
           height={150}
         />
         <div className="w-full max-sm:w-full flex flex-col items-center justify-center">
-          <h1 className="section-title w-full text-5xl font-bold text-center">
+          <h1 className="section-title w-full text-2xl sm:text-3xl lg:text-5xl font-bold text-center">
             Your Journey <ScribledHighlightedText textInput={"Mentors"} />
           </h1>
-          <p className="mt-2 text-gray-400 text-center max-sm:text-xs">
+          <p className="mt-2 text-gray-400 text-center text-xs sm:text-sm lg:text-lg p-2 w-2/3 sm:w-1/2 lg:w-full">
             {`Learn from the ones who've already helped thousands of students achieve their dreams`}
           </p>
         </div>
@@ -78,10 +78,10 @@ const MentorSection = () => {
               transition={{ duration: 1, delay: 1 }}
               className="flex lg:flex-row flex-col items-center opacity-0"
             >
-              <h1 className="lg:text-5xl  sm:text-3xl text-xl font-bold lg:border-r max-md:border-b text-nowrap">
+              <h1 className="lg:text-5xl  sm:text-3xl text-xl font-bold lg:pr-2 lg:border-r max-md:border-b text-nowrap">
                 {isAnimating && mentors[animatingMentorIndex]?.title}
               </h1>
-              <p className="p-5 text-xs sm:text-sm leading-relaxed">
+              <p className="p-5 text-xs sm:text-sm leading-relaxed lg:leading-loose">
                 {isAnimating && mentors[animatingMentorIndex]?.desc}
               </p>
             </motion.div>

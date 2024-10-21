@@ -18,7 +18,7 @@ const ProspectusSection = () => {
       >
         <motion.img
           src={icons.flower}
-          className={"absolute top-48 right-40 opacity-50 "}
+          className={"absolute hidden sm:flex top-48 right-40 opacity-50 "}
           alt={"bg-blur"}
           width={70}
           height={70}

@@ -27,7 +27,7 @@ const StatisticSection = () => {
       </div>
       <div
         className={
-          "section-content w-full h-full p-20 z-40 flex flex-col items-center gap-10"
+          "section-content w-full h-full p-20 z-40 flex flex-col items-center gap-32"
         }
       >
         <h1
@@ -91,7 +91,7 @@ const StatisticSection = () => {
             whileInView={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className={
-              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-40 lg:right-10 right-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
+              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-48 lg:right-10 right-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
             }
           >
             <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>

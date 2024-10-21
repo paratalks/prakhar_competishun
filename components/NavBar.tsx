@@ -141,11 +141,11 @@ const NavBar = () => {
             </button>
           </DialogTrigger>
           <DialogContent
-            className="sm:max-w-md rounded-3xl p-8"
+            className="sm:max-w-md rounded-3xl p-8 bg-primary"
             style={{ borderRadius: 20 }}
           >
             <DialogHeader>
-              <DialogTitle>{`Let's Make You Champ!`}</DialogTitle>
+              <DialogTitle>{`Let's Make You Champ! 🏆`}</DialogTitle>
               <DialogDescription>
                 {`Ask any doubt, hindering you from being a 'Champ'`}
               </DialogDescription>
@@ -159,6 +159,7 @@ const NavBar = () => {
                   id="queryName"
                   name={"query-name"}
                   placeholder={"Full Name"}
+                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
                   value={formData.studentName}
                   onChange={(e) => {
                     setFormData({
@@ -173,6 +174,7 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-phone"}
+                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
                   placeholder={"Phone"}
                   value={formData.studentPhone}
                   onChange={(e) => {
@@ -188,6 +190,7 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-city"}
+                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
                   placeholder={"City"}
                   value={formData.studentCity}
                   onChange={(e) => {
@@ -203,6 +206,7 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-target"}
+                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
                   placeholder={"Target Exam (eg. JEE/NEET/NISO)"}
                   value={formData.studentTarget}
                   onChange={(e) => {
@@ -219,6 +223,7 @@ const NavBar = () => {
                   id="queryDesc"
                   name={"query-desc"}
                   placeholder={"Your Query"}
+                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
                   cols={5}
                   value={formData.studentQuery}
                   onChange={(e) => {
@@ -229,21 +234,10 @@ const NavBar = () => {
                   }}
                 />
                 <div className={"w-full flex flex-row gap-5 justify-center"}>
-                  <DialogClose asChild>
-                    <Button
-                      onClick={() => {
-                        isFormOpen.current = false;
-                      }}
-                      size="sm"
-                      className="px-3 bg-secondary rounded-2xl mt-5 hover:bg-secondary hover:scale-110 secondary-button-animation transition-all duration-300"
-                    >
-                      {`Close`}
-                    </Button>
-                  </DialogClose>
                   <Button
                     type="submit"
                     size="sm"
-                    className="px-3 rounded-2xl mt-5 hover:scale-110 primary-button-animation transition-all duration-300"
+                    className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
                   >
                     {`Make Me Champ`}
                   </Button>
