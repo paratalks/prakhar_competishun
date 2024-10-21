@@ -91,10 +91,10 @@ const StatisticSection = () => {
             whileInView={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className={
-              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 top-40 right-10 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
+              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-40 lg:right-10 right-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
             }
           >
-            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
               <span
                 className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
               >
@@ -107,10 +107,10 @@ const StatisticSection = () => {
             whileInView={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className={
-              "absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 bottom-40 right-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
+              "absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-40 lg:right-20 right-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
             }
           >
-            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
               <span
                 className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
               >
@@ -123,10 +123,10 @@ const StatisticSection = () => {
             whileInView={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className={
-              "absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 bottom-52 left-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
+              "absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-52 lg:left-20 left-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
             }
           >
-            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
               <span
                 className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
               >
@@ -139,10 +139,10 @@ const StatisticSection = () => {
             whileInView={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className={
-              "absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 top-52 left-10 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
+              "absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-52 lg:left-10 left-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
             }
           >
-            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
               <span
                 className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
               >

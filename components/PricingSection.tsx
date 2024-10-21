@@ -11,7 +11,7 @@ const PricingSection = () => {
       <div
         id={"pricing-section"}
         className={
-          "section-content  w-10/12 h-full pt-72 z-40 flex flex-col items-center gap-y-16"
+          "section-content  relative w-10/12 h-full pt-72 z-40 flex flex-col items-center gap-y-16"
         }
       >
         <div

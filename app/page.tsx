@@ -162,7 +162,7 @@ export default function Home() {
               unoptimized
               onMouseLeave={handleMouseLeave}
               src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%]  max-w-[50%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -171,7 +171,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%] max-w-[50%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              className={`absolute max-h-[50%] max-w-[80%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -179,7 +179,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%]  max-w-[50%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -189,7 +189,7 @@ export default function Home() {
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%] max-w-[50%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+              className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}

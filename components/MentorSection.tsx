@@ -12,7 +12,7 @@ const MentorSection = () => {
   // Check if a mentor is being animated
   const isAnimating = animatingMentorIndex !== -1;
   useEffect(() => {
-    setScreen({ width: window.innerWidth, height: window.innerHeight });
+    setScreen({ width: window.outerWidth, height: window.outerHeight });
   }, [screen.width, screen.height]);
   return (
     <section className="w-full h-full flex flex-col items-center relative">
@@ -78,10 +78,10 @@ const MentorSection = () => {
               transition={{ duration: 1, delay: 1 }}
               className="flex lg:flex-row flex-col items-center opacity-0"
             >
-              <h1 className="lg:text-5xl  sm:text-3xl text-2xl font-bold p-5 lg:border-r max-md:border-b text-nowrap">
+              <h1 className="lg:text-5xl  sm:text-3xl text-xl font-bold lg:border-r max-md:border-b text-nowrap">
                 {isAnimating && mentors[animatingMentorIndex]?.title}
               </h1>
-              <p className="p-5 max-sm:text-xs">
+              <p className="p-5 text-xs sm:text-sm leading-relaxed">
                 {isAnimating && mentors[animatingMentorIndex]?.desc}
               </p>
             </motion.div>
