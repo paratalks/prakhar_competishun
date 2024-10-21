@@ -7,7 +7,11 @@ import { motion } from "framer-motion";
 
 const PricingSection = () => {
   return (
-    <section className={" w-screen relative flex flex-col mt-24 items-center"}>
+    <section
+      className={
+        " w-screen overflow-clip relative flex flex-col mt-24 items-center"
+      }
+    >
       <div
         id={"pricing-section"}
         className={
