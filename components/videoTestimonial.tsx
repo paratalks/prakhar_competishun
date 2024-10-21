@@ -9,7 +9,7 @@ const VideoTestimonial = ({
 }) => {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-full md:w-[60vw] lg:w-[30vw] h-[50vh]  relative flex justify-center rounded-3xl gradientBorder">
+      <div className="w-full md:w-[60vw] lg:w-[30vw] h-[500px]  relative flex justify-center rounded-3xl gradientBorder">
         <Image
           unoptimized
           src={image || illustrations.illustration1}
@@ -18,7 +18,7 @@ const VideoTestimonial = ({
           height={200}
           className="object-fill bg-black h-full w-full rounded-3xl"
         />
-        <div className="absolute bg-blue-900 bottom-2 z-10 p-2 w-11/12 rounded-2xl h-[6vh] flex items-center">
+        <div className="absolute bg-secondary bottom-2 z-10 p-2 w-11/12 rounded-2xl h-fit flex items-center">
           <a href={videoLink} target="_blank" rel="noopener noreferrer">
             <button
               aria-label="Play Video Testimonial"

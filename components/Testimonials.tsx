@@ -22,8 +22,8 @@ const Testimonials = () => {
     setSmallScreen(window.innerWidth < 640);
   }, [screen.width, screen.height, smallScreen]);
   return (
-    <section className={"featuresSection mt-12"}>
-      <div className={"w-full mt-12 flex justify-center items-center"}>
+    <section className={"featuresSection mt-12 relative"}>
+      <div className={"w-full mt-12 flex justify-center items-center relative"}>
         <div
           className={
             "testimonial-section-content z-10 relative flex flex-col gap-y-24 items-center justify-center w-full"
@@ -52,13 +52,13 @@ const Testimonials = () => {
                 align: "start",
                 loop: true,
               }}
-              className={"absolute  w-screen flex justify-center"}
+              className={"  w-screen flex justify-center"}
             >
-              <CarouselContent className={" gap-x-2 sm:gap-x-5 lg:gap-x-7"}>
+              <CarouselContent className={" gap-x-4 sm:gap-x-5 lg:gap-x-7"}>
                 {testimonialData.map((item, index) => (
                   <CarouselItem
                     key={index}
-                    className={`basis-1/2 sm:basis-1/3  lg:basis-1/5 first:pl-5`}
+                    className={` sm:basis-1/3 md:basis-1/4  lg:basis-1/5 first:pl-5`}
                   >
                     {/*  0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
                      */}

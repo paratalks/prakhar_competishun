@@ -50,15 +50,17 @@ const FeaturesSections = () => {
           </h1>
           <div
             className={
-              "flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-y-0 lg:gap-x-14 w-full  px-4"
+              "flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-y-0 lg:gap-x-14 w-full "
             }
           >
-            <div className={"flex flex-col gap-y-10 w-full lg:w-1/2"}>
+            <div
+              className={"flex flex-col md:flex-row flex-wrap gap-y-10 w-full"}
+            >
               {feature_Row1.map((item, index) => (
                 <div
                   key={index}
                   className={
-                    "bg-primary flex hover:scale-110 transition-all duration-300 flex-row max-sm:flex-col  gap-x-8 rounded-3xl p-2 border border-white items-start justify-start"
+                    "bg-primary flex hover:scale-110 transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-8 rounded-3xl p-2 scale-90 md:w-1/3 border border-white items-start justify-start"
                   }
                 >
                   <div
@@ -76,40 +78,7 @@ const FeaturesSections = () => {
                     />
                   </div>
                   <div className={"flex flex-col py-5 w-full lg:w-1/2 h-full"}>
-                    <h3 className={"text-xl lg:text-2xl font-extrabold"}>
-                      {item.title}
-                    </h3>
-                    <p className={"overflow-hidden h-1/2 text-sm lg:text-base"}>
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className={"flex flex-col gap-y-10 w-full lg:w-1/2"}>
-              {feature_Row2.map((item, index) => (
-                <div
-                  key={index}
-                  className={
-                    "bg-primary flex hover:scale-110 transition-all duration-300 flex-row max-sm:flex-col  gap-x-8 rounded-3xl p-2 border border-white items-start justify-start"
-                  }
-                >
-                  <div
-                    className={
-                      "h-full max-sm:h-fit overflow-hidden w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
-                    }
-                  >
-                    <Image
-                      unoptimized
-                      src={illustrations.illustration1}
-                      alt={"Animation"}
-                      width={150}
-                      height={100}
-                      objectFit={"contain"}
-                    />
-                  </div>
-                  <div className={"flex flex-col py-5 w-full lg:w-1/2 h-full"}>
-                    <h3 className={"text-xl lg:text-2xl font-extrabold"}>
+                    <h3 className={"text-xl lg:text-3xl font-extrabold"}>
                       {item.title}
                     </h3>
                     <p className={"overflow-hidden h-1/2 text-sm lg:text-base"}>

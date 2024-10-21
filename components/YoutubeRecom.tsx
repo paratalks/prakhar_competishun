@@ -39,7 +39,7 @@ const YoutubeRecom = () => {
           src="https://www.youtube.com/embed/QpeWhM0q0jw"
           frameBorder="0"
           width={"100%"}
-          className={"rounded-3xl h-[80vh] max-sm:h-[50vh]"}
+          className={"rounded-3xl h-[30vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"}
           allowFullScreen
         />
       </div>

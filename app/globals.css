@@ -67,6 +67,18 @@ body html{
     background: linear-gradient(90deg, rgba(241,94,4,1) 0%, rgba(81,107,255,1) 100%);
     padding: 1px;
 }
+@media only screen and (max-height: 800px) {
+    .modelImageContainer {
+        scale: 0.9;
+    }
+}
+@media only screen and (max-height: 600px) {
+    .hero-texts {
+        scale: 0.7;
+        margin: 0;
+        padding: 0;
+    }
+}
 @layer utilities {
     .text-balance {
         text-wrap: balance;

@@ -66,10 +66,12 @@ const ProspectusSection = () => {
                   onClick={() => {
                     setSelectedCategory(index);
                   }}
-                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-row gap-2 px-8 py-3 bg-primary rounded-full items-center lg:flex-nowrap transition-all duration-500`}
+                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-col md:flex-row gap-2 px-8 py-3 bg-primary rounded-full items-center lg:flex-nowrap transition-all duration-500`}
                 >
                   <NotebookPen className={"max-sm:size-3"} />
-                  <p>{item.title}</p>
+                  <p className={"text-xs sm:text-sm md:text-lg lg:text-xl"}>
+                    {item.title}
+                  </p>
                 </motion.button>
               ))}
             </div>

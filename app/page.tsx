@@ -157,44 +157,49 @@ export default function Home() {
                 alt={"Rolled Degree Icom"}
               />
             </div>
-
-            <Image
-              unoptimized
-              onMouseLeave={handleMouseLeave}
-              src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
-              alt={"Competishun Model"}
-              width={heroSectionModelDimension}
-              height={heroSectionModelDimension}
-              style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
-            />
-            <Image
-              unoptimized
-              src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%] max-w-[80%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
-              alt={"Competishun Model"}
-              width={heroSectionModelDimension}
-              height={heroSectionModelDimension}
-            />
-            <Image
-              unoptimized
-              src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
-              alt={"Competishun Model"}
-              width={heroSectionModelDimension}
-              height={heroSectionModelDimension}
-            />
-            <Image
-              unoptimized
-              ref={imageContainerRef}
-              onMouseMove={handleMouseMove}
-              src={images.modelImageHeroSec}
-              className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
-              alt={"Competishun Model"}
-              width={heroSectionModelDimension}
-              height={heroSectionModelDimension}
-              style={{ transform: "translate(0, 6%)" }}
-            />
+            <div
+              className={
+                "absolute w-screen h-full modelImageContainer flex flex-col items-center origin-bottom"
+              }
+            >
+              <Image
+                unoptimized
+                onMouseLeave={handleMouseLeave}
+                src={images.modelImageHeroSec}
+                className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+                alt={"Competishun Model"}
+                width={heroSectionModelDimension}
+                height={heroSectionModelDimension}
+                style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
+              />
+              <Image
+                unoptimized
+                src={images.modelImageHeroSec}
+                className={`absolute max-h-[50%] max-w-[80%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+                alt={"Competishun Model"}
+                width={heroSectionModelDimension}
+                height={heroSectionModelDimension}
+              />
+              <Image
+                unoptimized
+                src={images.modelImageHeroSec}
+                className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+                alt={"Competishun Model"}
+                width={heroSectionModelDimension}
+                height={heroSectionModelDimension}
+              />
+              <Image
+                unoptimized
+                ref={imageContainerRef}
+                onMouseMove={handleMouseMove}
+                src={images.modelImageHeroSec}
+                className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+                alt={"Competishun Model"}
+                width={heroSectionModelDimension}
+                height={heroSectionModelDimension}
+                style={{ transform: "translate(0, 6%)" }}
+              />
+            </div>
             <div className={"w-screen features-modal"}>
               <motion.div
                 ref={scope}
@@ -260,12 +265,12 @@ export default function Home() {
           </div>
           <div
             className={
-              "hero-texts flex flex-col items-center lg:gap-y-3 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full "
+              "hero-texts origin-top flex flex-col items-center lg:gap-y-3 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full "
             }
           >
             <h1
               className={
-                "hero-title flex text-2xl sm:text-2xl lg:text-5xl xl:text-7xl text-nowrap flex-row gap-x-4 font-extrabold"
+                "hero-title flex text-2xl sm:text-4xl lg:text-5xl xl:text-7xl text-nowrap flex-row gap-x-4 font-extrabold"
               }
             >
               {`Get into `}
@@ -289,14 +294,14 @@ export default function Home() {
             </h1>
             <h1
               className={
-                "hero-title text-2xl sm:text-2xl lg:text-5xl xl:text-7xl font-extrabold text-nowrap"
+                "hero-title text-2xl sm:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-nowrap"
               }
             >
               <span className={"text-primary"}>99 Percentile</span> Dream begins
             </h1>
             <p
               className={
-                " text-xs sm:text-xs lg:text-lg text-center lg:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
+                " text-xs sm:text-xs lg:text-lg text-center xl:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
               }
             >
               {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
@@ -337,7 +342,7 @@ export default function Home() {
           </div>
           <div className={"h-[10dvh] absolute w-screen bg-white z-10"} />
         </section>
-        <section className={"youtube-banner-section relative mt-12 h-[100dvh]"}>
+        <section className={"youtube-banner-section relative mt-12 "}>
           <div className={"w-full flex mt-56 justify-center"}>
             <Image
               unoptimized
@@ -392,9 +397,7 @@ export default function Home() {
 
         <FeaturesSections />
 
-        <div className={"relative h-[100dvh]"}>
-          <Testimonials />
-        </div>
+        <Testimonials />
 
         <FaqSection />
 

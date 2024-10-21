@@ -38,10 +38,10 @@ const TestimonialWithStarRating = ({
   }, [isInView]);
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full md:w-[60vw] lg:w-[30vw] rounded-3xl">
-        <div className="flex flex-col h-[50vh]  w-full relative gap-y-4">
-          <div className="rounded-3xl h-3/4 lg:h-full gradientBorder p-2">
+    <div className="w-full flex justify-center relative">
+      <div className="w-full md:w-[60vw] lg:w-[30vw]  rounded-3xl">
+        <div className="absolute flex flex-col h-[500px]  w-full gap-y-4">
+          <div className="rounded-3xl h-full gradientBorder p-2">
             <div className="top-0 h-full w-full bg-[#220D00] rounded-3xl p-5">
               <div className="flex flex-col h-full w-full gap-y-4">
                 <div className="flex flex-row gap-x-4">
@@ -64,8 +64,8 @@ const TestimonialWithStarRating = ({
               </div>
             </div>
           </div>
-          <div className="h-1/4 lg:h-fit  rounded-2xl gradientBorder p-2">
-            <div className=" w-full h-full bg-[#220D00] rounded-2xl">
+          <div className="h-fit rounded-2xl gradientBorder p-2">
+            <div className=" w-full h-fit bg-[#220D00] rounded-2xl">
               <div className="flex flex-row gap-x-4 w-full h-full items-center justify-center p-2">
                 <div
                   ref={starScope}
@@ -83,7 +83,7 @@ const TestimonialWithStarRating = ({
                     />
                   ))}
                 </div>
-                <p className="text-gray-300 text-sm  bg-blue-900 p-2 rounded-xl">
+                <p className="text-gray-300 text-sm bg-blue-900 p-2 rounded-xl">
                   {`${rating}/5`}
                 </p>
               </div>
