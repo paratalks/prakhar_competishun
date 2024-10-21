@@ -9,7 +9,7 @@ const VideoTestimonial = ({
 }) => {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-full md:w-[60vw] lg:w-[30vw] h-[30vh] sm:h-[40vh] lg:h-[50vh]  relative flex justify-center rounded-3xl gradientBorder">
+      <div className="w-full md:w-[60vw] lg:w-[30vw] h-[50vh]  relative flex justify-center rounded-3xl gradientBorder">
         <Image
           unoptimized
           src={image || illustrations.illustration1}

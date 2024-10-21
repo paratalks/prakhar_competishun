@@ -12,7 +12,9 @@ import {
 import AutoPlay from "embla-carousel-autoplay";
 const StatisticSection = () => {
   return (
-    <section className={"w-full h-full relative flex flex-col items-center"}>
+    <section
+      className={"w-full h-full relative flex flex-col items-center mt-32"}
+    >
       <div className={"absolute w-screen h-full"}>
         <Image
           unoptimized
@@ -25,7 +27,7 @@ const StatisticSection = () => {
       </div>
       <div
         className={
-          "section-content w-full h-full p-20 z-40 flex flex-col items-center"
+          "section-content w-full h-full p-20 z-40 flex flex-col items-center gap-10"
         }
       >
         <h1
@@ -38,7 +40,7 @@ const StatisticSection = () => {
         </h1>
         <div
           className={
-            "h-full lg:w-1/2 flex flex-col  items-center justify-center"
+            "h-full  w-screen flex flex-col  items-center justify-center"
           }
         >
           <Carousel
@@ -56,7 +58,7 @@ const StatisticSection = () => {
               {...Array.from({ length: 3 }).map((_, index) => (
                 <CarouselItem
                   key={index}
-                  className={"flex flex-row gap-x-0 p-0 w-fit justify-center"}
+                  className={"flex flex-row gap-x-0 p-0 w-fit justify-center "}
                 >
                   <div
                     className={
@@ -84,55 +86,72 @@ const StatisticSection = () => {
               ))}
             </CarouselContent>
           </Carousel>
+
+          <motion.div
+            whileInView={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className={
+              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 top-40 right-10 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
+            }
+          >
+            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+              <span
+                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+              >
+                12k+
+              </span>{" "}
+              <br /> Aspiring IITians
+            </h2>
+          </motion.div>
+          <motion.div
+            whileInView={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className={
+              "absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 bottom-40 right-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
+            }
+          >
+            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+              <span
+                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+              >
+                200+
+              </span>{" "}
+              <br /> Recorded Lectures
+            </h2>
+          </motion.div>
+          <motion.div
+            whileInView={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className={
+              "absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 bottom-52 left-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
+            }
+          >
+            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+              <span
+                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+              >
+                20k+
+              </span>{" "}
+              <br /> Students in IIT
+            </h2>
+          </motion.div>
+          <motion.div
+            whileInView={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className={
+              "absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-5 top-52 left-10 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
+            }
+          >
+            <h2 className={"text-center text-xs sm:text-2xl lg:text-3xl"}>
+              <span
+                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+              >
+                20k+
+              </span>{" "}
+              <br /> Students in IIT
+            </h2>
+          </motion.div>
         </div>
-        <motion.div
-          whileInView={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className={
-            "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-5 top-40 right-10 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
-          }
-        >
-          <h2 className={"text-center"}>
-            <span className={"text-3xl font-extrabold"}>12k+</span> <br />{" "}
-            Aspiring IITians
-          </h2>
-        </motion.div>
-        <motion.div
-          whileInView={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className={
-            "absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-5 bottom-40 right-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
-          }
-        >
-          <h2 className={"text-center"}>
-            <span className={"text-3xl font-extrabold"}>200+</span> <br />{" "}
-            Recorded Lectures
-          </h2>
-        </motion.div>
-        <motion.div
-          whileInView={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className={
-            "absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-5 bottom-52 left-20 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
-          }
-        >
-          <h2 className={"text-center"}>
-            <span className={"text-3xl font-extrabold"}>20k+</span> <br />{" "}
-            Students in IIT
-          </h2>
-        </motion.div>
-        <motion.div
-          whileInView={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className={
-            "absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-5 top-52 left-10 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
-          }
-        >
-          <h2 className={"text-center"}>
-            <span className={"text-3xl font-extrabold"}>20k+</span> <br />{" "}
-            Students in IIT
-          </h2>
-        </motion.div>
       </div>
       <div className={"flex flex-row w-screen justify-center gap-10 m-5"}>
         <button className={"text-primary text-lg sm:text-2xl lg:text-3xl"}>

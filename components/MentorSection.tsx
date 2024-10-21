@@ -15,7 +15,7 @@ const MentorSection = () => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
   }, [screen.width, screen.height]);
   return (
-    <section className="w-full h-full flex flex-col items-center">
+    <section className="w-full h-full flex flex-col items-center relative">
       <div className="absolute w-screen h-[150dvh]">
         <Image
           unoptimized

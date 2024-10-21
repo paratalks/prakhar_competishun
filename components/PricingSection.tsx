@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const PricingSection = () => {
   return (
-    <section className={"relative w-screen flex flex-col mt-24 items-center"}>
+    <section className={" w-screen relative flex flex-col mt-24 items-center"}>
       <div
         id={"pricing-section"}
         className={
@@ -16,7 +16,7 @@ const PricingSection = () => {
       >
         <div
           className={
-            "absolute bg-primary -z-10 w-96 h-72 rounded-full bottom-0 right-40 object-contain blur-[200px] "
+            "absolute bg-primary -z-10 w-96 h-72 rounded-full bottom-0 left-40 object-contain blur-[200px] "
           }
         />
         <Image

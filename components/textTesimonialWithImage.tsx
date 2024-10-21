@@ -12,7 +12,7 @@ const TextTestimonialWithImage = ({
     <div className={"w-full flex justify-center"}>
       <div
         className={
-          "w-full md:w-[60vw] lg:w-[30vw] h-[30vh] sm:h-[40vh] lg:h-[50vh] gradientBorder rounded-3xl"
+          "w-full md:w-[60vw] lg:w-[30vw] h-[50vh] gradientBorder rounded-3xl"
         }
       >
         <div

@@ -5,7 +5,9 @@ import { blurs, icons, images } from "@/constants";
 
 const FooterBanner = () => {
   return (
-    <section className={"w-full h-full flex flex-col items-center"}>
+    <section
+      className={"w-full h-full flex flex-col items-center mt-96 relative"}
+    >
       <div className={"absolute w-full h-full"}>
         <motion.img
           animate={{ scale: [1, 1.1, 1] }}

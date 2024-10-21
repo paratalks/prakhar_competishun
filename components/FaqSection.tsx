@@ -9,10 +9,10 @@ const FaqSection = () => {
     React.useState<number>(0);
 
   return (
-    <section className="w-full relative py-16">
+    <section className="w-full relative">
       <div className="w-full flex flex-col items-center gap-y-16 relative">
         <div className="absolute rounded-full right-28 -top-12 -z-10 bg-secondary blur-[300px] h-[50dvh] object-cover" />
-        <h1 className=" font-bold text-2xl sm:text-3xl lg:text-5xl">
+        <h1 className=" font-bold text-2xl sm:text-3xl lg:text-5xl text-center">
           Having <ScribledHighlightedText textInput="Doubt?" /> We are here to
           help
         </h1>

@@ -36,7 +36,7 @@ const HeroSectionSlider = ({ ...props }) => {
         {heroSectionHastags.map((item, index) => (
           <CarouselItem
             key={index}
-            className={`max-sm:basis-1/2 basis-1/4 flex flex-row gap-x-2 items-center text-2xl font-extrabold italic`}
+            className={`basis-1/2 sm:basis-1/4 flex first:pl-5 flex-row items-center text-2xl font-extrabold italic`}
           >
             {item}
             <Sparkle

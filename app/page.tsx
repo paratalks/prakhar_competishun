@@ -98,6 +98,17 @@ export default function Home() {
               "background-gradients w-full h-screen flex items-center justify-center"
             }
           >
+            <Image
+              unoptimized
+              src={blurs.blur1}
+              alt={"blur image"}
+              fill
+              objectFit={"cover"}
+              layout={"fill"}
+              className={
+                "w-full h-full blur-2xl -z-40 select-none md:scale-125"
+              }
+            />
             <div className={"w-screen side-icons"}>
               <motion.img
                 animate={{ y: [0, 10, 0] }}
@@ -107,7 +118,9 @@ export default function Home() {
                   duration: 2,
                   delay: 0.2,
                 }}
-                className={"absolute sm:w-14 w-10 top-1/2 left-[20%] -z-40"}
+                className={
+                  "absolute select-none sm:w-14 w-10 top-1/2 left-[20%] -z-40"
+                }
                 src={icons.rolledDegree}
                 alt={"Rolled Degree Icom"}
               />
@@ -124,7 +137,7 @@ export default function Home() {
                   delay: 0.3,
                 }}
                 className={
-                  "absolute w-12 sm:w-16 lg:w-24 sm:top-1/4 top-1/3 left-0 opacity-50 -z-40"
+                  "absolute hidden select-none sm:flex w-12 sm:w-16 lg:w-24 sm:top-1/4 top-1/3 left-0 opacity-50 -z-40"
                 }
                 src={icons.paperPlane}
                 alt={"Rolled Degree Icom"}
@@ -138,26 +151,18 @@ export default function Home() {
                 }}
                 width={50}
                 className={
-                  "absolute bottom-[10%] sm:right-1/4 right-1/3 opacity-50 -z-40"
+                  "absolute bottom-[10%] select-none sm:right-1/4 right-1/3 opacity-50 -z-40"
                 }
                 src={icons.medal}
                 alt={"Rolled Degree Icom"}
               />
             </div>
-            <Image
-              unoptimized
-              src={blurs.blur1}
-              alt={"blur image"}
-              fill
-              objectFit={"cover"}
-              layout={"fill"}
-              className={"w-full h-full blur-2xl -z-40 md:scale-125"}
-            />
+
             <Image
               unoptimized
               onMouseLeave={handleMouseLeave}
               src={images.modelImageHeroSec}
-              className={`absolute aspect-w-16 aspect-h-9 bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              className={`absolute max-h-[50%]  max-w-[50%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -166,7 +171,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute aspect-w-16 aspect-h-9 bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              className={`absolute max-h-[50%] max-w-[50%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -174,7 +179,7 @@ export default function Home() {
             <Image
               unoptimized
               src={images.modelImageHeroSec}
-              className={`absolute  aspect-w-16 aspect-h-9 bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              className={`absolute max-h-[50%]  max-w-[50%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -184,7 +189,7 @@ export default function Home() {
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               src={images.modelImageHeroSec}
-              className={`absolute aspect-w-16 aspect-h-9 bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+              className={`absolute max-h-[50%] max-w-[50%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
               alt={"Competishun Model"}
               width={heroSectionModelDimension}
               height={heroSectionModelDimension}
@@ -255,7 +260,7 @@ export default function Home() {
           </div>
           <div
             className={
-              "hero-texts flex flex-col items-center lg:gap-y-3 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full"
+              "hero-texts flex flex-col items-center lg:gap-y-3 max-sm:gap-y-1 md:gap-y-2 mt-16 justify-center w-full "
             }
           >
             <h1
@@ -265,21 +270,18 @@ export default function Home() {
             >
               {`Get into `}
               <div className={"relative flex max-sm:w-fit"}>
-                <Image
-                  unoptimized
-                  className={
-                    "absolute xl:-top-10 xl:-left-10 max-sm:-top-1 max-sm:-left-2 sm:-top-5 sm:-left-6"
-                  }
-                  src={icons.degreeHat}
-                  alt={"Degree Hat"}
-                  width={100}
-                  height={100}
-                />
                 <span
                   className={
                     "bg-gradient-to-r from-primary via-50% via-white to-blue-500 text-transparent bg-clip-text"
                   }
                 >
+                  <motion.img
+                    className={
+                      "absolute -top-2 -left-3 sm:-top-2 sm:-left-3 lg:-top-5 lg:-left-6"
+                    }
+                    src={icons.degreeHat}
+                    alt={"Degree Hat"}
+                  />
                   {`IIT `}
                 </span>
               </div>
@@ -311,7 +313,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary max-sm:mt-2 max-sm:text-sm max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl p-3 px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:mt-2 max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl text-sm max- p-2 sm:p-3 px-3 sm:px-5 rounded-2xl w-fit items-center"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>
@@ -374,7 +376,7 @@ export default function Home() {
               />
               <h2
                 className={
-                  "youtube-banner-title text-5xl max-sm:text-2xl font-extrabold"
+                  "youtube-banner-title text-2xl sm:text-3xl lg:text-5xl  font-extrabold"
                 }
               >
                 Our Latest{" "}
@@ -390,33 +392,27 @@ export default function Home() {
 
         <FeaturesSections />
 
-        <div className={"relative h-[80vh] lg:h-[100dvh]"}>
+        <div className={"relative h-[100dvh]"}>
           <Testimonials />
         </div>
-        <div className={"relative sm:h-[150dvh] xl:h-[100dvh] h-[200dvh]"}>
-          <FaqSection />
-        </div>
-        <div className={"relative xl:h-[100dvh] h-[150dvh] "}>
-          <StatisticSection />
-        </div>
+
+        <FaqSection />
+
+        <StatisticSection />
+
         <div className={"relative sm:h-[110dvh] h-[120dvh] "}>
           <MentorSection />
         </div>
-        <div className={"relative  xl:h-[100dvh] sm:h-[200dvh] h-[220dvh]"}>
-          <ProspectusSection />
-        </div>
-        <div
-          className={
-            "relative pricing-section lg:h-[150dvh] sm:h-[200dvh] h-[200dvh] flex flex-col items-center"
-          }
-        >
+        <ProspectusSection />
+
+        <div className={" flex flex-col items-center"}>
           <PricingSection />
         </div>
         <div className={"relative flex flex-col items-center "}>
           <FooterBanner />
         </div>
         <div className={"relative h-[50dvh] flex flex-col items-center"}>
-          <footer className="bg-white absolute h-full  w-screen dark:bg-background ">
+          <footer className=" absolute h-full  w-screen bg-background ">
             <div className=" w-full h-full p-4 py-6 lg:py-8">
               <div className="md:flex md:justify-between p-20">
                 <div className="mb-10 md:mb-0 lg:w-5/12 ">

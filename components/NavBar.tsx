@@ -23,6 +23,8 @@ const NavBar = () => {
   const [formData, setFormData] = useState({
     studentName: "",
     studentPhone: "",
+    studentCity: "",
+    studentTarget: "",
     studentQuery: "",
   });
   const isFormOpen = useRef(false);
@@ -37,6 +39,8 @@ const NavBar = () => {
     setFormData({
       studentName: "",
       studentPhone: "",
+      studentCity: "",
+      studentTarget: "",
       studentQuery: "",
     });
     isFormOpen.current = false;
@@ -61,7 +65,7 @@ const NavBar = () => {
           className={"max-sm:w-20"}
         />
       </div>
-      <div className={` flex-row group gap-x-12 hidden sm:flex`}>
+      <div className={` flex-row lg:gap-x-12 sm:gap-x-5 hidden sm:flex`}>
         {navLinks.map((link) => (
           <div
             key={link.id}
@@ -90,7 +94,7 @@ const NavBar = () => {
             {link.sublinks ? (
               <div
                 className={
-                  "absolute w-full mt-5 group hidden group-hover:block"
+                  "absolute w-full mt-5 group hidden group-hover:block z-40"
                 }
               >
                 {link.sublinks && (
@@ -122,18 +126,7 @@ const NavBar = () => {
         ))}
       </div>
       {/*    add hover effect in the button on hovering the button a slight shadow should come out of the button of primary color  */}
-      <div className={"flex flex-row items-center"}>
-        <button
-          onMouseEnter={() => {
-            setShowPhone(true);
-          }}
-          onMouseLeave={() => {
-            setShowPhone(false);
-          }}
-          className={"z-10 p-3"}
-        >
-          <Phone />
-        </button>
+      <div className={"flex flex-col gap-x-5"}>
         <Dialog>
           <DialogTrigger asChild>
             <button
@@ -141,7 +134,7 @@ const NavBar = () => {
                 isFormOpen.current = true;
               }}
               className={
-                "text-xs font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5 transition-all duration-300"
+                "text-xs font-bold w-fit contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5 transition-all duration-300"
               }
             >
               {showPhone ? "8888-0000-21" : "Contact Us"}
@@ -196,11 +189,11 @@ const NavBar = () => {
                   id="queryPhone"
                   name={"query-city"}
                   placeholder={"City"}
-                  value={formData.studentPhone}
+                  value={formData.studentCity}
                   onChange={(e) => {
                     setFormData({
                       ...formData,
-                      studentPhone: e.currentTarget.value,
+                      studentCity: e.currentTarget.value,
                     });
                   }}
                 />
@@ -211,11 +204,11 @@ const NavBar = () => {
                   id="queryPhone"
                   name={"query-target"}
                   placeholder={"Target Exam (eg. JEE/NEET/NISO)"}
-                  value={formData.studentPhone}
+                  value={formData.studentTarget}
                   onChange={(e) => {
                     setFormData({
                       ...formData,
-                      studentPhone: e.currentTarget.value,
+                      studentTarget: e.currentTarget.value,
                     });
                   }}
                 />
@@ -259,6 +252,9 @@ const NavBar = () => {
             </form>
           </DialogContent>
         </Dialog>
+        <div className={"flex flex-row gap-x-2 translate-y-4"}>
+          <Phone size={20} /> <p>{"8888-0000-21"}</p>
+        </div>
       </div>
     </div>
   );

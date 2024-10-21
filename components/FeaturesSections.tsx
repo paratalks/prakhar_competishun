@@ -41,7 +41,7 @@ const FeaturesSections = () => {
           />
           <h1
             className={
-              "feature-section-title text-center text-xl sm:text-3xl lg:text-5xl px-4"
+              "feature-section-title text-center text-2xl sm:text-3xl lg:text-5xl px-4"
             }
           >
             Get All the <ScribledHighlightedText textInput={"benefit"} /> of our

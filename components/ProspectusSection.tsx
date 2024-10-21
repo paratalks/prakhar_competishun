@@ -4,12 +4,13 @@ import { ArrowRight, Check, MoveRight, NotebookPen } from "lucide-react";
 import Image from "next/image";
 import { icons, illustrations, images, prospectusCategory } from "@/constants";
 import { motion } from "framer-motion";
+import PricingSection from "@/components/PricingSection";
 
 const ProspectusSection = () => {
   const [selectedCourse, setSelectedCourse] = useState(-1);
   const [selectedCategory, setSelectedCategory] = useState(0);
   return (
-    <section className={"w-full h-full relative flex flex-col items-center"}>
+    <section className={"w-full h-full flex flex-col items-center relative"}>
       <div
         className={
           "section-content w-9/12 h-full pt-40 z-40 flex flex-col items-center gap-y-16"
@@ -77,7 +78,7 @@ const ProspectusSection = () => {
         <div className={"flex flex-row justify-between"}>
           <div
             className={
-              "flex flex-col gap-y-10  gap-x-14 w-full xl:w-1/3 h-[70dvh] xl:flex-wrap lg:-translate-x-10"
+              "flex flex-col sm:flex-row justify-center  gap-y-10  gap-x-14 w-full flex-wrap "
             }
           >
             {...Array.from({ length: 6 }).map((_, i) => (
@@ -89,14 +90,14 @@ const ProspectusSection = () => {
                 onMouseLeave={() => {
                   setSelectedCourse(-1);
                 }}
-                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.5] group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
+                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.5] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
               >
                 <div className={"flex flex-col h-full p-2 w-full gap-2"}>
                   <div className={"p-1 bg-background rounded-full w-fit"}>
                     <Check />
                   </div>
                   <h3 className={"text-2xl font-extrabold h-1/2"}>
-                    JEE {prospectusCategory[selectedCategory].title}
+                    {`JEE ${prospectusCategory[selectedCategory].title} ${i}`}
                   </h3>
                   <p className={"text-sm text-gray-300"}>
                     Thorougly, covers all important topics across Physics,

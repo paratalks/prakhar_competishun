@@ -30,7 +30,7 @@ const Testimonials = () => {
           }
         >
           <h1 className={"testimonial-section-title max-sm:text-2xl"}>
-            Hear from our{" "}
+            {`Hear from our `}
             <ScribledHighlightedText
               textInput={"Champions!"}
               path={

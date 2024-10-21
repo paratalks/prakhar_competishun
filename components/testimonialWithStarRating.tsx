@@ -40,7 +40,7 @@ const TestimonialWithStarRating = ({
   return (
     <div className="w-full flex justify-center">
       <div className="w-full md:w-[60vw] lg:w-[30vw] rounded-3xl">
-        <div className="flex flex-col h-[30vh] sm:h-[40vh] lg:h-[50vh]  w-full relative gap-y-4">
+        <div className="flex flex-col h-[50vh]  w-full relative gap-y-4">
           <div className="rounded-3xl h-3/4 lg:h-full gradientBorder p-2">
             <div className="top-0 h-full w-full bg-[#220D00] rounded-3xl p-5">
               <div className="flex flex-col h-full w-full gap-y-4">
@@ -75,7 +75,7 @@ const TestimonialWithStarRating = ({
                     <Image
                       key={i}
                       unoptimized
-                      className="star lg:w-6 sm:w-3 w-2"
+                      className="star lg:w-6 sm:w-5 w-4"
                       src={icons.star}
                       alt={`Star ${i + 1}`}
                       width={startSize}
@@ -83,7 +83,7 @@ const TestimonialWithStarRating = ({
                     />
                   ))}
                 </div>
-                <p className="text-gray-300 bg-blue-900 p-2 rounded-xl">
+                <p className="text-gray-300 text-sm  bg-blue-900 p-2 rounded-xl">
                   {`${rating}/5`}
                 </p>
               </div>
