@@ -55,10 +55,10 @@ const TestimonialWithStarRating = ({
                   />
                   <div className="flex flex-col gap-y-0 justify-center h-full align-middle">
                     <p className="text-primary">{name}</p>
-                    <p className="text-gray-500">{achievement}</p>
+                    <p className="text-gray-300">{achievement}</p>
                   </div>
                 </div>
-                <p className="text-gray-300  leading-normal sm:leading-relaxed lg:leading-loose max-sm:text-gray-500 overflow-scroll">
+                <p className="text-gray-300  leading-normal sm:leading-relaxed lg:leading-loose max-sm:text-gray-500 overflow-hidden">
                   {testimonial}
                 </p>
               </div>
@@ -69,7 +69,7 @@ const TestimonialWithStarRating = ({
               <div className="flex flex-row gap-x-4 w-full h-full items-center justify-center p-2">
                 <div
                   ref={starScope}
-                  className="flex flex-row justify-between gap-x-5 align-middle"
+                  className="flex flex-row flex-1 px-2 justify-between gap-x-5 align-middle"
                 >
                   {Array.from({ length: Math.floor(rating) }).map((_, i) => (
                     <Image

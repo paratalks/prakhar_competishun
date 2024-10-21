@@ -49,6 +49,7 @@ const config: Config = {
       // => @media (min-width: 640px) { ... }
 
       md: "1300px",
+      hmd: { raw: "(max-height:1200px)" },
       // => @media (min-width: 768px) { ... }
 
       lg: "1440px",

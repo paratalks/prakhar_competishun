@@ -61,7 +61,7 @@ const NavBar = () => {
           className={"max-sm:w-20"}
         />
       </div>
-      <div className={`flex flex-row group gap-x-12 max-sm:hidden`}>
+      <div className={` flex-row group gap-x-12 hidden sm:flex`}>
         {navLinks.map((link) => (
           <div
             key={link.id}
@@ -181,6 +181,36 @@ const NavBar = () => {
                   id="queryPhone"
                   name={"query-phone"}
                   placeholder={"Phone"}
+                  value={formData.studentPhone}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentPhone: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <Label htmlFor="" className="sr-only">
+                  City of student
+                </Label>
+                <Input
+                  id="queryPhone"
+                  name={"query-city"}
+                  placeholder={"City"}
+                  value={formData.studentPhone}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentPhone: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <Label htmlFor="" className="sr-only">
+                  Target course of student
+                </Label>
+                <Input
+                  id="queryPhone"
+                  name={"query-target"}
+                  placeholder={"Target Exam (eg. JEE/NEET/NISO)"}
                   value={formData.studentPhone}
                   onChange={(e) => {
                     setFormData({

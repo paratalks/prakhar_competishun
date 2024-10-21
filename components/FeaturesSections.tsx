@@ -63,7 +63,7 @@ const FeaturesSections = () => {
                 >
                   <div
                     className={
-                      "h-full max-sm:h-fit overflow-scroll w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
+                      "h-full max-sm:h-fit overflow-hidden w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
                     }
                   >
                     <Image
@@ -79,7 +79,7 @@ const FeaturesSections = () => {
                     <h3 className={"text-xl lg:text-2xl font-extrabold"}>
                       {item.title}
                     </h3>
-                    <p className={"overflow-scroll h-1/2 text-sm lg:text-base"}>
+                    <p className={"overflow-hidden h-1/2 text-sm lg:text-base"}>
                       {item.desc}
                     </p>
                   </div>
@@ -96,7 +96,7 @@ const FeaturesSections = () => {
                 >
                   <div
                     className={
-                      "h-full max-sm:h-fit overflow-scroll w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
+                      "h-full max-sm:h-fit overflow-hidden w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
                     }
                   >
                     <Image
@@ -112,7 +112,7 @@ const FeaturesSections = () => {
                     <h3 className={"text-xl lg:text-2xl font-extrabold"}>
                       {item.title}
                     </h3>
-                    <p className={"overflow-scroll h-1/2 text-sm lg:text-base"}>
+                    <p className={"overflow-hidden h-1/2 text-sm lg:text-base"}>
                       {item.desc}
                     </p>
                   </div>

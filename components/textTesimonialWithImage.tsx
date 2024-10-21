@@ -16,7 +16,7 @@ const TextTestimonialWithImage = ({
         }
       >
         <div
-          className={"bg-[#220D00] overflow-scroll w-full h-full rounded-3xl"}
+          className={"bg-[#220D00] overflow-hidden w-full h-full rounded-3xl"}
         >
           <Image
             unoptimized
@@ -32,7 +32,7 @@ const TextTestimonialWithImage = ({
             </p>
             <p
               className={
-                "text-gray-400 leading-relaxed text-sm lg:text-base mt-2 overflow-scroll"
+                "text-gray-400 leading-relaxed text-sm lg:text-base mt-2 overflow-hidden"
               }
             >
               {testimonial}
