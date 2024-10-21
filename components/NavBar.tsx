@@ -39,16 +39,16 @@ const NavBar = () => {
       studentPhone: "",
       studentQuery: "",
     });
-    setIsFormOpen(false);
+    isFormOpen.current = false;
     alert(
       "Congratulations! You have paved your first path for becoming a champ!",
     );
   };
   useEffect(() => {
     setTimeout(() => {
-      isFormOpen = true;
+      isFormOpen.current = true;
     }, 10000);
-  }, [isFormOpen]);
+  }, [isFormOpen.current]);
   return (
     <div className={"navbar-container max-sm:px-2"}>
       <div>
@@ -138,7 +138,7 @@ const NavBar = () => {
           <DialogTrigger asChild>
             <button
               onClick={() => {
-                setIsFormOpen(true);
+                isFormOpen.current = true;
               }}
               className={
                 "text-xs font-bold contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5 transition-all duration-300"
@@ -208,6 +208,9 @@ const NavBar = () => {
                 <div className={"w-full flex flex-row gap-5 justify-center"}>
                   <DialogClose asChild>
                     <Button
+                      onClick={() => {
+                        isFormOpen.current = false;
+                      }}
                       size="sm"
                       className="px-3 bg-secondary rounded-2xl mt-5 hover:bg-secondary hover:scale-110 secondary-button-animation transition-all duration-300"
                     >

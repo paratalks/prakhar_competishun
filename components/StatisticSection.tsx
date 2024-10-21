@@ -134,6 +134,14 @@ const StatisticSection = () => {
           </h2>
         </motion.div>
       </div>
+      <div className={"flex flex-row w-screen justify-center gap-10 m-5"}>
+        <button className={"text-primary text-lg sm:text-2xl lg:text-3xl"}>
+          2024
+        </button>
+        <button className={" text-lg sm:text-2xl lg:text-3xl"}>2023</button>
+        <button className={" text-lg sm:text-2xl lg:text-3xl"}>2022</button>
+        <button className={" text-lg sm:text-2xl lg:text-3xl"}>2021</button>
+      </div>
     </section>
   );
 };
