@@ -15,8 +15,8 @@ const MentorSection = () => {
     setScreen({ width: window.outerWidth, height: window.outerHeight });
   }, [screen.width, screen.height]);
   return (
-    <section className="w-full h-full flex flex-col items-center relative">
-      <div className="absolute w-screen h-[150dvh]">
+    <section className="w-full h-[100dvh] flex flex-col items-center relative">
+      <div className="absolute w-screen  h-[150dvh]">
         <Image
           unoptimized
           src={blurs.mentorSectionBlur}
@@ -56,7 +56,7 @@ const MentorSection = () => {
           width={80}
           height={150}
         />
-        <div className="w-full max-sm:w-full flex flex-col items-center justify-center">
+        <div className="w-full mentor-section-heading origin-top max-sm:w-full flex flex-col items-center justify-center">
           <h1 className="section-title w-full text-2xl sm:text-3xl lg:text-5xl font-bold text-center">
             Your Journey <ScribledHighlightedText textInput={"Mentors"} />
           </h1>
@@ -70,7 +70,7 @@ const MentorSection = () => {
             scaleX: { duration: 0.6, delay: 0.5, ease: "easeIn" },
             y: { duration: 0.5 },
           }}
-          className={`h-fit mt-10 gradientBorder w-[80%] rounded-3xl ${isAnimating ? "flex" : "hidden"}`}
+          className={`h-fit  gradientBorder w-[80%] rounded-3xl ${isAnimating ? "flex" : "hidden"}`}
         >
           <div className="w-full h-full bg-[#220D00] rounded-3xl flex flex-col p-5">
             <motion.div
@@ -103,7 +103,7 @@ const MentorSection = () => {
                     duration: item.animationDuration,
                     ease: "easeOut",
                   }}
-                  className={`absolute z-[5] bottom-0 w-32 sm:w-44 lg:w-64 hover:w-40 hover:sm:w-56 hover:lg:w-80 transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
+                  className={`absolute mentorImages origin-bottom z-[5] bottom-0 w-32 sm:w-44 lg:w-64 hover:w-40 hover:sm:w-56 hover:lg:w-80 transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
                   src={item.image}
                   alt={`Mentor ${index + 1}`}
                 />

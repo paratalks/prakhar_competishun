@@ -10,7 +10,10 @@ const ProspectusSection = () => {
   const [selectedCourse, setSelectedCourse] = useState(-1);
   const [selectedCategory, setSelectedCategory] = useState(0);
   return (
-    <section className={"w-full h-full flex flex-col items-center relative"}>
+    <section
+      id={"prospectusSection"}
+      className={"w-full h-full flex flex-col items-center relative"}
+    >
       <div
         className={
           "section-content w-9/12 h-full pt-40 z-40 flex flex-col items-center gap-y-16"

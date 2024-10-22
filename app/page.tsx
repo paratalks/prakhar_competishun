@@ -405,17 +405,14 @@ export default function Home() {
         <Testimonials />
 
         <FaqSection />
-
-        <StatisticSection />
-
-        <div className={"relative sm:h-[110dvh] h-[120dvh] "}>
-          <MentorSection />
-        </div>
-        <ProspectusSection />
-
         <div className={" flex flex-col items-center"}>
           <PricingSection />
         </div>
+        <StatisticSection />
+
+        <MentorSection />
+        <ProspectusSection />
+
         <div className={"relative flex flex-col items-center "}>
           <FooterBanner />
         </div>
@@ -435,7 +432,7 @@ export default function Home() {
                       width={100}
                       height={100}
                     />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
                       Competishun
                     </span>
                   </a>
@@ -446,10 +443,10 @@ export default function Home() {
                 <div className="grid w-full lg:w-1/2 h-full grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                   <div className={"border-r"}>
                     <div>
-                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase text-white">
                         Support
                       </h2>
-                      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <ul className="text-gray-500 text-gray-400 font-medium">
                         <li className="mb-4">
                           <a href="/" className="hover:text-white">
                             Help
@@ -476,10 +473,10 @@ export default function Home() {
                   </div>
                   <div className={"border-r"}>
                     <div>
-                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase dark:text-white">
+                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase  text-white">
                         Resources
                       </h2>
-                      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <ul className="text-gray-500  text-gray-400 font-medium">
                         <li className="mb-4">
                           <a href="/" className="hover:text-white">
                             About
@@ -495,9 +492,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+              <hr className="my-6  sm:mx-auto  border-gray-700 lg:my-8" />
               <div className="sm:flex sm:items-center sm:justify-between w-full pb-6">
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                <span className="text-sm  sm:text-center  text-gray-400">
                   © 2024{" "}
                   <a
                     href="https://competishun.com/"
@@ -508,10 +505,7 @@ export default function Home() {
                   . All Rights Reserved.
                 </span>
                 <div className="flex mt-4 sm:justify-center sm:mt-0">
-                  <a
-                    href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                  >
+                  <a href="#" className="text-gray-500  hover:text-white">
                     <svg
                       className="w-4 h-4"
                       aria-hidden="true"
@@ -529,7 +523,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                    className="text-gray-500 hover:text-gray-900  hover:text-white ms-5"
                   >
                     <svg
                       className="w-4 h-4"
@@ -544,7 +538,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                    className="text-gray-500 hover:text-gray-900  hover:text-white ms-5"
                   >
                     <svg
                       className="w-4 h-4"
@@ -563,7 +557,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                    className="text-gray-500 hover:text-gray-900  hover:text-white ms-5"
                   >
                     <svg
                       className="w-4 h-4"
@@ -582,7 +576,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                    className="text-gray-500 hover:text-gray-900  hover:text-white ms-5"
                   >
                     <svg
                       className="w-4 h-4"

@@ -60,31 +60,28 @@ export const navLinks = [
     sublinks: null,
   },
   {
-    id: 2,
-    title: "Courses",
-    href: "/courses",
-    sublinks: [
-      {
-        title: "JEE",
-        href: "/",
-      },
-      {
-        title: "NEET",
-        href: "/",
-      },
-    ],
-  },
-  {
     id: 3,
     title: "About Us",
     href: "/about",
+    sublinks: null,
+  },
+  {
+    id: 2,
+    title: "Courses",
+    href: "#prospectusSection",
     sublinks: null,
   },
 
   {
     id: 4,
     title: "Test Series",
-    href: "/test-series",
+    href: "#prospectusSection",
+    sublinks: null,
+  },
+  {
+    id: 5,
+    title: "Books",
+    href: "#prospectusSection",
     sublinks: null,
   },
 ];

@@ -126,7 +126,10 @@ const NavBar = () => {
         ))}
       </div>
       {/*    add hover effect in the button on hovering the button a slight shadow should come out of the button of primary color  */}
-      <div className={"flex flex-col gap-x-5"}>
+      <div className={"flex flex-row gap-x-5 items-center"}>
+        <div className={"flex flex-row gap-x-2"}>
+          <Phone size={20} /> <p>{"8888-0000-21"}</p>
+        </div>
         <Dialog>
           <DialogTrigger asChild>
             <button
@@ -137,7 +140,7 @@ const NavBar = () => {
                 "text-xs font-bold w-fit contact-us-button primary-button-animation flex flex-row bg-primary rounded-xl py-2.5 px-5 transition-all duration-300"
               }
             >
-              {showPhone ? "8888-0000-21" : "Contact Us"}
+              {"Contact Us"}
             </button>
           </DialogTrigger>
           <DialogContent
@@ -159,7 +162,9 @@ const NavBar = () => {
                   id="queryName"
                   name={"query-name"}
                   placeholder={"Full Name"}
-                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
                   value={formData.studentName}
                   onChange={(e) => {
                     setFormData({
@@ -174,8 +179,10 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-phone"}
-                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
-                  placeholder={"Phone"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
+                  placeholder={"Mobile"}
                   value={formData.studentPhone}
                   onChange={(e) => {
                     setFormData({
@@ -190,7 +197,9 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-city"}
-                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
                   placeholder={"City"}
                   value={formData.studentCity}
                   onChange={(e) => {
@@ -206,7 +215,9 @@ const NavBar = () => {
                 <Input
                   id="queryPhone"
                   name={"query-target"}
-                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
                   placeholder={"Target Exam (eg. JEE/NEET/NISO)"}
                   value={formData.studentTarget}
                   onChange={(e) => {
@@ -223,7 +234,9 @@ const NavBar = () => {
                   id="queryDesc"
                   name={"query-desc"}
                   placeholder={"Your Query"}
-                  className={"bg-amber-50 rounded-xl placeholder:text-gray-600"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
                   cols={5}
                   value={formData.studentQuery}
                   onChange={(e) => {
@@ -246,9 +259,6 @@ const NavBar = () => {
             </form>
           </DialogContent>
         </Dialog>
-        <div className={"flex flex-row gap-x-2 translate-y-4"}>
-          <Phone size={20} /> <p>{"8888-0000-21"}</p>
-        </div>
       </div>
     </div>
   );

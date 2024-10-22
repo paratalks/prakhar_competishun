@@ -67,9 +67,19 @@ body html{
     background: linear-gradient(90deg, rgba(241,94,4,1) 0%, rgba(81,107,255,1) 100%);
     padding: 1px;
 }
+
 @media only screen and (max-height: 800px) {
     .modelImageContainer {
         scale: 0.9;
+    }
+    .mentorImages {
+        scale: 0.8;
+    }
+    .mentor-section-heading{
+        scale: 0.8;
+    }
+    .mentorContainer{
+        height: 300vh;
     }
 }
 @media only screen and (max-height: 600px) {
@@ -77,6 +87,9 @@ body html{
         scale: 0.7;
         margin: 0;
         padding: 0;
+    }
+    .mentorContainer{
+        height: 300vh;
     }
 }
 @layer utilities {
