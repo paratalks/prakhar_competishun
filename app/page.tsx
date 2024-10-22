@@ -97,7 +97,7 @@ export default function Home() {
       <div className={"w-10/12 flex flex-col"}>
         <section
           className={
-            "hero-section flex flex-col w-full h-screen max-h-[200vh] relative"
+            "hero-section flex flex-col w-full min-h-screen max-h-[200vh] relative"
           }
         >
           <div

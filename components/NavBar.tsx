@@ -65,7 +65,9 @@ const NavBar = () => {
           className={"max-sm:w-20"}
         />
       </div>
-      <div className={` flex-row lg:gap-x-12 sm:gap-x-5 hidden sm:flex`}>
+      <div
+        className={` flex-row lg:gap-x-12 sm:gap-x-5 hidden sm:flex translate-x-10`}
+      >
         {navLinks.map((link) => (
           <div
             key={link.id}
@@ -87,7 +89,8 @@ const NavBar = () => {
                 </span>
               ) : (
                 <div className={"flex flex-row gap-x-1"}>
-                  {link.title} {link.sublinks ? <ChevronDown /> : <></>}
+                  {link.title}{" "}
+                  {link.sublinks.length > 0 ? <ChevronDown /> : <></>}
                 </div>
               )}
             </a>

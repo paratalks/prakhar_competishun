@@ -57,32 +57,32 @@ export const navLinks = [
     id: 1,
     title: "Home",
     href: "/",
-    sublinks: null,
+    sublinks: [],
   },
   {
     id: 3,
     title: "About Us",
     href: "/about",
-    sublinks: null,
+    sublinks: [],
   },
   {
     id: 2,
     title: "Courses",
     href: "#prospectusSection",
-    sublinks: null,
+    sublinks: [],
   },
 
   {
     id: 4,
     title: "Test Series",
     href: "#prospectusSection",
-    sublinks: null,
+    sublinks: [],
   },
   {
     id: 5,
     title: "Books",
     href: "#prospectusSection",
-    sublinks: null,
+    sublinks: [],
   },
 ];
 
