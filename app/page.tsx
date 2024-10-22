@@ -96,7 +96,9 @@ export default function Home() {
       ></div>
       <div className={"w-10/12 flex flex-col"}>
         <section
-          className={"hero-section flex flex-col w-full h-screen relative"}
+          className={
+            "hero-section flex flex-col w-full h-screen max-h-[200vh] relative"
+          }
         >
           <div
             className={
@@ -242,7 +244,7 @@ export default function Home() {
                   repeat: Infinity,
                 }}
                 className={
-                  "gradientBorder primary-button-animation absolute md:bottom-[30%] bottom-[25%] md:right-[10%] right-0  rounded-2xl z-20"
+                  "gradientBorder primary-button-animation absolute md:bottom-[30%] bottom-[20%] md:right-[10%] right-0  rounded-2xl z-20"
                 }
               >
                 <div
@@ -275,38 +277,36 @@ export default function Home() {
           >
             <h1
               className={
-                "hero-title flex text-2xl sm:text-4xl lg:text-5xl xl:text-7xl text-nowrap flex-row gap-x-4 font-extrabold"
+                "hero-title text-4xl sm:text-7xl lg:text-5xl xl:text-7xl text-wrap font-extrabold text-center"
               }
             >
               {`Get into `}
-              <div className={"relative flex max-sm:w-fit"}>
-                <span
+              <span
+                className={
+                  "bg-gradient-to-r relative from-primary via-50% via-white to-blue-500 text-transparent bg-clip-text"
+                }
+              >
+                <motion.img
                   className={
-                    "bg-gradient-to-r from-primary via-50% via-white to-blue-500 text-transparent bg-clip-text"
+                    "absolute w-9 sm:w-12 lg:w-16 -top-2 -left-3 sm:-top-2 sm:-left-3 lg:-top-5 lg:-left-6"
                   }
-                >
-                  <motion.img
-                    className={
-                      "absolute -top-2 -left-3 sm:-top-2 sm:-left-3 lg:-top-5 lg:-left-6"
-                    }
-                    src={icons.degreeHat}
-                    alt={"Degree Hat"}
-                  />
-                  {`IIT `}
-                </span>
-              </div>
+                  src={icons.degreeHat}
+                  alt={"Degree Hat"}
+                />
+                {` IIT `}
+              </span>
               {`with Competishun,`}
             </h1>
             <h1
               className={
-                "hero-title text-2xl sm:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-nowrap"
+                "hero-title text-4xl sm:text-7xl mt-2 lg:text-5xl xl:text-7xl font-extrabold text-wrap text-center leading-8"
               }
             >
               <span className={"text-primary"}>99 Percentile</span> Dream begins
             </h1>
             <p
               className={
-                " text-xs sm:text-xs lg:text-lg text-center xl:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
+                " text-xs sm:text-xl lg:text-lg mt-3 text-center xl:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
               }
             >
               {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
@@ -323,7 +323,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary max-sm:mt-2 max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl text-sm max- p-2 sm:p-3 px-3 sm:px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:mt-2 max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl text-lg max- p-2 sm:p-3 px-3 sm:px-5 rounded-2xl w-fit items-center"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>
