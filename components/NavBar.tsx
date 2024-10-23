@@ -107,7 +107,7 @@ const NavBar = () => {
                     }
                   >
                     <div className={"flex flex-col gap-y-2 p-2"}>
-                      {link.sublinks.map((sublink, index) => (
+                      {link.sublinks.map((sublink: any, index) => (
                         <a
                           className={
                             "text-gray-400 font-bold hover:text-foreground transition-colors ease-linear duration-300"
