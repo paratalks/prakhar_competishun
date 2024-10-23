@@ -39,11 +39,7 @@ const FeaturesSections = () => {
             width={40}
             className={"absolute bottom-0 right-10 opacity-50"}
           />
-          <h1
-            className={
-              "feature-section-title text-center lg:text-5xl  sm:text-3xl text-xl px-4"
-            }
-          >
+          <h1 className={" text-center lg:text-5xl  sm:text-3xl text-3xl px-4"}>
             Get All the <ScribledHighlightedText textInput={"benefit"} /> of our
             iconic <br className="hidden sm:block" /> revision course, Enroll
             Now!
@@ -60,12 +56,12 @@ const FeaturesSections = () => {
                 <div
                   key={index}
                   className={
-                    "bg-primary flex hover:scale-110 transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-8 rounded-3xl p-2 scale-90 md:w-1/3 border border-white items-start justify-start"
+                    "bg-primary/[0.3]  hover:bg-primary flex hover:scale-110 transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-5 rounded-3xl p-2 scale-90 md:w-1/2 border border-white items-start justify-start"
                   }
                 >
                   <div
                     className={
-                      "h-full max-sm:h-fit overflow-hidden w-fit  max-sm:w-full rounded-3xl p-2 bg-[#FFDCC7]"
+                      "h-full overflow-clip w-full sm:w-1/3 flex justify-center rounded-3xl p-2 bg-[#FFDCC7]"
                     }
                   >
                     <Image
@@ -75,13 +71,22 @@ const FeaturesSections = () => {
                       width={150}
                       height={100}
                       objectFit={"contain"}
+                      className={"p-5"}
                     />
                   </div>
-                  <div className={"flex flex-col py-5 w-full lg:w-1/2 h-full"}>
-                    <h3 className={"text-xl lg:text-3xl font-extrabold"}>
+                  <div className={"flex flex-col py-5 w-full  h-full"}>
+                    <h3
+                      className={
+                        "text-xl lg:text-3xl font-extrabold mb-2 sm:mb-3"
+                      }
+                    >
                       {item.title}
                     </h3>
-                    <p className={"overflow-hidden h-1/2 text-sm lg:text-base"}>
+                    <p
+                      className={
+                        "overflow-clip w-full text-sm lg:text-base text-gray-300"
+                      }
+                    >
                       {item.desc}
                     </p>
                   </div>

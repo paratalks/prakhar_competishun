@@ -40,7 +40,7 @@ const PricingSection = () => {
             <div className={"flex lg:flex-row flex-col gap-x-2 gap-y-5"}>
               <div
                 className={
-                  "w-full md:w-1/2 h-full lg:pr-12 flex flex-col gap-y-12"
+                  "w-full lg:w-1/2 h-full lg:pr-12 flex flex-col gap-y-5 sm:gap-y-8 lg:gap-y-12"
                 }
               >
                 <h1 className={" text-3xl sm:text-6xl lg:text-7xl font-bold"}>
@@ -52,6 +52,7 @@ const PricingSection = () => {
                 </p>
                 <a href="https://rzp.io/rzp/YfK1Axui">
                   <motion.button
+                    id={"joinButtonPricingSection"}
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{
                       duration: 0.8,
@@ -67,7 +68,7 @@ const PricingSection = () => {
                 </a>
               </div>
               <div
-                className={"w-full md:w-1/2 h-full flex flex-col rounded-2xl"}
+                className={"w-full lg:w-1/2 h-full flex flex-col rounded-2xl"}
               >
                 <div
                   className={
@@ -96,27 +97,43 @@ const PricingSection = () => {
                     />
                     <h2
                       className={
-                        "text-8xl font-bold transition-all duration-200"
+                        "text-6xl sm:text-7xl lg:text-8xl font-bold transition-all duration-200"
                       }
                     >
                       ₹ 2999
                     </h2>
                   </div>
-                  <ul className={"gap-y-6 flex flex-col text-2xl"}>
+                  <ul
+                    className={
+                      "gap-y-6 flex flex-col text-sm sm:text-xl lg:text-2xl"
+                    }
+                  >
                     <li className={"flex flex-row gap-x-2"}>
-                      <Check className={"bg-black p-1 rounded-full"} /> Achieve
-                      97+ percentile in JEE Mains 2025
+                      <Check
+                        className={"bg-foreground p-1 rounded-full"}
+                        color={"#F15E04"}
+                      />{" "}
+                      Achieve 97+ percentile in JEE Mains 2025
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
-                      <Check className={"bg-black p-1 rounded-full"} />
+                      <Check
+                        className={"bg-foreground p-1 rounded-full"}
+                        color={"#F15E04"}
+                      />
                       Secure a rank under 25k in JEE Advanced
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
-                      <Check className={"bg-black p-1 rounded-full"} />₹ 2549
-                      upon meeting above criteria
+                      <Check
+                        className={"bg-foreground p-1 rounded-full"}
+                        color={"#F15E04"}
+                      />
+                      ₹ 2549 upon meeting above criteria
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
-                      <Check className={"bg-black p-1 rounded-full"} />
+                      <Check
+                        className={"bg-foreground p-1 rounded-full"}
+                        color={"#F15E04"}
+                      />
                       Refund applies only to student of this course
                     </li>
                   </ul>

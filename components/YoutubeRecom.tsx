@@ -11,15 +11,12 @@ const YoutubeRecom = () => {
   return (
     <div
       className={
-        "stackedView-container w-full relative flex flex-col items-center justify-center"
+        "stackedView-container  w-full relative flex flex-col items-center justify-center"
       }
     >
       <div
-        className={
-          "absolute stackedView-page bg-background h-[50vh] sm:h-[40vh] w-10/12 p-5 rounded-3xl translate-y-2 -top-5"
-        }
-      />
-      <div className={"h-fit rounded-3xl w-10/12 gradientBorder z-10"}>
+        className={"h-fit rounded-3xl w-screen sm:w-10/12 gradientBorder z-10"}
+      >
         <motion.img
           animate={{
             rotateX: [0, 20],
@@ -39,7 +36,9 @@ const YoutubeRecom = () => {
           src="https://www.youtube.com/embed/QpeWhM0q0jw"
           frameBorder="0"
           width={"100%"}
-          className={"rounded-3xl h-[30vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"}
+          className={
+            "rounded-3xl  h-[40vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
+          }
           allowFullScreen
         />
       </div>

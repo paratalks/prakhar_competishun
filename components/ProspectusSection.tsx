@@ -36,7 +36,7 @@ const ProspectusSection = () => {
         <div className={"w-full flex flex-col items-center justify-center"}>
           <h1
             className={
-              "section-title text-2xl sm:text-3xl lg:text-5xl font-bold text-center"
+              "section-title text-3xl sm:text-3xl lg:text-5xl font-bold text-center"
             }
           >
             Course{" "}
@@ -98,8 +98,8 @@ const ProspectusSection = () => {
                 className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.5] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
               >
                 <div className={"flex flex-col h-full p-2 w-full gap-2"}>
-                  <div className={"p-1 bg-background rounded-full w-fit"}>
-                    <Check />
+                  <div className={"p-1 bg-foreground rounded-full w-fit"}>
+                    <Check color={"#F15E04"} />
                   </div>
                   <h3 className={"text-2xl font-extrabold h-1/2"}>
                     {`JEE ${prospectusCategory[selectedCategory].title} ${i}`}
@@ -112,7 +112,7 @@ const ProspectusSection = () => {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     className={
-                      "bg-secondary/[0.7] group-hover:bg-secondary secondary-button-animation rounded-2xl w-fit px-4 py-2 flex flex-row font-bold gap-x-2"
+                      "bg-foreground text-background group-hover:bg-foreground secondary-button-animation rounded-xl w-fit px-4 py-2 flex flex-row font-bold gap-x-2"
                     }
                   >
                     Join Now

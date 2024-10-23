@@ -32,7 +32,7 @@ const StatisticSection = () => {
       >
         <h1
           className={
-            "section-title text-2xl sm:text-3xl lg:text-5xl font-bold text-center"
+            "section-title text-3xl sm:text-3xl lg:text-5xl font-bold text-center"
           }
         >
           Join <span className={"text-primary"}>Competishun</span> <br />{" "}
@@ -40,9 +40,43 @@ const StatisticSection = () => {
         </h1>
         <div
           className={
-            "h-full  w-screen flex flex-col  items-center justify-center"
+            "h-full w-screen flex flex-col  items-center justify-center"
           }
         >
+          <div className={"flex flex-row justify-between w-full px-5  z-10"}>
+            <motion.div
+              whileInView={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className={
+                " md:absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-[30%] lg:left-[15%] left-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
+              }
+            >
+              <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
+                <span
+                  className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+                >
+                  20k+
+                </span>{" "}
+                <br /> Students in IIT
+              </h2>
+            </motion.div>
+            <motion.div
+              whileInView={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className={
+                " md:absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-[35%] lg:right-[10%] right-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
+              }
+            >
+              <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
+                <span
+                  className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+                >
+                  12k+
+                </span>{" "}
+                <br /> Aspiring IITians
+              </h2>
+            </motion.div>
+          </div>
           <Carousel
             plugins={[
               AutoPlay({
@@ -71,7 +105,14 @@ const StatisticSection = () => {
                         "absolute z-10 w-full h-full flex flex-col items-center rounded-3xl bg-gradient-to-t from-black to-transparent"
                       }
                     />
-
+                    <h2
+                      className={
+                        "absolute bottom-10 z-10 text-2xl sm:text-3xl px-3 sm:px-5 font-extrabold text-gray-300"
+                      }
+                    >
+                      🎊 <span className={"text-primary"}>1000+</span> Selection
+                      in JEE Mains 🎊
+                    </h2>
                     <Image
                       unoptimized
                       src={images.statsBoy}
@@ -86,77 +127,55 @@ const StatisticSection = () => {
               ))}
             </CarouselContent>
           </Carousel>
-
-          <motion.div
-            whileInView={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+          <div
             className={
-              "absolute popAnimation bg-primary rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-48 lg:right-10 right-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-primary"
+              "flex flex-row justify-between w-full px-5 relative z-10"
             }
           >
-            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
-              <span
-                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
-              >
-                12k+
-              </span>{" "}
-              <br /> Aspiring IITians
-            </h2>
-          </motion.div>
-          <motion.div
-            whileInView={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className={
-              "absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-40 lg:right-20 right-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
-            }
-          >
-            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
-              <span
-                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
-              >
-                200+
-              </span>{" "}
-              <br /> Recorded Lectures
-            </h2>
-          </motion.div>
-          <motion.div
-            whileInView={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className={
-              "absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-52 lg:left-20 left-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
-            }
-          >
-            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
-              <span
-                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
-              >
-                20k+
-              </span>{" "}
-              <br /> Students in IIT
-            </h2>
-          </motion.div>
-          <motion.div
-            whileInView={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className={
-              "absolute popAnimation bg-purple-800 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 top-52 lg:left-10 left-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-purple-500"
-            }
-          >
-            <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
-              <span
-                className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
-              >
-                20k+
-              </span>{" "}
-              <br /> Students in IIT
-            </h2>
-          </motion.div>
+            <motion.div
+              whileInView={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className={
+                "md:absolute popAnimation bg-green-700 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-[30%] lg:right-[20%] right-0 scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-green-500"
+              }
+            >
+              <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
+                <span
+                  className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+                >
+                  200+
+                </span>{" "}
+                <br /> Recorded Lectures
+              </h2>
+            </motion.div>
+            <motion.div
+              whileInView={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className={
+                "md:absolute popAnimation bg-blue-900 rounded-3xl border border-white flex flex-col items-center p-2 sm:p-3 lg:p-5 bottom-[60%] left-[20%] scale-0 shadow-[0px_6px_35px_-7px_rgba(0,0,0,1)] drop-shadow-lg shadow-blue-500"
+              }
+            >
+              <h2 className={"text-center text-xs sm:text-lg lg:text-xl"}>
+                <span
+                  className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
+                >
+                  20k+
+                </span>{" "}
+                <br /> Students in IIT
+              </h2>
+            </motion.div>
+          </div>
         </div>
       </div>
-      <div className={"flex flex-row w-screen justify-center gap-10 m-5"}>
+      <div
+        className={
+          "flex flex-row w-full justify-between px-10 gap-10 m-5 mb-14"
+        }
+      >
         <button className={"text-primary text-lg sm:text-2xl lg:text-3xl"}>
           2024
         </button>
+
         <button className={" text-lg sm:text-2xl lg:text-3xl"}>2023</button>
         <button className={" text-lg sm:text-2xl lg:text-3xl"}>2022</button>
         <button className={" text-lg sm:text-2xl lg:text-3xl"}>2021</button>

@@ -29,7 +29,7 @@ const Testimonials = () => {
             "testimonial-section-content z-10 relative flex flex-col gap-y-24 items-center justify-center w-full"
           }
         >
-          <h1 className={"testimonial-section-title max-sm:text-2xl"}>
+          <h1 className={"text-2xl sm:text-3xl lg:text-5xl"}>
             {`Hear from our `}
             <ScribledHighlightedText
               textInput={"Champions!"}
@@ -58,7 +58,7 @@ const Testimonials = () => {
                 {testimonialData.map((item, index) => (
                   <CarouselItem
                     key={index}
-                    className={` sm:basis-1/3 md:basis-1/4  lg:basis-1/5 first:pl-5`}
+                    className={` sm:basis-1/2 md:basis-1/2 px-10 sm:px-5 lg:px-0 lg:basis-1/5 first:pl-5`}
                   >
                     {/*  0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
                      */}

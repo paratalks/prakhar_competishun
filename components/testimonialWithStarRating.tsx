@@ -44,21 +44,21 @@ const TestimonialWithStarRating = ({
           <div className="rounded-3xl h-full gradientBorder p-2">
             <div className="top-0 h-full w-full bg-[#220D00] rounded-3xl p-5">
               <div className="flex flex-col h-full w-full gap-y-4">
-                <div className="flex flex-row gap-x-4">
+                <div className="flex flex-row gap-x-4 bg-primary/[0.3] rounded-xl p-2">
                   <Image
                     unoptimized
                     src={image || illustrations.illustration1}
                     alt="Testimonial user"
-                    width={80}
-                    height={80}
-                    className="rounded-full w-10 h-10 object-fill"
+                    width={150}
+                    height={150}
+                    className="rounded-full w-20 object-fill"
                   />
                   <div className="flex flex-col gap-y-0 justify-center h-full align-middle">
-                    <p className="text-primary">{name}</p>
+                    <p className="font-bold text-xl">{name}</p>
                     <p className="text-gray-300">{achievement}</p>
                   </div>
                 </div>
-                <p className="text-gray-300  leading-normal sm:leading-relaxed lg:leading-loose max-sm:text-gray-500 overflow-hidden">
+                <p className="text-gray-400  leading-normal sm:leading-relaxed lg:leading-loose max-sm:text-gray-500 overflow-hidden">
                   {testimonial}
                 </p>
               </div>
