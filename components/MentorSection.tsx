@@ -93,6 +93,7 @@ const MentorSection = () => {
               <div className="h-fit flex flex-col gap-5 items-center last:mb-52 justify-center">
                 {mentors.map((item, index) => (
                   <div
+                    key={index}
                     className={
                       "w-fit h-fit relative flex flex-col justify-center"
                     }
@@ -103,7 +104,6 @@ const MentorSection = () => {
                       }
                     >
                       <motion.img
-                        key={index}
                         onClick={() => setAnimatingMentorIndex(index)}
                         onHoverStart={() => setAnimatingMentorIndex(index)}
                         onHoverEnd={() => setAnimatingMentorIndex(-1)}
