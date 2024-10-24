@@ -27,7 +27,7 @@ const StatisticSection = () => {
       </div>
       <div
         className={
-          "section-content w-full h-full p-20 z-40 flex flex-col items-center gap-32"
+          "section-content w-full h-full p-20 z-40 flex flex-col items-center gap-20 sm:gap-32"
         }
       >
         <h1
@@ -86,7 +86,7 @@ const StatisticSection = () => {
             opts={{
               loop: true,
             }}
-            className={"w-full  gap-0 flex justify-center"}
+            className={"w-full gap-0 flex justify-center"}
           >
             <CarouselContent className={"w-full"}>
               {...Array.from({ length: 3 }).map((_, index) => (

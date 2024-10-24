@@ -39,7 +39,7 @@ const FeaturesSections = () => {
             width={40}
             className={"absolute bottom-0 right-10 opacity-50"}
           />
-          <h1 className={" text-center lg:text-5xl  sm:text-3xl text-3xl px-4"}>
+          <h1 className={" text-center lg:text-5xl  sm:text-4xl text-4xl px-4"}>
             Get All the <ScribledHighlightedText textInput={"benefit"} /> of our
             iconic <br className="hidden sm:block" /> revision course, Enroll
             Now!
@@ -56,7 +56,7 @@ const FeaturesSections = () => {
                 <div
                   key={index}
                   className={
-                    "bg-primary/[0.3]  hover:bg-primary flex hover:scale-110 transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-5 rounded-3xl p-2 scale-90 md:w-1/2 border border-white items-start justify-start"
+                    "bg-primary/[0.3]  hover:bg-primary flex md:hover:scale-110 hover:scale-[1] transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-5 rounded-3xl p-2 scale-90 md:w-1/2 border border-white items-start justify-start"
                   }
                 >
                   <div

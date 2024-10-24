@@ -22,14 +22,14 @@ const Testimonials = () => {
     setSmallScreen(window.innerWidth < 640);
   }, [screen.width, screen.height, smallScreen]);
   return (
-    <section className={"featuresSection mt-12 relative"}>
-      <div className={"w-full mt-12 flex justify-center items-center relative"}>
+    <section className={" sm:mt-10 md:mt-12 relative"}>
+      <div className={"w-full flex justify-center items-center relative"}>
         <div
           className={
             "testimonial-section-content z-10 relative flex flex-col gap-y-24 items-center justify-center w-full"
           }
         >
-          <h1 className={"text-2xl sm:text-3xl lg:text-5xl"}>
+          <h1 className={"text-3xl sm:text-3xl lg:text-5xl"}>
             {`Hear from our `}
             <ScribledHighlightedText
               textInput={"Champions!"}

@@ -29,7 +29,7 @@ const PricingSection = () => {
           alt={"100"}
           height={100}
           width={100}
-          className={"absolute right-32 top-20"}
+          className={"absolute select-none -z-40 right-32 top-20"}
         />
         <div className={"gradientBorder w-full h-full rounded-3xl"}>
           <div

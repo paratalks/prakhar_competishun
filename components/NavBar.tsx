@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { createQuery } from "@/actions/index.action";
+import { redirect } from "next/navigation";
 
 const NavBar = () => {
   const [showPhone, setShowPhone] = useState(false);
@@ -44,9 +45,7 @@ const NavBar = () => {
       studentQuery: "",
     });
     isFormOpen.current = false;
-    alert(
-      "Congratulations! You have paved your first path for becoming a champ!",
-    );
+    redirect("/thankyou");
   };
   useEffect(() => {
     setTimeout(() => {

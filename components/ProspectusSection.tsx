@@ -16,7 +16,7 @@ const ProspectusSection = () => {
     >
       <div
         className={
-          "section-content w-9/12 h-full pt-40 z-40 flex flex-col items-center gap-y-16"
+          "section-content w-9/12 h-full  md:pt-40 z-40 flex flex-col items-center gap-y-16"
         }
       >
         <motion.img
@@ -28,7 +28,7 @@ const ProspectusSection = () => {
         />
         <motion.img
           src={icons.flower}
-          className={"absolute -bottom-40 left-0 opacity-50 "}
+          className={"absolute hidden sm:flex -bottom-40 left-0 opacity-50 "}
           alt={"bg-blur"}
           width={70}
           height={70}

@@ -384,7 +384,7 @@ export default function Home() {
               />
               <h2
                 className={
-                  "youtube-banner-title text-3xl sm:text-3xl lg:text-5xl  font-extrabold"
+                  "youtube-banner-title text-4xl sm:text-4xl lg:text-5xl  font-extrabold"
                 }
               >
                 {`Our Latest `}
