@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { createQuery } from "@/actions/index.action";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 const NavBar = () => {
   const [showPhone, setShowPhone] = useState(false);
@@ -45,7 +46,6 @@ const NavBar = () => {
       studentQuery: "",
     });
     isFormOpen.current = false;
-    redirect("/thankyou");
   };
   useEffect(() => {
     setTimeout(() => {
@@ -256,7 +256,7 @@ const NavBar = () => {
                     size="sm"
                     className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
                   >
-                    {`Make Me Champ`}
+                    <Link href={"/thankyou"}> {`Make Me Champ`}</Link>
                   </Button>
                 </div>
               </div>
