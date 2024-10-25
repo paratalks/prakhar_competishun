@@ -56,7 +56,7 @@ const FeaturesSections = () => {
                 <div
                   key={index}
                   className={
-                    "bg-primary/[0.3]  hover:bg-primary flex md:hover:scale-110 hover:scale-[1] transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-5 rounded-3xl p-2 scale-90 md:w-1/2 border border-white items-start justify-start"
+                    "bg-primary/[0.8]  hover:bg-primary flex md:hover:scale-110 hover:scale-[1] transition-all duration-300 flex-col sm:flex-row max-sm:flex-col  gap-x-5 rounded-3xl p-2 scale-90 md:w-1/2 border border-white items-start justify-start"
                   }
                 >
                   <div
@@ -77,16 +77,12 @@ const FeaturesSections = () => {
                   <div className={"flex flex-col py-5 w-full  h-full"}>
                     <h3
                       className={
-                        "text-xl lg:text-3xl font-extrabold mb-2 sm:mb-3"
+                        "text-center sm:text-start text-3xl font-bold mb-2 sm:mb-3"
                       }
                     >
                       {item.title}
                     </h3>
-                    <p
-                      className={
-                        "overflow-clip w-full text-sm lg:text-base text-gray-300"
-                      }
-                    >
+                    <p className={"overflow-clip w-full text-lg lg:text-base"}>
                       {item.desc}
                     </p>
                   </div>

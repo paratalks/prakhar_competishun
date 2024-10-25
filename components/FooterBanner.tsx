@@ -28,7 +28,7 @@ const FooterBanner = () => {
       >
         <div
           className={
-            " w-screen h-fit bg-primary/[0.2] relative p-20 flex lg:flex-row flex-col gap-2"
+            " w-screen h-fit bg-primary/[0.7] relative p-20 flex lg:flex-row flex-col gap-2"
           }
         >
           <div
@@ -39,19 +39,21 @@ const FooterBanner = () => {
             <h2 className={"text-5xl font-bold leading-[1.3]"}>
               Prepare for your dream in 10% less
             </h2>
-            <motion.button
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{
-                duration: 0.8,
-                repeat: Infinity,
-                ease: "anticipate",
-              }}
-              className={
-                "bg-primary primary-button-animation border-white font-bold text-2xl border p-5 w-full rounded-2xl"
-              }
-            >
-              Join Now <span className={"ml-2"}>🏆</span>
-            </motion.button>
+            <div className={"w-full gradientBorder rounded-2xl"}>
+              <motion.button
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  ease: "anticipate",
+                }}
+                className={
+                  "bg-blue-700 secondary-button-animation  font-bold text-2xl border p-5 w-full rounded-2xl"
+                }
+              >
+                Join Now <span className={"ml-2"}>🏆</span>
+              </motion.button>
+            </div>
           </div>
           <div
             className={

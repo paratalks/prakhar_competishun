@@ -69,9 +69,9 @@ const ProspectusSection = () => {
                   onClick={() => {
                     setSelectedCategory(index);
                   }}
-                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-col md:flex-row gap-2 px-8 py-3 bg-primary rounded-full items-center lg:flex-nowrap transition-all duration-500`}
+                  className={`${selectedCategory == index ? "bg-primary" : "bg-transparent"} text-nowrap w-full h-fit flex flex-col md:flex-row gap-2 px-5 sm:px-8 py-3 bg-primary rounded-full items-center lg:flex-nowrap transition-all duration-500`}
                 >
-                  <NotebookPen className={"max-sm:size-3"} />
+                  <NotebookPen className={"hidden sm:inline"} />
                   <p className={"text-xs sm:text-sm md:text-lg lg:text-xl"}>
                     {item.title}
                   </p>
@@ -95,7 +95,7 @@ const ProspectusSection = () => {
                 onMouseLeave={() => {
                   setSelectedCourse(-1);
                 }}
-                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.5] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
+                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.8] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
               >
                 <div className={"flex flex-col h-full p-2 w-full gap-2"}>
                   <div className={"p-1 bg-foreground rounded-full w-fit"}>

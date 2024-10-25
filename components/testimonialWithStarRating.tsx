@@ -58,7 +58,7 @@ const TestimonialWithStarRating = ({
                     <p className="text-gray-300">{achievement}</p>
                   </div>
                 </div>
-                <p className="text-gray-400  leading-normal sm:leading-relaxed lg:leading-loose max-sm:text-gray-500 overflow-hidden">
+                <p className=" leading-normal sm:leading-relaxed lg:leading-loose  overflow-hidden">
                   {testimonial}
                 </p>
               </div>

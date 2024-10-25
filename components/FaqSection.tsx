@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ContactUsButton from "@/components/ContactUsButton";
 
 const FaqSection = () => {
   const [currentlyChoosenQuestion, setCurrentlyChoosenQuestion] =
@@ -76,6 +77,22 @@ const FaqSection = () => {
               <FaqAnswerContainer
                 answer={Faqs[currentlyChoosenQuestion].answer}
               />
+            </div>
+            <div
+              className={
+                "w-full bg-primary rounded-xl flex flex-col items-center p-4 gap-5"
+              }
+            >
+              <div className={"flex flex-col items-center gap-1"}>
+                <h3
+                  className={"text-center text-3xl font-bold"}
+                >{`Still Having Doubt?`}</h3>
+                <p
+                  className={"font-light text-sm"}
+                >{`Let's Resolve it together! fill the form`}</p>
+              </div>
+
+              <ContactUsButton variant={"secondary"} />
             </div>
           </div>
         </div>

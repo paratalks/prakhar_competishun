@@ -421,7 +421,7 @@ export default function Home() {
         <div className={"relative h-[50dvh] flex flex-col items-center"}>
           <footer className=" absolute h-full  w-screen bg-background ">
             <div className=" w-full h-full p-4 py-6 lg:py-8">
-              <div className="md:flex md:justify-between p-20">
+              <div className="md:flex md:justify-between p-2 sm:p-10 md:p-20">
                 <div className="mb-10 md:mb-0 lg:w-5/12 ">
                   <a
                     href="/"
@@ -439,16 +439,16 @@ export default function Home() {
                     </span>
                   </a>
                   <p className={"mt-5"}>
-                    {`Competishun is a well-known name in the field of IIT-JEE/NEET Online & Offline Coaching providing Pre-Engineering/Pre-Medical training to aspirants intending to prepare and appear in various competitive, talent search and scholarship examinations of National and International level such as JEE (Main + Advanced) formerly IIT-JEE (Indian Institute of Technology - Joint Entrance Examination). JEE (Main) (formerly AIEEE-All India Engineering Entrance Examination), NEET (National Eligibility cum Entrance Test), BITSAT (Birla Institute of Technology & Science Admission Test) etc. `}
+                    {`Competishun is a well-known name in the field of IIT-JEE/NEET Online & Offline Coaching providing Pre-Engineering/Pre-Medical training to aspirants intending to prepare and appear in various competitive, talent search and scholarship examinations of National and International level such as JEE,NEET,BITSAT,etc `}
                   </p>
                 </div>
                 <div className="grid w-full lg:w-1/2 h-full grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                   <div className={"border-r"}>
                     <div>
-                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold text-gray-900 uppercase text-white">
+                      <h2 className="mb-6 text-xs sm:text-sm lg:text-xl font-semibold uppercase text-white">
                         Support
                       </h2>
-                      <ul className="text-gray-500 text-gray-400 font-medium">
+                      <ul className=" text-gray-400 font-medium">
                         <li className="mb-4">
                           <a href="/" className="hover:text-white">
                             Help
@@ -463,12 +463,7 @@ export default function Home() {
                           </a>
                         </li>
                         <li className={"hover:text-white"}>
-                          <a
-                            href="https://tailwindcss.com/"
-                            className="hover:underline"
-                          >
-                            FAQ
-                          </a>
+                          <a href="https://tailwindcss.com/">FAQ</a>
                         </li>
                       </ul>
                     </div>

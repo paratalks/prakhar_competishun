@@ -10,6 +10,15 @@ export const images = {
   guyWithTshirt: "/assets/images/guyWithTshirt.png",
   halfCircleNonPrimary: "/assets/images/halfCircleNonPrimary.svg",
 };
+
+export const aboutusImages = [
+  "/assets/images/aboutus/1.JPG",
+  "/assets/images/aboutus/2.JPG",
+  "/assets/images/aboutus/3.JPG",
+  "/assets/images/aboutus/4.JPG",
+  "/assets/images/aboutus/5.JPG",
+];
+
 export const icons = {
   degreeHat: "/assets/images/icons/degreeHat.svg",
   rolledDegree: "/assets/images/icons/rolledDegree.svg",
@@ -62,7 +71,7 @@ export const navLinks = [
   {
     id: 3,
     title: "About Us",
-    href: "/about",
+    href: "/aboutus",
     sublinks: [],
   },
   {

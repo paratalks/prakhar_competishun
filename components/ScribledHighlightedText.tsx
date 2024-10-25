@@ -36,7 +36,7 @@ const ScribledHighlightedText = ({
     },
   };
   return (
-    <span className={"text-primary relative"}>
+    <span className={" relative bg-primary px-1 text-white rounded-xl"}>
       <motion.svg
         initial="hidden"
         animate="visible"

@@ -11,7 +11,7 @@ const FaqAnswerContainer = ({ answer }: { answer: string }) => {
           {answer}
         </p>
       </div>
-      <a href="https://rzp.io/rzp/YfK1Axui" className={"w-full h-fit"}>
+      <a href="/enrollment" className={"w-full h-fit"}>
         <button className="bg-secondary mt-5 md:mt-2 mb-5 w-full text-white hover:shadow-none shadow-[5px_5px_0px_0px_rgba(255,255,255)]  transition-all duration-200 font-bold py-4 px-6 rounded-full relative">
           <motion.img
             animate={{ rotateX: [0, 30, 0] }}

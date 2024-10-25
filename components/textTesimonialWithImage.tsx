@@ -21,18 +21,21 @@ const TextTestimonialWithImage = ({
           <Image
             unoptimized
             src={image || illustrations.illustration1}
-            alt={"Sample Image"}
+            alt={"Video Image"}
             width={500}
             height={500}
             className={"w-full h-1/2 object-cover"}
           />
           <div className={"w-full h-1/2 p-5"}>
-            <p className={"font-extrabold text-xl lg:text-2xl text-white"}>
+            <p className={"font-extrabold text-3xl lg:text-2xl text-white"}>
               {name}
+            </p>
+            <p className={"font-normal text-xl  lg:text-2xl text-gray-300"}>
+              {achievement}
             </p>
             <p
               className={
-                "text-gray-400 leading-relaxed text-sm lg:text-base mt-2 overflow-hidden"
+                "leading-relaxed text-sm lg:text-base mt-2 overflow-hidden"
               }
             >
               {testimonial}

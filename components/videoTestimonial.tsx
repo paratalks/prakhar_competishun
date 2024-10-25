@@ -10,14 +10,21 @@ const VideoTestimonial = ({
   return (
     <div className="w-full flex justify-center">
       <div className="w-full md:w-[60vw] lg:w-[30vw] h-[500px]  relative flex justify-center rounded-3xl gradientBorder">
-        <Image
-          unoptimized
-          src={image || illustrations.illustration1}
-          alt={name}
-          width={200}
-          height={200}
-          className="object-fill bg-black h-full w-full rounded-3xl"
-        />
+        <div className={"w-full h-full"}>
+          <div
+            className={
+              "absolute z-20 bg-gradient-to-t from-black to-transparent via-20% "
+            }
+          />
+          <Image
+            unoptimized
+            src={image || illustrations.illustration1}
+            alt={name}
+            width={200}
+            height={200}
+            className="object-fill bg-black h-full w-full rounded-3xl"
+          />
+        </div>
         <div className="absolute bg-secondary bottom-2 z-10 p-2 w-11/12 rounded-2xl h-fit flex items-center">
           <a href={videoLink} target="_blank" rel="noopener noreferrer">
             <button
