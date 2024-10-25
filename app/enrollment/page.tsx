@@ -265,7 +265,7 @@ export default function EnrollmentForm() {
                 )}
               />
               <Button type="submit" className="w-full rounded-xl">
-                {loading ? `Submit Details` : `Loading 🫸`}
+                {loading ? `Loading 🫸` : `Submit Details`}
               </Button>
             </form>
           </Form>

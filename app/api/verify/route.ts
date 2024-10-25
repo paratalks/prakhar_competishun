@@ -20,7 +20,7 @@ const generatedSignature = (
 };
 
 export async function POST(request: NextRequest) {
-  const { orderCreationId, razorpayPaymentId, razorpaySignature, formData } =
+  const { orderCreationId, razorpayPaymentId, razorpaySignature } =
     await request.json();
 
   const signature = generatedSignature(orderCreationId, razorpayPaymentId);
@@ -30,13 +30,6 @@ export async function POST(request: NextRequest) {
       { status: 400 },
     );
   }
-  const obj = {
-    name: formData.name,
-    phone: formData.phone,
-    class: formData.class,
-    city: formData.city,
-  };
-  cookies().set("user", JSON.stringify(obj));
   return NextResponse.json(
     { message: "payment verified successfully", isOk: true },
     { status: 200 },

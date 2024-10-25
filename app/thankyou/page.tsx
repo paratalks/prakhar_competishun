@@ -9,20 +9,24 @@ import {
 } from "@/components/ui/card";
 import { CheckCircle, Home } from "lucide-react";
 import Link from "next/link";
-// import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
+import Script from "next/script";
 
 export default function ThankYouPage() {
-  // const searchParams = useSearchParams();
-  // const studentDetails = {
-  //   transactionId: searchParams.get("transactionId")!,
-  //   name: searchParams.get("name")!,
-  //   phone: searchParams.get("phone")!,
-  //   city: searchParams.get("city")!,
-  //   class: searchParams.get("class"),
-  // };
+  const searchParams = useSearchParams();
+  const studentDetails = {
+    transactionId: searchParams.get("transactionId")!,
+    name: searchParams.get("name")!,
+    phone: searchParams.get("phone")!,
+    city: searchParams.get("city")!,
+    class: searchParams.get("class"),
+  };
+  useEffect(() => {
+    console.log(studentDetails);
+  }, []);
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense>
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary/20 to-background">
         <header className="w-full p-4 flex justify-between items-center border-b">
           <Link href="/" className="flex items-center space-x-2">
