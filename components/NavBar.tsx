@@ -25,6 +25,7 @@ const NavBar = () => {
   const [formData, setFormData] = useState({
     studentName: "",
     studentPhone: "",
+    studentEmail: "",
     studentCity: "",
     studentTarget: "",
     studentQuery: "",
@@ -196,10 +197,28 @@ const NavBar = () => {
                   }}
                 />
                 <Label htmlFor="" className="sr-only">
+                  Email of student
+                </Label>
+                <Input
+                  id="queryEmail"
+                  name={"query-email"}
+                  className={
+                    "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
+                  }
+                  placeholder={"Email"}
+                  value={formData.studentEmail}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      studentEmail: e.currentTarget.value,
+                    });
+                  }}
+                />
+                <Label htmlFor="" className="sr-only">
                   City of student
                 </Label>
                 <Input
-                  id="queryPhone"
+                  id="queryCity"
                   name={"query-city"}
                   className={
                     "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
@@ -217,7 +236,7 @@ const NavBar = () => {
                   Target course of student
                 </Label>
                 <Input
-                  id="queryPhone"
+                  id="queryTarget"
                   name={"query-target"}
                   className={
                     "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
@@ -257,7 +276,7 @@ const NavBar = () => {
                     className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
                   >
                     <Link
-                      href={`/thankyou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}`}
+                      href={`/thankyou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}&email=${formData.studentEmail}`}
                     >
                       {`Make Me Champ`}
                     </Link>
