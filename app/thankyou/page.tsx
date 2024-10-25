@@ -9,9 +9,8 @@ import {
 } from "@/components/ui/card";
 import { CheckCircle, Home } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
-import Script from "next/script";
 
 export default function ThankYouPage() {
   // const searchParams = useSearchParams();
