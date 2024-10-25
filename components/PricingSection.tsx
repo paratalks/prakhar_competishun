@@ -50,7 +50,7 @@ const PricingSection = () => {
                   {`Revise Smarter, Score Higher with Experts mentors in
                     Competishun. Let's Crack JEE 2025`}
                 </p>
-                <a href="https://rzp.io/rzp/YfK1Axui">
+                <a href="/enrollment">
                   <motion.button
                     id={"joinButtonPricingSection"}
                     animate={{ scale: [1, 1.1, 1] }}

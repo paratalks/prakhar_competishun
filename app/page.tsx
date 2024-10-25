@@ -312,7 +312,7 @@ export default function Home() {
             >
               {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
             </p>
-            <a href="#pricing-section " className={"z-20"}>
+            <a href="#pricing-section" className={"z-20"}>
               <motion.button
                 animate={{
                   scale: [1, 1.2, 1],
