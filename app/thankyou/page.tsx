@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,8 +9,22 @@ import {
 } from "@/components/ui/card";
 import { CheckCircle, Home } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import Script from "next/script";
 
 export default function ThankYouPage() {
+  const searchParams = useSearchParams();
+  const studentDetails = {
+    transactionId: searchParams.get("transactionId")!,
+    name: searchParams.get("name")!,
+    phone: searchParams.get("phone")!,
+    city: searchParams.get("city")!,
+    class: searchParams.get("class"),
+  };
+  useEffect(() => {
+    console.log(studentDetails);
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary/20 to-background">
       <header className="w-full p-4 flex justify-between items-center border-b">
@@ -31,8 +46,8 @@ export default function ThankYouPage() {
           </CardHeader>
           <CardContent>
             <p className="text-center text-muted-foreground">
-              We appreciate your submission. Our team will review your
-              information and get back to you soon.
+              We appreciate your submission. Now! Our team will connect with you
+              shortly!
             </p>
           </CardContent>
           <CardFooter className="flex justify-center">

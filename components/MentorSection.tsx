@@ -90,7 +90,7 @@ const MentorSection = () => {
         <div className=" w-full bottom-0 ">
           <div className="w-full  overflow-hidden bottom-0 z-20">
             {screen.width < 640 ? (
-              <div className="h-fit flex flex-col gap-5 items-center last:mb-52 justify-center">
+              <div className="h-fit flex flex-col gap-10 items-center last:mb-52 justify-center">
                 {mentors.map((item, index) => (
                   <div
                     key={index}
@@ -100,17 +100,24 @@ const MentorSection = () => {
                   >
                     <div
                       className={
-                        " bottom-0 right-0 left-0 flex flex-col gap-8 bg-primary/[0.3] z-20 rounded-2xl p-6"
+                        " bottom-0 right-0 left-0 flex flex-col gap-8 bg-primary z-20 rounded-2xl p-6"
                       }
                     >
-                      <motion.img
-                        onClick={() => setAnimatingMentorIndex(index)}
-                        onHoverStart={() => setAnimatingMentorIndex(index)}
-                        onHoverEnd={() => setAnimatingMentorIndex(-1)}
-                        className={` mentorImages origin-bottom z-[5] transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
-                        src={item.image}
-                        alt={`Mentor ${index + 1}`}
-                      />
+                      <div className={"w-full flex flex-col relative"}>
+                        <div
+                          className={
+                            "absolute bottom-0 w-full h-full z-10 rounded-3xl bg-gradient-to-t from-primary/[0.8] via-20% via-transparent to-transparent overflow-clip"
+                          }
+                        />
+                        <motion.img
+                          onClick={() => setAnimatingMentorIndex(index)}
+                          onHoverStart={() => setAnimatingMentorIndex(index)}
+                          onHoverEnd={() => setAnimatingMentorIndex(-1)}
+                          className={` mentorImages origin-bottom z-[5] transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
+                          src={item.image}
+                          alt={`Mentor ${index + 1}`}
+                        />
+                      </div>
                       <motion.div
                         whileInView={{ scale: [1, 1.05, 1] }}
                         transition={{ duration: 1, repeat: Infinity }}
@@ -119,8 +126,10 @@ const MentorSection = () => {
                           {item.title}
                         </h1>
                       </motion.div>
-
-                      <h2 className={"text-lg text-gray-400"}> {item.desc} </h2>
+                      <h2 className={"text-lg font-bold text-gray-200 mb-2"}>
+                        {" "}
+                        {item.desc}{" "}
+                      </h2>
                     </div>
                   </div>
                 ))}

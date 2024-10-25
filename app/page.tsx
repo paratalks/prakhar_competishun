@@ -54,6 +54,7 @@ export default function Home() {
       },
     );
   };
+
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
 
@@ -94,9 +95,11 @@ export default function Home() {
         id="chat-widget"
         data-key="670f87c42f6b943716677af3"
       ></div>
-      <div className={"md:w-10/12 w-11/12 flex flex-col"}>
+      <div className={"w-11/12 flex flex-col"}>
         <section
-          className={"hero-section flex flex-col w-full min-h-screen relative"}
+          className={
+            "hero-section flex flex-col w-full h-[120vh] md:h-screen relative"
+          }
         >
           <div
             className={
@@ -212,7 +215,7 @@ export default function Home() {
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 2, ease: "backOut", repeat: Infinity }}
                 className={
-                  "gradientBorder primary-button-animation absolute sm:bottom-[15%] bottom-[10%] md:left-[12%] left-0 rounded-2xl "
+                  "gradientBorder primary-button-animation absolute sm:bottom-[15%] bottom-[10%] md:left-[12%] left-0 rounded-2xl z-20"
                 }
               >
                 <div
@@ -309,7 +312,7 @@ export default function Home() {
             >
               {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
             </p>
-            <a href="#pricing-section">
+            <a href="#pricing-section " className={"z-20"}>
               <motion.button
                 animate={{
                   scale: [1, 1.2, 1],
@@ -321,7 +324,7 @@ export default function Home() {
                   duration: 1,
                 }}
                 className={
-                  "bg-primary max-sm:mt-2 max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl text-lg max- p-2 sm:p-3 px-3 sm:px-5 rounded-2xl w-fit items-center"
+                  "bg-primary max-sm:mt-2 max-sm:text-nowrap primary-button-animation font-bold lg:text-2xl sm:text-lg md:text-xl text-lg max- p-2 sm:p-3 px-3 sm:px-5 rounded-2xl w-fit items-center z-20"
                 }
               >
                 Join Now <span className={"ml-2"}>🏆</span>

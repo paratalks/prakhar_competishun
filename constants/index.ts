@@ -118,7 +118,7 @@ export const Faqs = [
   },
   {
     question: "How Do you contact Support Staff of Competishun?",
-    answer: "You can contact Support Staff at 8888-0000-21, 7410-900-901",
+    answer: "Contact Support Staff at 8888-0000-21, 7410-900-901",
   },
 ];
 

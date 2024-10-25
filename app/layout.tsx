@@ -30,7 +30,10 @@ export default function RootLayout({
         className={`${hkgothic.variable} overflow-x-clip font-sans bg-background text-foreground antialiased`}
       >
         <Script src="https://cdn.jsdelivr.net/gh/helio-ai/widget@latest/main.js"></Script>
-
+        <Script
+          id="razorpay-checkout-js"
+          src="https://checkout.razorpay.com/v1/checkout.js"
+        />
         {children}
       </body>
     </html>

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { images, navLinks } from "@/constants";
 import { ChevronDown, Copy, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { getCookie, setCookie } from "cookies-next";
+
 import {
   Dialog,
   DialogClose,
