@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Competishun Champ</title>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-10838004875"
@@ -37,6 +38,21 @@ export default function RootLayout({
   gtag('js', new Date());
 
   gtag('config', 'AW-10838004875');`}
+        </Script>
+        <Script id={"userEmailVariableContainer"}>
+          {`var user_email = decodeURIComponent(window.location.href).split("email=")[1].split("&")[0];`}
+        </Script>
+
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10838004875"
+        ></Script>
+        <Script id={"userEmailCapture"}>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('set', 'user_data', {"email": user_email});
+          gtag('config','AW-10838004875', {'allow_enhanced_conversions':true});`}
         </Script>
       </head>
       <body

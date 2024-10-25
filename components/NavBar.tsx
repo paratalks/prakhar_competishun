@@ -41,6 +41,7 @@ const NavBar = () => {
     });
     setFormData({
       studentName: "",
+      studentEmail: "",
       studentPhone: "",
       studentCity: "",
       studentTarget: "",
