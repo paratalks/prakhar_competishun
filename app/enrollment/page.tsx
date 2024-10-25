@@ -32,6 +32,9 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
+  email: z.string().min(2, {
+    message: "Email must be at least 2 characters.",
+  }),
   phone: z.string().regex(/^\d{10}$/, {
     message: "Phone number must be 10 digits.",
   }),
@@ -54,6 +57,7 @@ export default function EnrollmentForm() {
     defaultValues: {
       name: "",
       phone: "",
+      email: "",
       class: "",
       city: "",
       state: "",
@@ -119,7 +123,7 @@ export default function EnrollmentForm() {
             setLoading(false);
             alert("payment succeed");
             await router.push(
-              `/thankyou?name=${form.getValues("name")}&phone=${form.getValues("phone")}&class=${form.getValues("class")}&transactionId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id}&currency=INR&amount=3999`,
+              `/thankyou?name=${form.getValues("name")}&phone=${form.getValues("phone")}&class=${form.getValues("class")}&email=${form.getValues("email")}&transactionId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id}&currency=INR&amount=3999`,
             );
           } else {
             setLoading(false);
@@ -189,6 +193,7 @@ export default function EnrollmentForm() {
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
                       <Input
+                        type={"number"}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="1234567890"
                         {...field}
@@ -197,6 +202,23 @@ export default function EnrollmentForm() {
                     <FormDescription>
                       Enter a 10-digit phone number without spaces or dashes.
                     </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        className={"bg-foreground text-background rounded-xl"}
+                        placeholder="Your Email"
+                        {...field}
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -247,6 +269,7 @@ export default function EnrollmentForm() {
                   </FormItem>
                 )}
               />
+
               <FormField
                 control={form.control}
                 name="state"
