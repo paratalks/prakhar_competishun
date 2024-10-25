@@ -256,7 +256,11 @@ const NavBar = () => {
                     size="sm"
                     className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
                   >
-                    <Link href={"/thankyou"}> {`Make Me Champ`}</Link>
+                    <Link
+                      href={`/thankyou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}`}
+                    >
+                      {`Make Me Champ`}
+                    </Link>
                   </Button>
                 </div>
               </div>
