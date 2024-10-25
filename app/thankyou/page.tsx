@@ -82,6 +82,13 @@ export default function ThankYouPage() {
           }
         })`}
           </Script>
+          <Script id={"userEmailCapture"}>
+            {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('set', 'user_data', {"email": user_email});
+          gtag('config','AW-10838004875', {'allow_enhanced_conversions':true});`}
+          </Script>
         </footer>
       </div>
     </Suspense>
