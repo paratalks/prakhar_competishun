@@ -39,3 +39,12 @@ export const getRelatedCourseData = async () => {
     )
     .then((res) => res);
 };
+
+export const getSlider = async () => {
+  return await databases
+    .listDocuments(
+      process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "",
+      process.env.NEXT_PUBLIC_APPWRITE_SLIDER_COLLECTION_ID || "",
+    )
+    .then((res) => res);
+};

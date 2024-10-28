@@ -45,6 +45,7 @@ export const mentorImages = {
   aloksir: "/assets/images/mentors/aloksir.png",
   mohitsir: "/assets/images/mentors/mohitsir.png",
   neerajsir: "/assets/images/mentors/neerajsir.png",
+  collective: "/assets/image/mentors/group_pic.png",
 };
 
 export const sounds = {
