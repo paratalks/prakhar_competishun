@@ -303,7 +303,7 @@ export default function EnrollmentForm() {
       </main>
 
       <footer className="w-full p-4 border-t text-center text-sm text-muted-foreground">
-        <Script>
+        <Script id={"formThankYouTrackingCode"}>
           {`window.addEventListener("load", function () {
             if (window.location.href.indexOf('/thankyou') != -1 && window.location.href.indexOf('?name=') != -1) {
               var totalVal = decodeURIComponent(window.location.href).split("transactionId=")[1].split("&")[0]
