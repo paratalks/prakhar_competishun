@@ -142,6 +142,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               Target course of student
             </Label>
             <Input
+              required={true}
               id="queryTarget"
               name={"query-target"}
               className={
@@ -160,6 +161,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               Query of student
             </Label>
             <Textarea
+              required={true}
               id="queryDesc"
               name={"query-desc"}
               placeholder={"Your Query"}
@@ -182,7 +184,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
               >
                 <Link
-                  href={`/thankyou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}&email=${formData.studentEmail}`}
+                  href={`/formThankYou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}&email=${formData.studentEmail}`}
                 >
                   {`Make Me Champ`}
                 </Link>
