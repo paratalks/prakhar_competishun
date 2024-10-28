@@ -86,12 +86,20 @@ const NavBar = () => {
           </div>
         ))}
       </div>
-      {/*    add hover effect in the button on hovering the button a slight shadow should come out of the button of primary color  */}
+      {/* add hover effect in the button on hovering the button a slight shadow should come out of the button of primary color  */}
       <div className={"flex flex-col md:flex-row  md:gap-x-5 items-center"}>
         <div
           className={"flex flex-row gap-x-2 -translate-y-5 md:translate-y-0"}
         >
-          <Phone size={20} /> <p>{"8888-0000-21"}</p>
+          <button
+            onClick={() => {
+              redirect("tel:+918888000021");
+            }}
+          >
+            <Phone size={20} />{" "}
+          </button>
+
+          <p>{"8888-0000-21"}</p>
         </div>
         <ContactUsButton />
       </div>

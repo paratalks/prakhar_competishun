@@ -13,6 +13,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { createQuery } from "@/actions/index.action";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { FormControl } from "@/components/ui/form";
 
 const ContactUsButton = ({ variant = "primary" }) => {
   const [formData, setFormData] = useState({
@@ -145,22 +153,32 @@ const ContactUsButton = ({ variant = "primary" }) => {
             <Label htmlFor="" className="sr-only">
               Target course of student
             </Label>
-            <Input
+            <Select
               required={true}
-              id="queryTarget"
-              name={"query-target"}
-              className={
-                "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
-              }
-              placeholder={"Target Exam (eg. JEE/NEET/NISO)"}
-              value={formData.studentTarget}
-              onChange={(e) => {
+              onValueChange={(e) => {
                 setFormData({
                   ...formData,
-                  studentTarget: e.currentTarget.value,
+                  studentTarget: e,
                 });
               }}
-            />
+              name={"query-target"}
+              defaultValue={formData.studentTarget}
+            >
+              <FormControl>
+                <SelectTrigger
+                  className={"bg-foreground text-background rounded-xl"}
+                >
+                  <SelectValue placeholder="Select a class" />
+                </SelectTrigger>
+              </FormControl>
+              <SelectContent
+                className={"bg-foreground text-background rounded-xl"}
+              >
+                <SelectItem value="class11">Class 11</SelectItem>
+                <SelectItem value="class12">Class 12</SelectItem>
+                <SelectItem value="dropper">Dropper</SelectItem>
+              </SelectContent>
+            </Select>
             <Label htmlFor="" className="sr-only">
               Query of student
             </Label>
