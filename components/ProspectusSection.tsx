@@ -1,14 +1,24 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import ScribledHighlightedText from "@/components/ScribledHighlightedText";
 import { ArrowRight, Check, MoveRight, NotebookPen } from "lucide-react";
 import Image from "next/image";
 import { icons, illustrations, images, prospectusCategory } from "@/constants";
 import { motion } from "framer-motion";
 import PricingSection from "@/components/PricingSection";
+import { getRelatedCourseData } from "@/lib/fetchData";
 
 const ProspectusSection = () => {
   const [selectedCourse, setSelectedCourse] = useState(-1);
   const [selectedCategory, setSelectedCategory] = useState(0);
+  const [relatedCourse, setRelatedCourses] = useState<any>([]);
+  const fetchData = async () => {
+    await getRelatedCourseData().then((res) =>
+      setRelatedCourses(res.documents),
+    );
+  };
+  useEffect(() => {
+    fetchData();
+  }, [relatedCourse]);
   return (
     <section
       id={"prospectusSection"}
@@ -86,41 +96,41 @@ const ProspectusSection = () => {
               "flex flex-col sm:flex-row justify-center  gap-y-10  gap-x-14 w-full flex-wrap "
             }
           >
-            {...Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                onMouseEnter={() => {
-                  setSelectedCourse(i);
-                }}
-                onMouseLeave={() => {
-                  setSelectedCourse(-1);
-                }}
-                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.8] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
-              >
-                <div className={"flex flex-col h-full p-2 w-full gap-2"}>
-                  <div className={"p-1 bg-foreground rounded-full w-fit"}>
-                    <Check color={"#F15E04"} />
+            {(relatedCourse.length > 0 ? relatedCourse : []).map(
+              (_: any, i: any) => (
+                <div
+                  key={i}
+                  onMouseEnter={() => {
+                    setSelectedCourse(i);
+                  }}
+                  onMouseLeave={() => {
+                    setSelectedCourse(-1);
+                  }}
+                  className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.8] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
+                >
+                  <div className={"flex flex-col h-full p-2 w-full gap-2"}>
+                    <div className={"p-1 bg-foreground rounded-full w-fit"}>
+                      <Check color={"#F15E04"} />
+                    </div>
+                    <h3 className={"text-2xl font-extrabold h-1/2"}>
+                      {relatedCourse[i].title}
+                    </h3>
+                    <p className={"text-sm text-gray-300"}>
+                      {relatedCourse[i].desc}
+                    </p>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      className={
+                        "bg-foreground text-background group-hover:bg-foreground secondary-button-animation rounded-xl w-fit px-4 py-2 flex flex-row font-bold gap-x-2"
+                      }
+                    >
+                      Join Now
+                      <ArrowRight />
+                    </motion.button>
                   </div>
-                  <h3 className={"text-2xl font-extrabold h-1/2"}>
-                    {`JEE ${prospectusCategory[selectedCategory].title} ${i}`}
-                  </h3>
-                  <p className={"text-sm text-gray-300"}>
-                    Thorougly, covers all important topics across Physics,
-                    Chemistry, Mathematics with expertly designed theory
-                    classes.
-                  </p>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    className={
-                      "bg-foreground text-background group-hover:bg-foreground secondary-button-animation rounded-xl w-fit px-4 py-2 flex flex-row font-bold gap-x-2"
-                    }
-                  >
-                    Join Now
-                    <ArrowRight />
-                  </motion.button>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </div>
       </div>

@@ -80,7 +80,7 @@ const FaqSection = () => {
             </div>
             <div
               className={
-                "w-full bg-primary rounded-xl flex flex-col items-center p-4 gap-5"
+                "w-full bg-primary rounded-xl flex flex-col md:hidden items-center p-4 gap-5"
               }
             >
               <div className={"flex flex-col items-center gap-1"}>

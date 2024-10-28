@@ -136,7 +136,7 @@ export const prospectusCategory = [
     title: "Courses",
   },
   { title: "Test Series" },
-  { title: "Short Term" },
+  { title: "Books" },
 ];
 
 export const mentors = [
@@ -407,3 +407,22 @@ export const testimonialData = [
     testimonialRating: 4.5,
   },
 ];
+
+export const constData = {
+  heroSectionStats: [
+    {
+      title: "24*7 doubt solving",
+      desc: "",
+    },
+    {
+      title: "24*7 doubt solving",
+      desc: "",
+    },
+  ],
+  bannerSliderData: [
+    { title: "#JEEAIR1" },
+    { title: "#NEETAIR1" },
+    { title: "#BecomeChamp" },
+  ],
+  videoLink: [{ title: "" }],
+};

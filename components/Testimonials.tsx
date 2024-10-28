@@ -9,18 +9,27 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { getTestimonialData } from "@/lib/fetchData";
+import { Models } from "appwrite";
 
 const Testimonials = () => {
+  const [testimonial, setTestimonial] = useState<any>([]);
+
   const [screen, setScreen] = useState({ width: 0, height: 0 });
   const [smallScreen, setSmallScreen] = useState(false);
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
     setSmallScreen(window.innerWidth < 640);
   }, [screen.width, screen.height, smallScreen]);
+
+  const fetchData = async () => {
+    setTestimonial(await getTestimonialData().then((res) => res));
+  };
+  useEffect(() => {
+    fetchData();
+  }, [testimonial]);
   return (
     <section className={" sm:mt-10 md:mt-12 relative"}>
       <div className={"w-full flex justify-center items-center relative"}>
@@ -55,36 +64,41 @@ const Testimonials = () => {
               className={"  w-screen flex justify-center"}
             >
               <CarouselContent className={" gap-x-4 sm:gap-x-5 lg:gap-x-7"}>
-                {testimonialData.map((item, index) => (
-                  <CarouselItem
-                    key={index}
-                    className={` sm:basis-1/2 md:basis-1/2 px-10 sm:px-5 lg:px-0 lg:basis-1/5 first:pl-5`}
-                  >
-                    {/*  0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
-                     */}
-                    {item.testimonialType == 0 ? (
-                      <TestimonialWithStarRating
-                        name={item.name}
-                        achievement={item.achievement}
-                        testimonial={item.testimonialDescription}
-                        rating={item.testimonialRating}
-                      />
-                    ) : item.testimonialType == 1 ? (
-                      <VideoTestimonial
-                        name={item.name}
-                        videoLink={
-                          item.testimonialLink || "https://manwith.codes"
-                        }
-                      />
-                    ) : (
-                      <TextTesimonialWithImage
-                        achievement={item.achievement}
-                        testimonial={item.testimonialDescription}
-                        name={item.name}
-                      />
-                    )}
-                  </CarouselItem>
-                ))}
+                {(testimonial.length > 0
+                  ? testimonial.documents
+                  : testimonialData
+                ).map((item: any, index: any) => {
+                  return (
+                    <CarouselItem
+                      key={index}
+                      className={` sm:basis-1/2 md:basis-1/2 px-10 sm:px-5 lg:px-0 lg:basis-1/5 first:pl-5`}
+                    >
+                      {/*  0 for text testimonial with rating, 1 for Video testimonial, 2 for image testimonial
+                       */}
+                      {item.testimonialType == 0 ? (
+                        <TestimonialWithStarRating
+                          name={item.name}
+                          achievement={item.achievement}
+                          testimonial={item.testimonialDescription}
+                          rating={item.testimonialRating}
+                        />
+                      ) : item.testimonialType == 1 ? (
+                        <VideoTestimonial
+                          name={item.name}
+                          videoLink={
+                            item.testimonialLink || "https://manwith.codes"
+                          }
+                        />
+                      ) : (
+                        <TextTesimonialWithImage
+                          achievement={item.achievement}
+                          testimonial={item.testimonialDescription}
+                          name={item.name}
+                        />
+                      )}
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
             </Carousel>
           </div>

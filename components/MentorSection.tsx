@@ -145,24 +145,22 @@ const MentorSection = () => {
             ) : (
               <div className="h-[90dvh] flex items-center justify-center">
                 {mentors.map((item, index) => (
-                  <>
-                    <motion.img
-                      key={index}
-                      onClick={() => setAnimatingMentorIndex(index)}
-                      onHoverStart={() => setAnimatingMentorIndex(index)}
-                      onHoverEnd={() => setAnimatingMentorIndex(-1)}
-                      whileInView={{
-                        x: [screen.width / item.movement],
-                      }}
-                      transition={{
-                        duration: item.animationDuration,
-                        ease: "easeOut",
-                      }}
-                      className={`absolute mentorImages origin-bottom z-[5] bottom-0 w-32 sm:w-44 lg:w-64 hover:w-40 hover:sm:w-56 hover:lg:w-80 transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
-                      src={item.image}
-                      alt={`Mentor ${index + 1}`}
-                    />
-                  </>
+                  <motion.img
+                    key={index}
+                    onClick={() => setAnimatingMentorIndex(index)}
+                    onHoverStart={() => setAnimatingMentorIndex(index)}
+                    onHoverEnd={() => setAnimatingMentorIndex(-1)}
+                    whileInView={{
+                      x: [screen.width / item.movement],
+                    }}
+                    transition={{
+                      duration: item.animationDuration,
+                      ease: "easeOut",
+                    }}
+                    className={`absolute mentorImages origin-bottom z-[5] bottom-0 w-32 sm:w-44 lg:w-64 hover:w-40 hover:sm:w-56 hover:lg:w-80 transition-all duration-300 ${index == 0 ? "z-10" : "z-0"}`}
+                    src={item.image}
+                    alt={`Mentor ${index + 1}`}
+                  />
                 ))}
               </div>
             )}

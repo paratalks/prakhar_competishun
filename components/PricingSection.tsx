@@ -5,7 +5,7 @@ import Image from "next/image";
 import { icons } from "@/constants";
 import { motion } from "framer-motion";
 
-const PricingSection = () => {
+const PricingSection = ({ courseFees = "2999" }) => {
   return (
     <section
       className={
@@ -100,7 +100,7 @@ const PricingSection = () => {
                         "text-6xl sm:text-7xl lg:text-8xl font-bold transition-all duration-200"
                       }
                     >
-                      ₹ 2999
+                      {`₹ ${courseFees}`}
                     </h2>
                   </div>
                   <ul

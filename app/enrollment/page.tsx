@@ -176,6 +176,7 @@ export default function EnrollmentForm() {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
+                        required={true}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="John Doe"
                         {...field}
@@ -193,6 +194,7 @@ export default function EnrollmentForm() {
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
                       <Input
+                        required={true}
                         type={"number"}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="1234567890"
@@ -214,6 +216,7 @@ export default function EnrollmentForm() {
                     <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input
+                        required={true}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="Your Email"
                         {...field}
@@ -230,6 +233,7 @@ export default function EnrollmentForm() {
                   <FormItem>
                     <FormLabel>Class</FormLabel>
                     <Select
+                      required={true}
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
@@ -260,6 +264,7 @@ export default function EnrollmentForm() {
                     <FormLabel>City</FormLabel>
                     <FormControl>
                       <Input
+                        required={true}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="Your City"
                         {...field}
@@ -278,6 +283,7 @@ export default function EnrollmentForm() {
                     <FormLabel>State</FormLabel>
                     <FormControl>
                       <Input
+                        required={true}
                         className={"bg-foreground text-background rounded-xl"}
                         placeholder="Your State"
                         {...field}

@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { icons } from "@/constants";
 import { useEffect, useState } from "react";
 
-const YoutubeRecom = () => {
+const YoutubeRecom = ({
+  youtubeLink = "https://www.youtube.com/embed/QpeWhM0q0jw",
+}) => {
   const [smallScreen, setSmallScreen] = useState(false);
   useEffect(() => {
     setSmallScreen(window.innerWidth < 640);
@@ -33,7 +35,7 @@ const YoutubeRecom = () => {
           } // Adjusted for mobile
         />
         <iframe
-          src="https://www.youtube.com/embed/QpeWhM0q0jw"
+          src={youtubeLink}
           frameBorder="0"
           width={"100%"}
           className={

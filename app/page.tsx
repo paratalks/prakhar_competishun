@@ -1,11 +1,11 @@
 "use client";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
-import { blurs, icons, images, scribles, sounds } from "@/constants";
+import { blurs, constData, icons, images, scribles, sounds } from "@/constants";
 import React, { useEffect, useRef, useState } from "react";
 import useSound from "use-sound";
 import { motion, useAnimate } from "framer-motion";
-import { HeadphonesIcon, Sparkle, StarIcon } from "lucide-react";
+import { HeadphonesIcon } from "lucide-react";
 import { primary } from "@/constants/colors";
 import HeroSectionSlider from "@/components/HeroSectionSlider";
 import YoutubeRecom from "@/components/YoutubeRecom";
@@ -18,6 +18,13 @@ import MentorSection from "@/components/MentorSection";
 import ProspectusSection from "@/components/ProspectusSection";
 import PricingSection from "@/components/PricingSection";
 import FooterBanner from "@/components/FooterBanner";
+import {
+  getData,
+  getFeaturesData,
+  getRelatedCourseData,
+  getStatsData,
+  getTestimonialData,
+} from "@/lib/fetchData";
 export default function Home() {
   const [clipPath, setClipPath] = useState("circle(0%)");
   const imageContainerRef = useRef(null);
@@ -26,9 +33,9 @@ export default function Home() {
     xPercent: 0,
     yPercent: 0,
   });
+  const [data, setData] = useState<any>();
   const [scope, popAnimate] = useAnimate();
   const [starsScope, twinkleAnimation] = useAnimate();
-
   const [playMagicSound] = useSound(sounds.magicSound, { volume: 0.5 });
   const [screen, setScreen] = useState({ width: 0, height: 0 });
   const heroSectionModelDimension = 320;
@@ -54,15 +61,19 @@ export default function Home() {
       },
     );
   };
-
+  // use effect for animations
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
-
     popFeatureModalAnimation();
-  }, []);
-  useEffect(() => {
     twinkleAnimationHandler();
   }, [screen.width, screen.height]);
+  // use effect to fetch data
+  const fetchData = async () => {
+    await getData().then((res) => setData(res.documents));
+  };
+  useEffect(() => {
+    fetchData();
+  }, [data]);
   // handling mouse move on model on hero section
   const handleMouseMove = (e: { clientX: number; clientY: number }) => {
     if (!imageContainerRef.current) return;
@@ -201,7 +212,7 @@ export default function Home() {
                 ref={imageContainerRef}
                 onMouseMove={handleMouseMove}
                 src={images.modelImageHeroSec}
-                className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""} filter grayscale `}
+                className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""}  `}
                 alt={"Competishun Model"}
                 width={heroSectionModelDimension}
                 height={heroSectionModelDimension}
@@ -396,7 +407,7 @@ export default function Home() {
                   scrible={screen.width >= 640}
                 />
               </h2>
-              <YoutubeRecom />
+              <YoutubeRecom youtubeLink={data && data[0].videoLink} />
             </div>
           </div>
         </section>
@@ -407,7 +418,7 @@ export default function Home() {
 
         <FaqSection />
         <div className={" flex flex-col items-center"}>
-          <PricingSection />
+          <PricingSection courseFees={data && data[0].price} />
         </div>
         <StatisticSection />
 

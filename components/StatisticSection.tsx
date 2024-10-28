@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { blurs, images } from "@/constants";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -10,9 +10,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import AutoPlay from "embla-carousel-autoplay";
+import { getStatsData } from "@/lib/fetchData";
 const StatisticSection = () => {
+  const statsData = useRef<any>();
+  const fetchData = async () => {
+    await getStatsData().then((res) => (statsData.current = res.documents));
+  };
+  useEffect(() => {
+    fetchData();
+  }, [statsData]);
   return (
     <section
+      onLoad={() => console.log(statsData.current)}
       className={"w-full h-full relative flex flex-col items-center mt-32"}
     >
       <div className={"absolute w-screen h-full"}>
@@ -55,9 +64,10 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  20k+
+                  {statsData.current
+                    ? statsData.current[0].statsDesc1
+                    : `12k+ \n Aspiring IITians`}
                 </span>{" "}
-                <br /> Students in IIT
               </h2>
             </motion.div>
             <motion.div
@@ -71,9 +81,10 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  12k+
-                </span>{" "}
-                <br /> Aspiring IITians
+                  {statsData.current
+                    ? statsData.current[0].statsDesc2
+                    : `12k+ \n Aspiring IITians`}
+                </span>
               </h2>
             </motion.div>
           </div>
@@ -89,42 +100,119 @@ const StatisticSection = () => {
             className={"w-full gap-0 flex justify-center"}
           >
             <CarouselContent className={"w-full"}>
-              {...Array.from({ length: 3 }).map((_, index) => (
-                <CarouselItem
-                  key={index}
-                  className={"flex flex-row gap-x-0 p-0 w-fit justify-center "}
+              {/*{...Array.from({ length: 3 }).map((_, index) => (*/}
+              <CarouselItem
+                className={"flex flex-row gap-x-0 p-0 w-fit justify-center "}
+              >
+                <div
+                  className={
+                    "gradientBorder relative rounded-3xl w-fit flex flex-col items-center"
+                  }
+                  style={{ padding: 2 }}
                 >
                   <div
                     className={
-                      "gradientBorder relative rounded-3xl w-fit flex flex-col items-center"
+                      "absolute z-10 w-full h-full flex flex-col items-center rounded-3xl bg-gradient-to-t from-black to-transparent"
                     }
-                    style={{ padding: 2 }}
+                  />
+                  <h2
+                    className={
+                      "absolute bottom-10 z-10 text-2xl sm:text-3xl px-3 sm:px-5 font-extrabold text-gray-300"
+                    }
                   >
-                    <div
-                      className={
-                        "absolute z-10 w-full h-full flex flex-col items-center rounded-3xl bg-gradient-to-t from-black to-transparent"
-                      }
-                    />
-                    <h2
-                      className={
-                        "absolute bottom-10 z-10 text-2xl sm:text-3xl px-3 sm:px-5 font-extrabold text-gray-300"
-                      }
-                    >
-                      🎊 <span className={"text-primary"}>1000+</span> Selection
-                      in JEE Mains 🎊
-                    </h2>
-                    <Image
-                      unoptimized
-                      src={images.statsBoy}
-                      alt={"Competishun Stats"}
-                      width={500}
-                      height={500}
-                      objectFit={"cover"}
-                      className={"rounded-3xl"}
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
+                    🎊 <span className={"text-primary"}>1000+</span> Selection
+                    in JEE Mains 🎊
+                  </h2>
+                  <Image
+                    unoptimized
+                    src={
+                      statsData.current
+                        ? statsData.current[0].carouselLink1
+                        : images.statsBoy
+                    }
+                    alt={"Competishun Stats"}
+                    width={500}
+                    height={500}
+                    objectFit={"cover"}
+                    className={"rounded-3xl"}
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem
+                className={"flex flex-row gap-x-0 p-0 w-fit justify-center "}
+              >
+                <div
+                  className={
+                    "gradientBorder relative rounded-3xl w-fit flex flex-col items-center"
+                  }
+                  style={{ padding: 2 }}
+                >
+                  <div
+                    className={
+                      "absolute z-10 w-full h-full flex flex-col items-center rounded-3xl bg-gradient-to-t from-black to-transparent"
+                    }
+                  />
+                  <h2
+                    className={
+                      "absolute bottom-10 z-10 text-2xl sm:text-3xl px-3 sm:px-5 font-extrabold text-gray-300"
+                    }
+                  >
+                    🎊 <span className={"text-primary"}>1000+</span> Selection
+                    in JEE Mains 🎊
+                  </h2>
+                  <Image
+                    unoptimized
+                    src={
+                      statsData.current
+                        ? statsData.current[0].carouselLink2
+                        : images.statsBoy
+                    }
+                    alt={"Competishun Stats"}
+                    width={500}
+                    height={500}
+                    objectFit={"cover"}
+                    className={"rounded-3xl"}
+                  />
+                </div>
+              </CarouselItem>
+              <CarouselItem
+                className={"flex flex-row gap-x-0 p-0 w-fit justify-center "}
+              >
+                <div
+                  className={
+                    "gradientBorder relative rounded-3xl w-fit flex flex-col items-center"
+                  }
+                  style={{ padding: 2 }}
+                >
+                  <div
+                    className={
+                      "absolute z-10 w-full h-full flex flex-col items-center rounded-3xl bg-gradient-to-t from-black to-transparent"
+                    }
+                  />
+                  <h2
+                    className={
+                      "absolute bottom-10 z-10 text-2xl sm:text-3xl px-3 sm:px-5 font-extrabold text-gray-300"
+                    }
+                  >
+                    🎊 <span className={"text-primary"}>1000+</span> Selection
+                    in JEE Mains 🎊
+                  </h2>
+                  <Image
+                    unoptimized
+                    src={
+                      statsData.current
+                        ? statsData.current[0].carouselLink3
+                        : images.statsBoy
+                    }
+                    alt={"Competishun Stats"}
+                    width={500}
+                    height={500}
+                    objectFit={"cover"}
+                    className={"rounded-3xl"}
+                  />
+                </div>
+              </CarouselItem>
+              {/*))}*/}
             </CarouselContent>
           </Carousel>
           <div
@@ -143,9 +231,10 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  200+
+                  {statsData.current
+                    ? statsData.current[0].statsDesc3
+                    : `12k+ \n Aspiring IITians`}
                 </span>{" "}
-                <br /> Recorded Lectures
               </h2>
             </motion.div>
             <motion.div
@@ -159,9 +248,11 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  20k+
-                </span>{" "}
-                <br /> Students in IIT
+                  {statsData.current
+                    ? statsData.current[0].statsDesc4
+                    : `12k+ \n
+                     Aspiring IITians`}
+                </span>
               </h2>
             </motion.div>
           </div>
