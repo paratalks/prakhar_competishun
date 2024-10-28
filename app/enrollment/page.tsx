@@ -27,6 +27,7 @@ import { images } from "@/constants";
 import { useState } from "react";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -302,9 +303,27 @@ export default function EnrollmentForm() {
       </main>
 
       <footer className="w-full p-4 border-t text-center text-sm text-muted-foreground">
+        <Script>
+          {`window.addEventListener("load", function () {
+            if (window.location.href.indexOf('/thankyou') != -1 && window.location.href.indexOf('?name=') != -1) {
+              var totalVal = decodeURIComponent(window.location.href).split("transactionId=")[1].split("&")[0]
+              var orderId = decodeURIComponent(window.location.href).split("amount=")[1].split("&")[0]
+              gtag("event", "conversion", {
+                send_to: "AW-10838004875/GwYGCL6oxeEZEIup-68o",
+                value: parseFloat(totalVal),
+                currency: "INR",
+                transaction_id: orderId,
+              })
+            }
+            if (window.location.pathname.includes("/formThankYou") != -1) {
+              gtag("event", "conversion", {
+                send_to: "AW-10838004875/gddNCMGoxeEZEIup-68o",
+              })
+            }
+          })`}
+        </Script>
         <p>
-          &copy; {new Date().getFullYear()} Your Educational Institute. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} Competishun. All rights reserved.
         </p>
       </footer>
     </div>

@@ -70,6 +70,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               Name of student
             </Label>
             <Input
+              required={true}
               id="queryName"
               name={"query-name"}
               placeholder={"Full Name"}
@@ -88,6 +89,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               Phone of student
             </Label>
             <Input
+              required={true}
               id="queryPhone"
               name={"query-phone"}
               className={
@@ -106,6 +108,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               Email of student
             </Label>
             <Input
+              required={true}
               id="queryEmail"
               name={"query-email"}
               className={
@@ -124,6 +127,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
               City of student
             </Label>
             <Input
+              required={true}
               id="queryCity"
               name={"query-city"}
               className={
