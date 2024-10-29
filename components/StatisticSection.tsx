@@ -66,7 +66,8 @@ const StatisticSection = () => {
                 >
                   {statsData.current
                     ? statsData.current[0].statsDesc1
-                    : `12k+ \n Aspiring IITians`}
+                    : `12k+ \n Aspiring IITians`}{" "}
+                  <br /> Selection
                 </span>{" "}
               </h2>
             </motion.div>
@@ -84,6 +85,7 @@ const StatisticSection = () => {
                   {statsData.current
                     ? statsData.current[0].statsDesc2
                     : `12k+ \n Aspiring IITians`}
+                  <br /> Selection
                 </span>
               </h2>
             </motion.div>
@@ -126,7 +128,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current
+                      statsData.current &&
+                      statsData.current[0].carouselLink1 != null
                         ? statsData.current[0].carouselLink1
                         : images.statsBoy
                     }
@@ -163,7 +166,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current
+                      statsData.current &&
+                      statsData.current[0].carouselLink2 != null
                         ? statsData.current[0].carouselLink2
                         : images.statsBoy
                     }
@@ -200,7 +204,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current
+                      statsData.current &&
+                      statsData.current[0].carouselLink3 != null
                         ? statsData.current[0].carouselLink3
                         : images.statsBoy
                     }
@@ -234,6 +239,7 @@ const StatisticSection = () => {
                   {statsData.current
                     ? statsData.current[0].statsDesc3
                     : `12k+ \n Aspiring IITians`}
+                  <br /> Selection
                 </span>{" "}
               </h2>
             </motion.div>
@@ -252,6 +258,7 @@ const StatisticSection = () => {
                     ? statsData.current[0].statsDesc4
                     : `12k+ \n
                      Aspiring IITians`}
+                  <br /> Selection
                 </span>
               </h2>
             </motion.div>
