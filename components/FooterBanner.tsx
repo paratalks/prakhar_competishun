@@ -43,19 +43,21 @@ const FooterBanner = () => {
               </p>
             </h2>
             <div className={"w-full gradientBorder rounded-2xl"}>
-              <motion.button
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  duration: 0.8,
-                  repeat: Infinity,
-                  ease: "anticipate",
-                }}
-                className={
-                  "bg-blue-700 secondary-button-animation  font-bold text-2xl border p-5 w-full rounded-2xl"
-                }
-              >
-                Join Now <span className={"ml-2"}>🏆</span>
-              </motion.button>
+              <a href="/enrollment" className={"w-full h-full"}>
+                <motion.button
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    ease: "anticipate",
+                  }}
+                  className={
+                    "bg-blue-700 secondary-button-animation  font-bold text-2xl border p-5 w-full rounded-2xl"
+                  }
+                >
+                  Join Now <span className={"ml-2"}>🏆</span>
+                </motion.button>
+              </a>
             </div>
           </div>
           <div
