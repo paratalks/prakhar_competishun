@@ -25,6 +25,7 @@ import {
   getStatsData,
   getTestimonialData,
 } from "@/lib/fetchData";
+import { Models } from "appwrite";
 export default function Home() {
   const [clipPath, setClipPath] = useState("circle(0%)");
   const imageContainerRef = useRef(null);
@@ -33,7 +34,7 @@ export default function Home() {
     xPercent: 0,
     yPercent: 0,
   });
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<Models.DocumentList<Models.Document>>();
   const [scope, popAnimate] = useAnimate();
   const [starsScope, twinkleAnimation] = useAnimate();
   const [playMagicSound] = useSound(sounds.magicSound, { volume: 0.5 });
@@ -69,11 +70,11 @@ export default function Home() {
   }, [screen.width, screen.height]);
   // use effect to fetch data
   const fetchData = async () => {
-    await getData().then((res) => setData(res.documents));
+    await getData().then((res) => setData(res));
   };
   useEffect(() => {
     fetchData();
-  }, [data]);
+  }, []);
   // handling mouse move on model on hero section
   const handleMouseMove = (e: { clientX: number; clientY: number }) => {
     if (!imageContainerRef.current) return;
@@ -243,7 +244,9 @@ export default function Home() {
                       "text-black text-[0.5rem] sm:text-xs lg:text-xl font-extrabold flex flex-row gap-x-5"
                     }
                   >
-                    24*7 Doubt Solving
+                    {data && data.documents.length > 0
+                      ? data.documents[0].heroSectionStats1
+                      : "24 * 7 Doubt Solving"}
                   </p>
                 </div>
               </motion.div>
@@ -273,7 +276,9 @@ export default function Home() {
                       "text-black text-[0.5rem] sm:text-xs lg:text-xl font-extrabold flex flex-row gap-x-5"
                     }
                   >
-                    24*7 Doubt Solving
+                    {data && data.documents.length > 0
+                      ? data.documents[0].heroSectionStats2
+                      : "24 * 7 Doubt Solving"}
                   </p>
                 </div>
               </motion.div>
@@ -407,7 +412,7 @@ export default function Home() {
                   scrible={screen.width >= 640}
                 />
               </h2>
-              <YoutubeRecom youtubeLink={data && data[0].videoLink} />
+              <YoutubeRecom youtubeLink={data && data.documents[0].videoLink} />
             </div>
           </div>
         </section>
@@ -418,7 +423,7 @@ export default function Home() {
 
         <FaqSection />
         <div className={" flex flex-col items-center"}>
-          <PricingSection courseFees={data && data[0].price} />
+          <PricingSection courseFees={data && data.documents[0].price} />
         </div>
         <StatisticSection />
 

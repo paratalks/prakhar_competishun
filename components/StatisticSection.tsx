@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { blurs, images } from "@/constants";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -11,17 +11,18 @@ import {
 } from "@/components/ui/carousel";
 import AutoPlay from "embla-carousel-autoplay";
 import { getStatsData } from "@/lib/fetchData";
+import { Models } from "appwrite";
 const StatisticSection = () => {
-  const statsData = useRef<any>();
+  const [statsData, setStatsData] =
+    useState<Models.DocumentList<Models.Document>>();
   const fetchData = async () => {
-    await getStatsData().then((res) => (statsData.current = res.documents));
+    await getStatsData().then((res) => setStatsData(res));
   };
   useEffect(() => {
     fetchData();
-  }, [statsData]);
+  }, []);
   return (
     <section
-      onLoad={() => console.log(statsData.current)}
       className={"w-full h-full relative flex flex-col items-center mt-32"}
     >
       <div className={"absolute w-screen h-full"}>
@@ -64,8 +65,8 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  {statsData.current
-                    ? statsData.current[0].statsDesc1
+                  {statsData
+                    ? statsData.documents[0].statsDesc1
                     : `12k+ \n Aspiring IITians`}{" "}
                   <br /> Selection
                 </span>{" "}
@@ -82,11 +83,11 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  {statsData.current
-                    ? statsData.current[0].statsDesc2
-                    : `12k+ \n Aspiring IITians`}
+                  {statsData
+                    ? statsData.documents[0].statsDesc2
+                    : `12k+ \n Aspiring IITians`}{" "}
                   <br /> Selection
-                </span>
+                </span>{" "}
               </h2>
             </motion.div>
           </div>
@@ -128,9 +129,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current &&
-                      statsData.current[0].carouselLink1 != null
-                        ? statsData.current[0].carouselLink1
+                      statsData && statsData.documents[0].carouselLink1 != null
+                        ? statsData.documents[0].carouselLink1
                         : images.statsBoy
                     }
                     alt={"Competishun Stats"}
@@ -166,9 +166,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current &&
-                      statsData.current[0].carouselLink2 != null
-                        ? statsData.current[0].carouselLink2
+                      statsData && statsData.documents[0].carouselLink2 != null
+                        ? statsData.documents[0].carouselLink2
                         : images.statsBoy
                     }
                     alt={"Competishun Stats"}
@@ -204,9 +203,8 @@ const StatisticSection = () => {
                   <Image
                     unoptimized
                     src={
-                      statsData.current &&
-                      statsData.current[0].carouselLink3 != null
-                        ? statsData.current[0].carouselLink3
+                      statsData && statsData.documents[0].carouselLink3 != null
+                        ? statsData.documents[0].carouselLink3
                         : images.statsBoy
                     }
                     alt={"Competishun Stats"}
@@ -236,8 +234,8 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  {statsData.current
-                    ? statsData.current[0].statsDesc3
+                  {statsData
+                    ? statsData.documents[0].statsDesc3
                     : `12k+ \n Aspiring IITians`}
                   <br /> Selection
                 </span>{" "}
@@ -254,8 +252,8 @@ const StatisticSection = () => {
                 <span
                   className={"sm:text-2xl lg:text-3xl text-xs font-extrabold"}
                 >
-                  {statsData.current
-                    ? statsData.current[0].statsDesc4
+                  {statsData
+                    ? statsData.documents[0].statsDesc4
                     : `12k+ \n
                      Aspiring IITians`}
                   <br /> Selection

@@ -6,19 +6,19 @@ import { icons, illustrations, images, prospectusCategory } from "@/constants";
 import { motion } from "framer-motion";
 import PricingSection from "@/components/PricingSection";
 import { getRelatedCourseData } from "@/lib/fetchData";
+import { Models } from "appwrite";
 
 const ProspectusSection = () => {
   const [selectedCourse, setSelectedCourse] = useState(-1);
   const [selectedCategory, setSelectedCategory] = useState(0);
-  const [relatedCourse, setRelatedCourses] = useState<any>([]);
+  const [relatedCourse, setRelatedCourses] =
+    useState<Models.DocumentList<Models.Document>>();
   const fetchData = async () => {
-    await getRelatedCourseData().then((res) =>
-      setRelatedCourses(res.documents),
-    );
+    await getRelatedCourseData().then((res) => setRelatedCourses(res));
   };
   useEffect(() => {
     fetchData();
-  }, [relatedCourse]);
+  }, []);
   return (
     <section
       id={"prospectusSection"}
@@ -96,28 +96,31 @@ const ProspectusSection = () => {
               "flex flex-col sm:flex-row justify-center  gap-y-10  gap-x-14 w-full flex-wrap "
             }
           >
-            {(relatedCourse.length > 0 ? relatedCourse : []).map(
-              (_: any, i: any) => (
-                <div
-                  key={i}
-                  onMouseEnter={() => {
-                    setSelectedCourse(i);
-                  }}
-                  onMouseLeave={() => {
-                    setSelectedCourse(-1);
-                  }}
-                  className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.8] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
-                >
-                  <div className={"flex flex-col h-full p-2 w-full gap-2"}>
-                    <div className={"p-1 bg-foreground rounded-full w-fit"}>
-                      <Check color={"#F15E04"} />
-                    </div>
-                    <h3 className={"text-2xl font-extrabold h-1/2"}>
-                      {relatedCourse[i].title}
-                    </h3>
-                    <p className={"text-sm text-gray-300"}>
-                      {relatedCourse[i].desc}
-                    </p>
+            {(relatedCourse && relatedCourse.documents.length > 0
+              ? relatedCourse.documents
+              : []
+            ).map((_: any, i: any) => (
+              <div
+                key={i}
+                onMouseEnter={() => {
+                  setSelectedCourse(i);
+                }}
+                onMouseLeave={() => {
+                  setSelectedCourse(-1);
+                }}
+                className={`${selectedCourse != -1 && selectedCourse != i ? "blur-md" : "blur-none"} hover:bg-primary coursesItem bg-primary/[0.8] w-full sm:w-1/3 md:w-1/4 group hover:scale-125 transition-all duration-300 flex flex-row gap-x-8 rounded-3xl p-2 border border-white items-start justify-start`}
+              >
+                <div className={"flex flex-col h-full p-2 w-full gap-2"}>
+                  <div className={"p-1 bg-foreground rounded-full w-fit"}>
+                    <Check color={"#F15E04"} />
+                  </div>
+                  <h3 className={"text-2xl font-extrabold h-1/2"}>
+                    {relatedCourse && relatedCourse.documents[i].title}
+                  </h3>
+                  <p className={"text-sm text-gray-300"}>
+                    {relatedCourse && relatedCourse.documents[i].desc}
+                  </p>
+                  <a href={relatedCourse && relatedCourse.documents[i].link}>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       className={
@@ -127,10 +130,10 @@ const ProspectusSection = () => {
                       Join Now
                       <ArrowRight />
                     </motion.button>
-                  </div>
+                  </a>
                 </div>
-              ),
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

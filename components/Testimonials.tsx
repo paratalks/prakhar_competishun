@@ -29,7 +29,7 @@ const Testimonials = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [testimonial]);
+  }, []);
   return (
     <section className={" sm:mt-10 md:mt-12 relative"}>
       <div className={"w-full flex justify-center items-center relative"}>
