@@ -510,7 +510,7 @@ export default function Home() {
                 <span className="text-sm  sm:text-center  text-gray-400">
                   © 2024{" "}
                   <a
-                    href="https://competishun.com/"
+                    href="https://champ.competishun.in/"
                     className="hover:underline"
                   >
                     Competishun™
