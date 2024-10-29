@@ -23,7 +23,7 @@ const HeroSectionSlider = ({ ...props }) => {
     fetchData();
     setScreen({ width: window.innerWidth, height: window.innerHeight });
     setSmallScreen(window.innerWidth < 640);
-  }, [screen.width, screen.height, smallScreen]);
+  }, [screen.width, screen.height, smallScreen, sliderData, sliderData.length]);
   return (
     <Carousel
       plugins={[
