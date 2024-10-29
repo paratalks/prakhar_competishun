@@ -472,14 +472,14 @@ export default function Home() {
                         </li>
                         <li className="mb-4 hover:text-white">
                           <a
-                            href="https://competishun.com/"
+                            href="https://champ.competishun.in/"
                             className="hover:underline"
                           >
                             FAQ
                           </a>
                         </li>
                         <li className={"hover:text-white"}>
-                          <a href="https://tailwindcss.com/">FAQ</a>
+                          <a href="https://champ.competishun.in/">FAQ</a>
                         </li>
                       </ul>
                     </div>
