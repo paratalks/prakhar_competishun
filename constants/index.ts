@@ -143,7 +143,7 @@ export const prospectusCategory = [
 export const mentors = [
   {
     title: "Mohit sir",
-    desc: "  B.Tech, IIT Delhi : Mohit Tyagi Sir (MT sir) holds more than 22 years of experience and is one of the finest faculty of Mathematics who can not only teach Mathematics, but create a love for it among the Students. Having headed the Maths Team as HOD (Maths) at one of the leading coaching institute of Kota. His channel at YouTube is a source of Inspiration for both students & faculty members.",
+    desc: "  B.Tech, IIT Delhi : Mohit Tyagi Sir (MT sir) : Mathematics",
     experience: [
       {
         year: "2021",
@@ -163,7 +163,7 @@ export const mentors = [
   },
   {
     title: "Amit sir",
-    desc: "B.tech, IIT- Delhi  Amit Bijarnia Sir (ABJ sir) is a graduate from IIT-Delhi, a very enthusiastic Physics Teacher with a great love for the subject and very popular among the students of JEE (Advanced) / IIT-JEE. His ability to make the students imagine the problem and reach its solution in quick time is very unique. He is very much adored and loved by the Students for his ability to capture the vivid world of Physics and present it to the students in a lucid manner so as to create a love for the subject. Over the years, numerous students taught by him at Kota, have captured prestigious ranks in IIT-JEE (Advanced).",
+    desc: "B.tech, IIT- Delhi  Amit Bijarnia Sir (ABJ sir) : Physics",
     experience: [
       {
         year: "2021",
@@ -183,7 +183,7 @@ export const mentors = [
   },
   {
     title: "Alok sir",
-    desc: "B.TECH, NIT-ALLAHABAD (EX SCIENTIST - ISRO) Alok Sir (ALK Sir), held senior faculty positions among many nationally reputed IIT-JEE coaching institutions and is well known for making the subject simple, interesting for students by his organized way of teaching. His exceptional approach of relating various topics of chemistry with practical applications create a deep interest and a sense of belonging for Chemistry. Being a former Scientist of ISRO, he believes that Science and technology will a play a pivotal role in the development of our country and strives hard to motivate students to pursue the same.",
+    desc: "B.TECH, NIT-ALLAHABAD (EX SCIENTIST - ISRO) Alok Sir (ALK Sir)",
     experience: [
       {
         year: "2021",
@@ -203,7 +203,7 @@ export const mentors = [
   },
   {
     title: "Neeraj sir",
-    desc: ' M.Sc., NET-JRF, SLET : Neeraj Sir (NS Sir), has vast experience of teaching Organic Chemistry as  Senior Faculty in a Reputed National Institute for past 14 Years. He is known for teaching to "the point and in a simplified way such that students are able to score well in Organic Chemistry. He has nurtured many Top-100 AIRs in IIT-JEE(Main)& (Main+Advanced).',
+    desc: " M.Sc., NET-JRF, SLET : Neeraj Sir (NS Sir) : Chemistry",
     experience: [
       {
         year: "2021",
