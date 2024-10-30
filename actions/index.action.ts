@@ -5,13 +5,16 @@ import { databases, ID } from "@/lib/appwrite";
 
 export const createQuery = async (data: any) => {
   try {
-    console.log(data);
     return await databases
       .createDocument(databaseId, queriesCollectionId, ID.unique(), data)
       .then((res) => {
+        console.log(res);
+
         return res;
       });
   } catch (error) {
+    console.log(error);
+
     return error;
   }
 };

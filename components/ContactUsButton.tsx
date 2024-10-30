@@ -36,11 +36,11 @@ const ContactUsButton = ({ variant = "primary" }) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     await createQuery({
-      name: formData.get("query-name")?.toString(),
-      phone: formData.get("query-phone")?.toString(),
-      query: formData.get("query-desc")?.toString(),
-      email: formData.get("query-email")?.toString(),
-      target: formData.get("query-target")?.toString(),
+      name: formDataTemp.studentName,
+      phone: formDataTemp.studentPhone,
+      query: formDataTemp.studentQuery,
+      email: formDataTemp.studentEmail,
+      target: formDataTemp.studentTarget,
     });
     setFormData({
       studentName: "",
