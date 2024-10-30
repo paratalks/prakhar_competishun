@@ -123,7 +123,7 @@ export default function EnrollmentForm() {
           if (res.isOk) {
             setLoading(false);
             alert("payment succeed");
-            await router.push(
+            router.push(
               `/thankyou?name=${form.getValues("name")}&phone=${form.getValues("phone")}&class=${form.getValues("class")}&email=${form.getValues("email")}&transactionId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id}&currency=INR&amount=3999`,
             );
           } else {

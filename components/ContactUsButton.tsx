@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { createQuery } from "@/actions/index.action";
 import {
   Select,
@@ -20,10 +19,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { FormControl } from "@/components/ui/form";
+import { useRouter } from "next/navigation";
 
 const ContactUsButton = ({ variant = "primary" }) => {
-  const [formData, setFormData] = useState({
+  const [formDataTemp, setFormData] = useState({
     studentName: "",
     studentPhone: "",
     studentEmail: "",
@@ -32,6 +31,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
     studentQuery: "",
   });
   const isFormOpen = useRef(false);
+  const router = useRouter();
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -49,6 +49,9 @@ const ContactUsButton = ({ variant = "primary" }) => {
       studentQuery: "",
     });
     isFormOpen.current = false;
+    router.push(
+      `/formThankYou?name=${formDataTemp.studentName}&phone=${formDataTemp.studentPhone}&class=${formDataTemp.studentTarget}&email=${formDataTemp.studentEmail}`,
+    );
   };
   return (
     <Dialog>
@@ -72,6 +75,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
             {`Ask any doubt, hindering you from being a 'Champ'`}
           </DialogDescription>
         </DialogHeader>
+
         <form onSubmit={handleFormSubmit}>
           <div className="flex flex-col items-center space-x-2 gap-y-5">
             <Label htmlFor="" className="sr-only">
@@ -85,10 +89,10 @@ const ContactUsButton = ({ variant = "primary" }) => {
               className={
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
               }
-              value={formData.studentName}
+              value={formDataTemp.studentName}
               onChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentName: e.currentTarget.value,
                 });
               }}
@@ -104,10 +108,10 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
               }
               placeholder={"Mobile"}
-              value={formData.studentPhone}
+              value={formDataTemp.studentPhone}
               onChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentPhone: e.currentTarget.value,
                 });
               }}
@@ -123,10 +127,10 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
               }
               placeholder={"Email"}
-              value={formData.studentEmail}
+              value={formDataTemp.studentEmail}
               onChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentEmail: e.currentTarget.value,
                 });
               }}
@@ -142,10 +146,10 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
               }
               placeholder={"City"}
-              value={formData.studentCity}
+              value={formDataTemp.studentCity}
               onChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentCity: e.currentTarget.value,
                 });
               }}
@@ -157,20 +161,18 @@ const ContactUsButton = ({ variant = "primary" }) => {
               required={true}
               onValueChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentTarget: e,
                 });
               }}
               name={"query-target"}
-              defaultValue={formData.studentTarget}
+              defaultValue={formDataTemp.studentTarget}
             >
-              <FormControl>
-                <SelectTrigger
-                  className={"bg-foreground text-background rounded-xl"}
-                >
-                  <SelectValue placeholder="Select a class" />
-                </SelectTrigger>
-              </FormControl>
+              <SelectTrigger
+                className={"bg-foreground text-background rounded-xl"}
+              >
+                <SelectValue placeholder="Select a class" />
+              </SelectTrigger>
               <SelectContent
                 className={"bg-foreground text-background rounded-xl"}
               >
@@ -191,10 +193,10 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
               }
               cols={5}
-              value={formData.studentQuery}
+              value={formDataTemp.studentQuery}
               onChange={(e) => {
                 setFormData({
-                  ...formData,
+                  ...formDataTemp,
                   studentQuery: e.currentTarget.value,
                 });
               }}
@@ -205,11 +207,7 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 size="sm"
                 className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
               >
-                <Link
-                  href={`/formThankYou?name=${formData.studentName}&phone=${formData.studentPhone}&class=${formData.studentTarget}&email=${formData.studentEmail}`}
-                >
-                  {`Make Me Champ`}
-                </Link>
+                {`Make Me Champ`}
               </Button>
             </div>
           </div>
