@@ -39,6 +39,8 @@ const ContactUsButton = ({ variant = "primary" }) => {
       name: formData.get("query-name")?.toString(),
       phone: formData.get("query-phone")?.toString(),
       query: formData.get("query-desc")?.toString(),
+      email: formData.get("query-email")?.toString(),
+      target: formData.get("query-target")?.toString(),
     });
     setFormData({
       studentName: "",
@@ -102,7 +104,6 @@ const ContactUsButton = ({ variant = "primary" }) => {
             </Label>
             <Input
               required={true}
-              id="queryPhone"
               name={"query-phone"}
               className={
                 "bg-amber-50 text-black rounded-xl placeholder:text-gray-600"
