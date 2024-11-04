@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import ScribledHighlightedText from "@/components/ScribledHighlightedText";
-import { aboutusImages, mentorImages } from "@/constants";
+import { aboutusImages, images, mentorImages } from "@/constants";
 
 const carouselImages = [
   "/placeholder.svg?height=400&width=1200",
@@ -36,9 +36,9 @@ export default function AboutUs() {
             {aboutusImages.map((src, index) => (
               <CarouselItem key={index}>
                 <Card className="border-0">
-                  <CardContent className="p-0 aspect-[2/1]">
+                  <CardContent className="p-0 aspect-[4/1]">
                     <Image
-                      src={mentorImages.collective}
+                      src={images.results}
                       alt={`Carousel image ${index + 1}`}
                       width={1080}
                       height={1080}

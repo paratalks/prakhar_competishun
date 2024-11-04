@@ -9,6 +9,7 @@ export const images = {
   halfCirclePrimary: "/assets/images/halfCirclePrimary.svg",
   guyWithTshirt: "/assets/images/guyWithTshirt.png",
   halfCircleNonPrimary: "/assets/images/halfCircleNonPrimary.svg",
+  results: "/assets/images/result.jpeg",
 };
 
 export const aboutusImages = [
@@ -45,7 +46,7 @@ export const mentorImages = {
   aloksir: "/assets/images/mentors/aloksir.png",
   mohitsir: "/assets/images/mentors/mohitsir.png",
   neerajsir: "/assets/images/mentors/neerajsir.png",
-  collective: "/assets/image/mentors/group_pic.png",
+  collective: "/assets/images/mentors/group_pic.png",
 };
 
 export const sounds = {
