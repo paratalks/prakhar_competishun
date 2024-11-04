@@ -31,16 +31,11 @@ const FeaturesSections = () => {
     },
   };
   return (
-    <section
-      onLoad={() => {
-        console.log(features);
-      }}
-      className={"featuresSection mt-12 relative"}
-    >
+    <section className={"featuresSection mt-12 relative"}>
       <div className={"w-full flex mt-56 justify-center"}>
         <div
           className={
-            "feature-section-content z-10 pb-36 relative flex flex-col gap-y-24 items-center justify-center w-full"
+            " z-10 pb-36 relative flex flex-col gap-y-24 items-center justify-center w-full"
           }
         >
           <motion.img
@@ -65,7 +60,9 @@ const FeaturesSections = () => {
             }
           >
             <div
-              className={"flex flex-col md:flex-row flex-wrap gap-y-10 w-full"}
+              className={
+                "flex flex-col md:flex-row flex-wrap gap-y-5 w-full sm:px-24"
+              }
             >
               {(features && features.documents.length > 0
                 ? features.documents
@@ -100,7 +97,11 @@ const FeaturesSections = () => {
                     >
                       {item.title}
                     </h3>
-                    <p className={"overflow-clip w-full text-lg lg:text-base"}>
+                    <p
+                      className={
+                        "overflow-clip w-full px-1 sm:px-0 text-lg lg:text-base"
+                      }
+                    >
                       {item.desc}
                     </p>
                   </div>

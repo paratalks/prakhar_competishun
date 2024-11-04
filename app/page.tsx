@@ -115,7 +115,7 @@ export default function Home() {
         >
           <div
             className={
-              "background-gradients w-full h-full flex items-center justify-center"
+              "background-gradients w-full h-full -z-10 flex items-center justify-center"
             }
           >
             <Image
@@ -177,49 +177,45 @@ export default function Home() {
                 alt={"Rolled Degree Icom"}
               />
             </div>
-            <div
-              className={
-                "absolute w-screen h-full modelImageContainer flex flex-col items-center origin-bottom"
-              }
-            >
-              <Image
-                unoptimized
-                onMouseLeave={handleMouseLeave}
-                src={images.modelImageHeroSec}
-                className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
-                alt={"Competishun Model"}
-                width={heroSectionModelDimension}
-                height={heroSectionModelDimension}
-                style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
-              />
-              <Image
-                unoptimized
-                src={images.modelImageHeroSec}
-                className={`absolute max-h-[50%] max-w-[80%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
-                alt={"Competishun Model"}
-                width={heroSectionModelDimension}
-                height={heroSectionModelDimension}
-              />
-              <Image
-                unoptimized
-                src={images.modelImageHeroSec}
-                className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
-                alt={"Competishun Model"}
-                width={heroSectionModelDimension}
-                height={heroSectionModelDimension}
-              />
-              <Image
-                unoptimized
-                ref={imageContainerRef}
-                onMouseMove={handleMouseMove}
-                src={images.modelImageHeroSec}
-                className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""}  `}
-                alt={"Competishun Model"}
-                width={heroSectionModelDimension}
-                height={heroSectionModelDimension}
-                style={{ transform: "translate(0, 6%)" }}
-              />
-            </div>
+
+            <Image
+              unoptimized
+              onMouseLeave={handleMouseLeave}
+              src={images.modelImageHeroSec}
+              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 z-10 ${activateTransition ? "transition-all duration-1000" : ""}`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+              style={{ clipPath: clipPath, transform: "translate(0, 6%)" }}
+            />
+            <Image
+              unoptimized
+              src={images.modelImageHeroSec}
+              className={`absolute max-h-[50%] max-w-[80%]  bottom-0 filter brightness-[50] -z-[3] -translate-x-1 translate-y-[6%]`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+            />
+            <Image
+              unoptimized
+              src={images.modelImageHeroSec}
+              className={`absolute max-h-[50%]  max-w-[80%]  bottom-0 filter blur-xl -z-[2] -translate-x-1 translate-y-[6%]`}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+            />
+            <Image
+              unoptimized
+              ref={imageContainerRef}
+              onMouseMove={handleMouseMove}
+              src={images.modelImageHeroSec}
+              className={`absolute max-h-[50%] max-w-[80%] bottom-0 ${activateTransition ? "transition-all duration-1000" : ""}  `}
+              alt={"Competishun Model"}
+              width={heroSectionModelDimension}
+              height={heroSectionModelDimension}
+              style={{ transform: "translate(0, 6%)" }}
+            />
+
             <div className={"w-screen features-modal"}>
               <motion.div
                 ref={scope}

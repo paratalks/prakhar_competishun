@@ -96,6 +96,20 @@ const FaqSection = () => {
             </div>
           </div>
         </div>
+        <div
+          className={
+            "w-full bg-primary rounded-xl md:rounded-3xl  hidden md:flex flex-row items-center justify-between px-10 py-5 gap-5"
+          }
+        >
+          <div className={"flex flex-col gap-1 "}>
+            <h3 className={" text-3xl font-bold"}>{`Still Having Doubt?`}</h3>
+            <p
+              className={"font-light text-sm"}
+            >{`Let's Resolve it together! fill the form`}</p>
+          </div>
+
+          <ContactUsButton variant={"secondary"} />
+        </div>
       </div>
     </section>
   );

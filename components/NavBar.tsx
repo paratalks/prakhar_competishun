@@ -2,26 +2,25 @@ import Image from "next/image";
 import { images, navLinks } from "@/constants";
 import { ChevronDown, Copy, Phone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { motion, useAnimate } from "framer-motion";
 
-import { createQuery } from "@/actions/index.action";
 import { redirect } from "next/navigation";
-import Link from "next/link";
 import ContactUsButton from "@/components/ContactUsButton";
 
 const NavBar = () => {
-  const [showPhone, setShowPhone] = useState(false);
-
   return (
-    <div className={"navbar-container max-sm:px-2"}>
+    <div className={"navbar-container max-sm:px-2 z-40"}>
       <div>
-        <Image
-          unoptimized
-          src={images.logo}
-          alt={"logo"}
-          width={80}
-          height={80}
-          className={"max-sm:w-20"}
-        />
+        <a href={"/"} className="flex items-center z-40">
+          <motion.img
+            onClick={() => {
+              redirect("/");
+            }}
+            src={images.logo}
+            alt={"logo"}
+            className={"w-24"}
+          />
+        </a>
       </div>
       <div
         className={` flex-row lg:gap-x-12 sm:gap-x-5 hidden sm:flex translate-x-10`}
@@ -101,7 +100,7 @@ const NavBar = () => {
 
           <p>{"8888-0000-21"}</p>
         </div>
-        <ContactUsButton />
+        <ContactUsButton openDialog={true} />
       </div>
     </div>
   );

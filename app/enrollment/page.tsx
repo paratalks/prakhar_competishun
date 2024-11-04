@@ -156,7 +156,10 @@ export default function EnrollmentForm() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary/20 to-background">
       <header className="w-full p-4 border-b flex flex-row items-center">
-        <Image src={images.logo} alt={"Logo"} width={50} height={50} />
+        <a href="/">
+          {" "}
+          <Image src={images.logo} alt={"Logo"} width={50} height={50} />
+        </a>
         <h1 className="text-2xl flex-1 font-bold text-center pr-10">
           Competishun Student Enrollment Form
         </h1>

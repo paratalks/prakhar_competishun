@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 
-const ContactUsButton = ({ variant = "primary" }) => {
+const ContactUsButton = ({ variant = "primary", openDialog = false }) => {
   const [formDataTemp, setFormData] = useState({
     studentName: "",
     studentPhone: "",
@@ -30,8 +30,9 @@ const ContactUsButton = ({ variant = "primary" }) => {
     studentTarget: "",
     studentQuery: "",
   });
-  const isFormOpen = useRef(false);
+  const [isFormOpen, setIsFormOpen] = useState(openDialog);
   const router = useRouter();
+
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -50,19 +51,19 @@ const ContactUsButton = ({ variant = "primary" }) => {
       studentTarget: "",
       studentQuery: "",
     });
-    isFormOpen.current = false;
+    setIsFormOpen(false);
     router.push(
       `/formThankYou?name=${formDataTemp.studentName}&phone=${formDataTemp.studentPhone}&class=${formDataTemp.studentTarget}&email=${formDataTemp.studentEmail}`,
     );
   };
   return (
-    <Dialog>
+    <Dialog open={isFormOpen}>
       <DialogTrigger asChild>
         <button
           onClick={() => {
-            isFormOpen.current = true;
+            setIsFormOpen(true);
           }}
-          className={`text-xs font-bold w-fit contact-us-button ${variant}-button-animation flex flex-row bg-${variant} rounded-xl py-2.5 px-5 transition-all duration-300`}
+          className={`text-lg font-bold w-fit contact-us-button ${variant}-button-animation flex flex-row bg-${variant} rounded-xl py-2.5 px-5 transition-all duration-300`}
         >
           {"Contact Us"}
         </button>
@@ -202,13 +203,26 @@ const ContactUsButton = ({ variant = "primary" }) => {
                 });
               }}
             />
-            <div className={"w-full flex flex-row gap-5 justify-center"}>
+            <div
+              className={
+                "w-full flex flex-row gap-3 items-center justify-center relative"
+              }
+            >
               <Button
                 type="submit"
                 size="sm"
-                className="px-3 rounded-2xl bg-secondary hover:bg-secondary mt-5 hover:scale-110 secondary-button-animation transition-all duration-300"
+                className="text-lg px-4 py-2 rounded-2xl bg-secondary hover:bg-secondary hover:scale-110 secondary-button-animation transition-all duration-300"
               >
                 {`Make Me Champ`}
+              </Button>
+
+              <Button
+                onClick={() => {
+                  setIsFormOpen(false);
+                }}
+                className={`absolute right-0 w-fit contact-us-button ${variant}-button-animation flex flex-row bg-none border border-white rounded-3xl py-0 px-5 transition-all duration-300`}
+              >
+                {"close"}
               </Button>
             </div>
           </div>
