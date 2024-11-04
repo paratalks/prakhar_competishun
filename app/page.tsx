@@ -26,6 +26,7 @@ import {
   getTestimonialData,
 } from "@/lib/fetchData";
 import { Models } from "appwrite";
+import LeadFormWidget from "@/components/LeadFormWidget";
 export default function Home() {
   const [clipPath, setClipPath] = useState("circle(0%)");
   const imageContainerRef = useRef(null);
@@ -64,10 +65,9 @@ export default function Home() {
   };
   // use effect for animations
   useEffect(() => {
-    setScreen({ width: window.innerWidth, height: window.innerHeight });
     popFeatureModalAnimation();
     twinkleAnimationHandler();
-  }, [screen.width, screen.height]);
+  }, []);
   // use effect to fetch data
   const fetchData = async () => {
     await getData().then((res) => setData(res));
@@ -75,6 +75,19 @@ export default function Home() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    setScreen({ width: window.innerWidth, height: window.innerHeight });
+    const handleResize = () => {
+      setScreen({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize); // Clean up on unmount
+    };
+  }, []);
+
   // handling mouse move on model on hero section
   const handleMouseMove = (e: { clientX: number; clientY: number }) => {
     if (!imageContainerRef.current) return;
@@ -101,17 +114,16 @@ export default function Home() {
     );
   };
   return (
-    <div className="w-full flex relative flex-col items-center">
+    <div className="w-full max-w-screen flex relative flex-col items-center">
       <div
-        className={"z-40 w-screen overflow-hidden md:flex hidden"}
+        className={"z-40 w-screen overflow-hidden "}
         id="chat-widget"
         data-key="670f87c42f6b943716677af3"
       ></div>
+      <LeadFormWidget />
       <div className={"w-11/12 flex flex-col"}>
         <section
-          className={
-            "hero-section flex flex-col w-full h-[120vh] md:h-screen relative"
-          }
+          className={"hero-section flex flex-col w-full h-[120vh]  relative"}
         >
           <div
             className={

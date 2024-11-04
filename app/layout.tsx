@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
@@ -18,7 +18,13 @@ export const metadata: Metadata = {
   title: "Competishun",
   description: "Best website for preparing for JEE and NEET",
 };
-
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
+  userScalable: false,
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +34,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Competishun Champ</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-10838004875"

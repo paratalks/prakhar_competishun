@@ -108,7 +108,7 @@ const FaqSection = () => {
             >{`Let's Resolve it together! fill the form`}</p>
           </div>
 
-          <ContactUsButton variant={"secondary"} />
+          <ContactUsButton variant={"secondary"} openDialog={false} />
         </div>
       </div>
     </section>

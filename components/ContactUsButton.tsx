@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
+import { X } from "lucide-react";
 
 const ContactUsButton = ({ variant = "primary", openDialog = false }) => {
   const [formDataTemp, setFormData] = useState({
@@ -30,9 +31,17 @@ const ContactUsButton = ({ variant = "primary", openDialog = false }) => {
     studentTarget: "",
     studentQuery: "",
   });
-  const [isFormOpen, setIsFormOpen] = useState(openDialog);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const router = useRouter();
-
+  const intervalRef: React.MutableRefObject<boolean> = useRef(false);
+  useEffect(() => {
+    if (openDialog && !intervalRef.current) {
+      setTimeout(() => {
+        setIsFormOpen(true);
+        intervalRef.current = true;
+      }, 10000);
+    }
+  }, []);
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -63,7 +72,7 @@ const ContactUsButton = ({ variant = "primary", openDialog = false }) => {
           onClick={() => {
             setIsFormOpen(true);
           }}
-          className={`text-lg font-bold w-fit contact-us-button ${variant}-button-animation flex flex-row bg-${variant} rounded-xl py-2.5 px-5 transition-all duration-300`}
+          className={` text-xs sm:text-lg font-bold w-fit contact-us-button ${variant}-button-animation flex flex-row bg-${variant} rounded-xl py-2.5 px-5 transition-all duration-300`}
         >
           {"Contact Us"}
         </button>
@@ -215,18 +224,18 @@ const ContactUsButton = ({ variant = "primary", openDialog = false }) => {
               >
                 {`Make Me Champ`}
               </Button>
-
-              <Button
-                onClick={() => {
-                  setIsFormOpen(false);
-                }}
-                className={`absolute right-0 w-fit contact-us-button ${variant}-button-animation flex flex-row bg-none border border-white rounded-3xl py-0 px-5 transition-all duration-300`}
-              >
-                {"close"}
-              </Button>
             </div>
           </div>
         </form>
+        <button
+          onClick={() => {
+            setIsFormOpen(false);
+            intervalRef.current = false;
+          }}
+          className={`absolute right-0 w-fit contact-us-button flex flex-row bg-transparent p-5`}
+        >
+          <X />
+        </button>
       </DialogContent>
     </Dialog>
   );

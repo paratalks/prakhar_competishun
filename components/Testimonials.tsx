@@ -21,8 +21,16 @@ const Testimonials = () => {
   const [smallScreen, setSmallScreen] = useState(false);
   useEffect(() => {
     setScreen({ width: window.innerWidth, height: window.innerHeight });
-    setSmallScreen(window.innerWidth < 640);
-  }, [screen.width, screen.height, smallScreen]);
+    const handleResize = () => {
+      setScreen({ width: window.innerWidth, height: window.innerHeight });
+      setSmallScreen(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize); // Clean up on unmount
+    };
+  }, []);
 
   const fetchData = async () => {
     setTestimonial(await getTestimonialData().then((res) => res));

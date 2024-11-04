@@ -12,8 +12,16 @@ const MentorSection = () => {
   // Check if a mentor is being animated
   const isAnimating = animatingMentorIndex !== -1;
   useEffect(() => {
-    setScreen({ width: window.outerWidth, height: window.outerHeight });
-  }, [screen.width, screen.height]);
+    setScreen({ width: window.innerWidth, height: window.innerHeight });
+    const handleResize = () => {
+      setScreen({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize); // Clean up on unmount
+    };
+  }, []);
   return (
     <section className="w-full flex flex-col items-center relative">
       <div className=" w-screen  ">
