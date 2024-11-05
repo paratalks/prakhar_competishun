@@ -24,11 +24,13 @@ const HeroSectionSlider = ({ ...props }) => {
     const handleResize = () => {
       setScreen({ width: window.innerWidth, height: window.innerHeight });
     };
-
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize); // Clean up on unmount
     };
+  }, []);
+  useEffect(() => {
+    fetchData();
   }, []);
   return (
     <Carousel
