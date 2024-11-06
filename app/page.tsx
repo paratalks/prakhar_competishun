@@ -480,14 +480,14 @@ export default function Home() {
                         </li>
                         <li className="mb-4 hover:text-white">
                           <a
-                            href="https://champ.competishun.in/"
+                            href="https://champ.competishun.com/"
                             className="hover:underline"
                           >
                             FAQ
                           </a>
                         </li>
                         <li className={"hover:text-white"}>
-                          <a href="https://champ.competishun.in/">FAQ</a>
+                          <a href="https://champ.competishun.com/">FAQ</a>
                         </li>
                       </ul>
                     </div>
@@ -518,7 +518,7 @@ export default function Home() {
                 <span className="text-sm  sm:text-center  text-gray-400">
                   © 2024{" "}
                   <a
-                    href="https://champ.competishun.in/"
+                    href="https://champ.competishun.com/"
                     className="hover:underline"
                   >
                     Competishun™
