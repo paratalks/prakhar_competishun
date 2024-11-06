@@ -66,7 +66,7 @@ export default function EnrollmentForm() {
     },
   });
   const { toast } = useToast();
-  const amount = "2999";
+  const amount = "45000";
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
 
@@ -106,7 +106,7 @@ export default function EnrollmentForm() {
         class: form.getValues("class"),
         city: form.getValues("city"),
         state: form.getValues("state"),
-        course: "Champ",
+        course: "Prakhar",
       };
       await createEnrollment(data);
       const orderId: string = await createOrderId();
