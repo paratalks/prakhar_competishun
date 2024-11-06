@@ -108,24 +108,26 @@ export const heroSectionHastags = [
 
 export const Faqs = [
   {
-    question: "Will I get Physical Study Material?",
+    question: "Who must use Champ course for JEE MAIN preparation?",
     answer:
-      "With this Course Purchase, you will get only Digital Study Material like DPP’s and their respective Text and Video Solution. Physical Study Material is not provided with this Short term Course.",
+      "Champ is perfect for students who have completed their syllabus and now want to revise and strengthen their concepts to boost their rank further.",
   },
   {
-    question: "Will Classes be any Live Classes?",
+    question:
+      "Will I get personalized feedback on my performance in the Champ course?",
     answer:
-      "There will be only Recorded Scheduled Lectures will be provided. In week there will be LIVE INTERACTION Session for your guidance for 30 Minutes.",
+      "Yes, students receive personalized performance analysis, which helps in understanding and improving areas that need more focus.",
   },
   {
-    question: "Will Test be conducted in this course? ",
+    question: "Will we have Guidance Session for JEE MAIN Preparation? ",
     answer:
-      "Test will be conducted on weekly basis as per test grid that will be provided to you along with the course. Test will be conducted on COMPETISHUN DIGITAL APP / WEBSITE and we will share the complete details in your Official Support Prior to your 1st test.",
+      "Yes, your batch will have regular guidance Session once in a week where you ask your doubts related to JEE MAIN preparation directly with MT Sir, ABJ Sir, ALK Sir or NS Sir.",
   },
   {
-    question: "Will Doubt clearing session will be conducted?",
+    question:
+      "Does the Champ course cover all the important topics comprehensively?",
     answer:
-      "you can ask your doubts in your doubt groups tagging faculties and you will get a reply at the earliest.",
+      "Absolutely! The Champ course is designed to revisit all important topics and high-yield areas, ensuring comprehensive coverage for maximum readiness.",
   },
   {
     question: "How Do you contact Support Staff of Competishun?",
