@@ -108,26 +108,24 @@ export const heroSectionHastags = [
 
 export const Faqs = [
   {
-    question: "Who must use Champ course for JEE MAIN preparation?",
+    question: "What is duration of this course?",
     answer:
-      "Champ is perfect for students who have completed their syllabus and now want to revise and strengthen their concepts to boost their rank further.",
+      "Starts 11th November 2024, with classes until November 2025 and access for revision through JEE Advanced 2026. ",
   },
   {
-    question:
-      "Will I get personalized feedback on my performance in the Champ course?",
+    question: "Should I enroll in Prakhar Integrated Course?",
     answer:
-      "Yes, students receive personalized performance analysis, which helps in understanding and improving areas that need more focus.",
+      "Yes, It’s ideal for XI-to-XII moving students or early droppers who had setbacks in XI due to various reasons and want to align their prep for JEE 2026.",
   },
   {
-    question: "Will we have Guidance Session for JEE MAIN Preparation? ",
+    question: "Will we have Guidance Session for JEE MAIN Preparation?",
     answer:
       "Yes, your batch will have regular guidance Session once in a week where you ask your doubts related to JEE MAIN preparation directly with MT Sir, ABJ Sir, ALK Sir or NS Sir.",
   },
   {
-    question:
-      "Does the Champ course cover all the important topics comprehensively?",
+    question: "What if I missed important topics in XI?",
     answer:
-      "Absolutely! The Champ course is designed to revisit all important topics and high-yield areas, ensuring comprehensive coverage for maximum readiness.",
+      "The course covers all essential XI and XII topics, including foundational concepts, so you can catch up effectively",
   },
   {
     question: "How Do you contact Support Staff of Competishun?",
@@ -228,23 +226,23 @@ export const mentors = [
 
 export const feature_Row1 = [
   {
-    title: "Expert Faculty",
-    desc: "Our experienced and highly qualified instructors are experts in their respective fields, providing students with top-notch guidance, personalized attention, and valuable insights to tackle the JEE Main.",
+    title: "Complete Syllabus Coverage",
+    desc: "This Competishun course, covers the entire JEE Main & Advanced syllabus for both 11th and 12th, giving you a structured approach to make sure no topic is left behind.",
     image: illustrations.illustration1,
   },
   {
-    title: "Rigorous Curriculum",
-    desc: "The course is meticulously crafted to cover the entire JEE Main syllabus. We prioritize essential topics, offer in-depth explanations, and provide ample practice material to strengthen your understanding",
+    title: "Engaging & In-Depth Lectures",
+    desc: "With the best edtech lectures, Learn with in-depth theory lectures, covering foundational to advanced concepts based on the latest JEE pattern.",
     image: illustrations.illustration1,
   },
   {
-    title: "Time-Efficient",
-    desc: "Designed as a condensed program, the crash course optimizes your preparation time, making it ideal for students with tight schedules or those looking for a last-minute refresher",
+    title: "Revision Programs",
+    desc: "Includes dedicated revision sessions for both JEE Main and Advanced, keeping you consistently prepared through the final stages.",
     image: illustrations.illustration1,
   },
   {
-    title: "Mock Tests and Practice Papers",
-    desc: "To gauge your progress and build confidence, we offer a series of mock tests and practice papers that simulate the actual exam.",
+    title: "Specialized Test Series & Analysis",
+    desc: "Take part in a dedicated test series with detailed performance analytics, helping you monitor progress, identify areas for improvement, and adjust your study plan.",
     image: illustrations.illustration1,
   },
   {
@@ -253,8 +251,8 @@ export const feature_Row1 = [
     image: illustrations.illustration1,
   },
   {
-    title: "Digital Study Materials",
-    desc: "Our meticulously curated Digital study materials resources will be provided",
+    title: "Personalized Study Paths",
+    desc: "Our flexible course structure allows customization based on your strengths, weaknesses, and time availability.\n",
     image: illustrations.illustration1,
   },
 ];

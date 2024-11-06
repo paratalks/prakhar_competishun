@@ -334,7 +334,7 @@ export default function Home() {
                 " text-xs sm:text-xl lg:text-lg mt-6 sm:mt-3 text-center xl:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
               }
             >
-              {`The Competishun High Achiever’s Main Program (CHAMP - 2025) is a specialized revision course designed to help students unlock excel in the JEE Main examination. `}
+              {`Prakhar Integrated course makes sure that you’re ready for JEE 2026 by focusing on mastery of concepts, revision, and exam strategy. Concisely created year long course just for you! `}
             </p>
             <a href="#pricing-section" className={"z-20"}>
               <motion.button
@@ -431,7 +431,8 @@ export default function Home() {
 
         <FaqSection />
         <div className={" flex flex-col items-center"}>
-          <PricingSection courseFees={data && data.documents[0].price} />
+          {/*<PricingSection courseFees={data && data.documents[0].price} />*/}
+          <PricingSection />
         </div>
         <StatisticSection />
 
