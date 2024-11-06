@@ -28,6 +28,7 @@ import { useState } from "react";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Script from "next/script";
+import { createEnrollment } from "@/actions/index.action";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -65,9 +66,10 @@ export default function EnrollmentForm() {
     },
   });
   const { toast } = useToast();
-  const amount = "1";
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const amount = "2999";
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
+
     processPayment();
 
     // Here you would typically send the form data to your server
@@ -97,6 +99,16 @@ export default function EnrollmentForm() {
   };
   const processPayment = async () => {
     try {
+      const data = {
+        name: form.getValues("name"),
+        phone: form.getValues("phone"),
+        email: form.getValues("email"),
+        class: form.getValues("class"),
+        city: form.getValues("city"),
+        state: form.getValues("state"),
+        course: "Champ",
+      };
+      await createEnrollment(data);
       const orderId: string = await createOrderId();
       const options = {
         key: process.env.key_id,
@@ -122,6 +134,7 @@ export default function EnrollmentForm() {
           if (res.isOk) {
             setLoading(false);
             alert("payment succeed");
+
             router.push(
               `/thankyou?name=${form.getValues("name")}&phone=${form.getValues("phone")}&class=${form.getValues("class")}&email=${form.getValues("email")}&transactionId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id}&currency=INR&amount=3999`,
             );
