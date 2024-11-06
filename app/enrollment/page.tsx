@@ -65,7 +65,7 @@ export default function EnrollmentForm() {
     },
   });
   const { toast } = useToast();
-  const amount = "45000";
+  const amount = "1";
   function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
     processPayment();
