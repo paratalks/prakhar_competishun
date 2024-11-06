@@ -259,21 +259,6 @@ export const feature_Row1 = [
   },
 ];
 
-export const feature_Row2 = [
-  {
-    title: "Mock Tests and Practice Papers",
-    desc: "To gauge your progress and build confidence, we offer a series of mock tests and practice papers that simulate the actual exam.",
-  },
-  {
-    title: "Doubt Resolution",
-    desc: "Our dedicated doubt-clearing sessions ensure that no question remains unanswered. Feel free to ask questions, seek clarification, and reinforce your topics",
-  },
-  {
-    title: "Digital Study Materials",
-    desc: "Our meticulously curated Digital study materials resources will be provided",
-  },
-];
-
 export const statisticsData = [
   {
     number: "12k+",
