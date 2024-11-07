@@ -4,7 +4,7 @@ import { icons } from "@/constants";
 import { useEffect, useState } from "react";
 
 const YoutubeRecom = ({
-  youtubeLink = "https://www.youtube.com/embed/QpeWhM0q0jw",
+  youtubeLink = "https://www.youtube.com/embed/pKGYI7CkvjQ",
 }) => {
   const [smallScreen, setSmallScreen] = useState(false);
   useEffect(() => {
@@ -38,9 +38,7 @@ const YoutubeRecom = ({
           src={youtubeLink}
           frameBorder="0"
           width={"100%"}
-          className={
-            "rounded-3xl  h-[40vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
-          }
+          className={"rounded-3xl aspect-[16/9]"}
           allowFullScreen
         />
       </div>

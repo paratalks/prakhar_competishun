@@ -305,7 +305,7 @@ export default function Home() {
                 "hero-title text-5xl sm:text-7xl lg:text-5xl xl:text-7xl text-wrap font-extrabold text-center"
               }
             >
-              {`Get into `}
+              {`Achieve `}
               <span
                 className={
                   "bg-gradient-to-r relative from-primary via-50% via-white to-blue-500 text-transparent bg-clip-text"
@@ -320,21 +320,22 @@ export default function Home() {
                 />
                 {` IIT `}
               </span>
-              {`with Competishun,`}
+              {`JEE Success With`}
             </h1>
             <h1
               className={
                 "hero-title text-5xl sm:text-7xl mt-2 lg:text-5xl xl:text-7xl font-extrabold text-wrap text-center"
               }
             >
-              <span className={"text-primary"}>99 Percentile</span> Dream begins
+              <span className={"text-primary"}>{`Prakhar Integrated `}</span>
+              {`Course`}
             </h1>
             <p
               className={
                 " text-xs sm:text-xl lg:text-lg mt-6 sm:mt-3 text-center xl:w-1/2 w-full mb-6 lg:mb-2 max-sm:text-gray-500"
               }
             >
-              {`Prakhar Integrated course makes sure that you’re ready for JEE 2026 by focusing on mastery of concepts, revision, and exam strategy. Concisely created year long course just for you! `}
+              {`A one-year online course to master both Class 11 & 12 for JEE 2026. Perfect for catching up, staying on track, and achieving your IIT dream with Competishun’s expert guidance`}
             </p>
             <a href="#pricing-section" className={"z-20"}>
               <motion.button

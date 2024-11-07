@@ -50,9 +50,9 @@ const FeaturesSections = () => {
             className={"absolute bottom-0 right-10 opacity-50"}
           />
           <h1 className={" text-center lg:text-5xl  sm:text-4xl text-4xl px-4"}>
-            Get All the <ScribledHighlightedText textInput={"benefit"} /> of our
-            iconic <br className="hidden sm:block" /> revision course, Enroll
-            Now!
+            Get All the <ScribledHighlightedText textInput={"benefit"} /> of
+            yearlong <br className="hidden sm:block" />
+            online course, Enroll Now!
           </h1>
           <div
             className={

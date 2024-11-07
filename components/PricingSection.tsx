@@ -44,7 +44,7 @@ const PricingSection = ({ courseFees = "45000" }) => {
                 }
               >
                 <h1 className={" text-3xl sm:text-6xl lg:text-7xl font-bold"}>
-                  {`The Best Year Long Course for JEE - 2025`}
+                  {`The Best Year Long Course for JEE - 2026`}
                 </h1>
                 <p>
                   {`Study Smarter, Score Higher with Experts mentors in
@@ -113,28 +113,29 @@ const PricingSection = ({ courseFees = "45000" }) => {
                         className={"bg-foreground p-1 rounded-full"}
                         color={"#F15E04"}
                       />{" "}
-                      Achieve 97+ percentile in JEE Mains 2025
+                      {`Basic to advanced detailed Theory Lectures`}
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
                       <Check
                         className={"bg-foreground p-1 rounded-full"}
                         color={"#F15E04"}
                       />
-                      Secure a rank under 25k in JEE Advanced
+                      {`Graded Exhaustive Material with Solutions
+`}
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
                       <Check
                         className={"bg-foreground p-1 rounded-full"}
                         color={"#F15E04"}
                       />
-                      ₹10000 refund upon meeting above criteria
+                      {`DPP’s with solution for Revision.`}
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
                       <Check
                         className={"bg-foreground p-1 rounded-full"}
                         color={"#F15E04"}
                       />
-                      Refund applies only to student of this course
+                      {`Live doubt zoom Class (Daily)`}
                     </li>
                   </ul>
                 </div>
