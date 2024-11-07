@@ -80,7 +80,10 @@ const PricingSection = ({ courseFees = "45000" }) => {
                       "flex flex-col items-center gap-y-6 h-fit relative"
                     }
                   >
-                    <h3 className={"text-2xl font-bold"}> Course Fees </h3>
+                    <h3 className={"text-2xl font-bold"}>
+                      {" "}
+                      Course Fees for Early Birds
+                    </h3>
                     <motion.img
                       animate={{ x: [0, 150] }}
                       transition={{
@@ -113,7 +116,7 @@ const PricingSection = ({ courseFees = "45000" }) => {
                         className={"bg-foreground p-1 rounded-full"}
                         color={"#F15E04"}
                       />{" "}
-                      {`Basic to advanced detailed Theory Lectures`}
+                      {`EMI/Installments options available.`}
                     </li>
                     <li className={"flex flex-row gap-x-2"}>
                       <Check
