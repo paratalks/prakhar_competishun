@@ -35,7 +35,7 @@ const YoutubeRecom = ({
           } // Adjusted for mobile
         />
         <iframe
-          src={youtubeLink}
+          src={"https://www.youtube.com/embed/pKGYI7CkvjQ"}
           frameBorder="0"
           width={"100%"}
           className={"rounded-3xl aspect-[16/9]"}
