@@ -436,7 +436,6 @@ export default function Home() {
           {/*<PricingSection courseFees={data && data.documents[0].price} />*/}
           <PricingSection />
         </div>
-        <StatisticSection />
         <ResultShowcase />
         <MentorSection />
 
